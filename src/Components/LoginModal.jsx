@@ -4,7 +4,7 @@ import { useUserAuth } from '../Context/UserAuthContext';
 
 function LoginModal(props) {
   const { error, setError } = props;
-  const { login, loginGoogle } = useUserAuth();
+  const { user, login, loginGoogle } = useUserAuth();
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
@@ -14,6 +14,7 @@ function LoginModal(props) {
     e.preventDefault();
     try {
       await login(email, password);
+      console.log(user);
       navigate("/home");
       setError("");
     } catch (err) {
