@@ -1,0 +1,14 @@
+@import "../../Utilities/variables";
+
+.tweetbox__container {
+    .tweetbox__input-container {
+        input {
+            border: none;
+            background: $lightModeGrey20;
+
+            ::placeholder {
+                color: $lightModeGrey;
+            }
+        }
+    }
+}

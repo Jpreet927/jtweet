@@ -1,0 +1,21 @@
+.tweetbox__container .tweetbox__input-container input {
+  border: none;
+  background: rgba(138, 180, 211, 0.2);
+}
+
+.tweetbox__container .tweetbox__input-container input ::-webkit-input-placeholder {
+  color: #8ab5d3;
+}
+
+.tweetbox__container .tweetbox__input-container input :-ms-input-placeholder {
+  color: #8ab5d3;
+}
+
+.tweetbox__container .tweetbox__input-container input ::-ms-input-placeholder {
+  color: #8ab5d3;
+}
+
+.tweetbox__container .tweetbox__input-container input ::placeholder {
+  color: #8ab5d3;
+}
+/*# sourceMappingURL=TweetBox.css.map */

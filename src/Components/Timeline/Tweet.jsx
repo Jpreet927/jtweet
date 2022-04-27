@@ -2,7 +2,9 @@ import React from 'react'
 
 function Tweet() {
   return (
-    <div>Tweet</div>
+    <div className="tweet__container">
+      
+    </div>
   )
 }
 
