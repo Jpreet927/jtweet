@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import LoginModal from '../Components/LoginModal'
+import '../Styles/LoginPage/LoginPage.css'
 
 function LoginPage() {
   const [error, setError] = useState('');
+
   return (
-    <div>
+    <div className='login__container'>
+      <div className="login__modal-container">
         <LoginModal error={error} setError={setError} />
-        <Link to="/signup">Click to Sign Up</Link>
-        {error ? <div><p>{error}</p></div> : ""}  
+      </div>
     </div>
   )
 }

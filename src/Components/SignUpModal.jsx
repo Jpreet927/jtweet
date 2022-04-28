@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   doc,
   collection,
@@ -9,6 +9,7 @@ import {
 } from "firebase/firestore";
 import { useUserAuth } from "../Context/UserAuthContext";
 import { db } from "../Firebase/firebase";
+import '../Styles/SignUpModal/SignUpModal.css'
 
 function SignUpModal(props) {
   const { error, setError } = props;
@@ -62,8 +63,9 @@ function SignUpModal(props) {
   };
 
   return (
-    <div className="signup__container">
-      <form action="" className="signup__form" onSubmit={handleSubmit}>
+    <div className="signup-modal__container">
+      <form action="" className="signup-modal__form" onSubmit={handleSubmit}>
+        <h3>See what's happening in the world right now</h3>
         <input
           type="text"
           placeholder="Enter Your Name"
@@ -94,8 +96,12 @@ function SignUpModal(props) {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
-        <button className="signup__form-button">Sign Up</button>
+        <button className="signup-modal__form-button">Sign Up</button>
       </form>
+      <div className="signup-modal__redirect">
+          <Link to="/" className='signup-modal__link'>Click to <span>Login</span></Link>
+          {error ? <div><p className='signup-modal__error'>{error}</p></div> : ""}  
+        </div>
     </div>
   );
 }

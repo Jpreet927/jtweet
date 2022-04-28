@@ -1,0 +1,102 @@
+@import "../../Utilities/variables";
+
+.login-modal__container {
+    background-color: $lightModeWhite50;
+    width: 500px;
+    height: 600px;
+    padding: 48px;
+    backdrop-filter: blur(16px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+
+    ::placeholder {
+        color: $lightModeGrey;
+    }
+
+    .login-modal__form-button {
+        border: none;
+        background-color: $mainBlue;
+        padding: 16px;
+        color: $lightModeWhite;
+        font-size: 14px;
+        font-weight: 700;
+        border-radius: 100px;
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+    }
+
+    .login-modal__form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        h3 {
+            font-size: 32px;
+        }
+        
+        input {
+            background-color: $lightModeGrey20;
+            border: none;
+            padding: 16px;
+            flex-shrink: 0;
+
+            &:focus {
+                outline: $mainBlue;
+            }
+        }
+    }
+
+    .login-modal__google-container {
+        background-color: $lightModeWhite;
+        padding: 16px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100px;
+        transition: transform 0.2s ease;
+
+        img {
+            height: 24px;
+        }
+
+        .login-modal__google-button {
+            background: none;
+            border: none;
+            color: $mainBlue;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+    }
+
+    .login-modal__redirect {
+        display: flex;
+        justify-content: center;
+
+        .login-modal__link {
+            text-decoration: none;
+            color: black;
+
+            span {
+                color: $mainBlue;
+                font-weight: 700;
+            }
+        }
+
+        .login-modal__error {
+            color: rgb(237, 48, 64);
+            font-weight: 500;
+        }
+    }
+}

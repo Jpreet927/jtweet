@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useUserAuth } from '../Context/UserAuthContext';
+import '../Styles/LoginModal/LoginModal.css'
 
-function LoginModal(props) {
-  const { error, setError } = props;
+function LoginModal() {
+  const [error, setError] = useState('');
   const { user, login, loginGoogle } = useUserAuth();
   const navigate = useNavigate();
 
@@ -34,8 +35,9 @@ function LoginModal(props) {
   }
 
   return (
-    <div className="login__container">
-        <form action="" className="login__form" onSubmit={ handleSubmit } >
+    <div className="login-modal__container">
+        <form action="" className="login-modal__form" onSubmit={ handleSubmit } >
+          <h3>Log in to Jtweet</h3>
             <input 
               type="email" 
               placeholder="Enter Your Email" 
@@ -46,9 +48,16 @@ function LoginModal(props) {
               placeholder="Enter Your Password"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button className="login__form-button">Login</button>
+            <button className="login-modal__form-button">Login</button>
         </form>
-        <button className="login__google-button" onClick={handleGoogleLogin}>Login with Google</button>
+        <div className="login-modal__google-container">
+          <img src={require("../Assets/Icons/google-logo.png")} alt="" />
+          <button className="login-modal__google-button" onClick={handleGoogleLogin}>Login with Google</button>
+        </div>
+        <div className="login-modal__redirect">
+          <Link to="/signup" className='login-modal__link'>Click to <span>Sign Up</span></Link>
+          {error ? <div><p className='login-modal__error'>{error}</p></div> : ""}  
+        </div>
     </div>
   )
 }
