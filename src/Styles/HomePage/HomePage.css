@@ -1,10 +1,13 @@
 .home__container {
   width: 100%;
   height: 100vh;
-  overflow: hidden;
-  background-image: url("../../Assets/Images/Light-BG.jpg");
+  background-image: url("../../Assets/Images/Light-BG-2.jpg");
   background-size: cover;
   background-position: center;
+}
+
+.home__container .home__main {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12,7 +15,7 @@
   padding: 80px 120px;
 }
 
-.home__container .home__left-section {
+.home__container .home__main .home__left-section {
   max-width: 25%;
   -webkit-box-flex: 25%;
       -ms-flex: 25%;
@@ -20,14 +23,14 @@
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.home__container .home__middle-section {
+.home__container .home__main .home__middle-section {
   max-width: 50%;
   -webkit-box-flex: 50%;
       -ms-flex: 50%;
           flex: 50%;
 }
 
-.home__container .home__right-section {
+.home__container .home__main .home__right-section {
   max-width: 25%;
   -webkit-box-flex: 25%;
       -ms-flex: 25%;

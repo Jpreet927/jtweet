@@ -1,0 +1,9 @@
+.avatar__container {
+    object-fit: contain;
+    border-radius: 200px;
+    overflow: hidden;
+    
+    img {
+        width: 100%;
+    }
+}

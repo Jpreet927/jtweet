@@ -3,29 +3,33 @@
 .home__container {
   width: 100%;
   height: 100vh;
-  overflow: hidden;
-  background-image: url('../../Assets/Images/Light-BG.jpg');
+  // overflow: hidden;
+  background-image: url('../../Assets/Images/Light-BG-2.jpg');
   background-size: cover;
   background-position: center;
-  display: flex;
-  gap: 32px;
-  padding: 80px 120px;
 
-  .home__left-section {
-    max-width: 25%;
-    flex: 25%;
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-
-  .home__middle-section {
-    max-width: 50%;
-    flex: 50%;
-  }
-
-  .home__right-section {
-    max-width: 25%;
-    flex: 25%;
-    background-color: rgba(255, 255, 255, 0.5);
+  .home__main {
+    height: 100%;
+    display: flex;
+    gap: 32px;
+    padding: 80px 120px;
+  
+    .home__left-section {
+      max-width: 25%;
+      flex: 25%;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  
+    .home__middle-section {
+      max-width: 50%;
+      flex: 50%;
+    }
+  
+    .home__right-section {
+      max-width: 25%;
+      flex: 25%;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
   }
 }
 

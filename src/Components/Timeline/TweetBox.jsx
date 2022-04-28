@@ -10,6 +10,10 @@ import {
 import { ref, uploadString, getDownloadURL } from "firebase/storage";
 import { useUserAuth } from "../../Context/UserAuthContext";
 import { db, storage } from "../../Firebase/firebase";
+import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
+import EmojiEmotionsOutlinedIcon from '@mui/icons-material/EmojiEmotionsOutlined';
+import CloseIcon from '@mui/icons-material/Close';
+import Avatar from "../Misc/Avatar";
 import '../../Styles/TweetBox/TweetBox.css'
 
 function TweetBox() {
@@ -41,13 +45,13 @@ function TweetBox() {
       const tweetImageRef = ref(storage, `tweets/${tweetRef.id}/image`);
       if (currentTweetImage) {
         await uploadString(tweetImageRef, currentTweetImage, "data_url").then(
-          async () => {
-            const tweetImageURL = getDownloadURL(tweetImageRef);
+          async (snapshot) => {
+            const tweetImageURL = await getDownloadURL(tweetImageRef);
             await updateDoc(doc(db, "all-tweets", tweetRef.id), {
-              image: tweetImageURL,
+              image: tweetImageURL
             });
             await updateDoc(doc(db, "tweets", user.uid, "tweets", tweetRef.id), {
-              image: tweetImageURL,
+              image: tweetImageURL
             });
         });
       }
@@ -72,28 +76,42 @@ function TweetBox() {
   return (
     <div className="tweetbox__container">
       <div className="tweetbox__input-container">
-        <div className="tweetbox__input-avatar">
-          <img src="" alt="" />
-        </div>
-        <input
-          type="text"
+        <Avatar width={`70px`}/>
+        <textarea 
+          name="" 
+          id="" 
+          rows="2" 
+          value={currentTweet} 
+          onChange={(e) => setCurrentTweet(e.target.value)} 
           placeholder="What's happening?"
-          value={currentTweet}
-          onChange={(e) => setCurrentTweet(e.target.value)}
         />
-        <img src={currentTweetImage} alt="" />
-        <div className="tweetbox__input-image-icon" onClick={() => imagePickerRef.current.click()}>
-          <img src="" alt="" />
-          <input
-            type="file"
-            hidden
-            placeholder="What's happening?"
-            onChange={(e) => {handleImage(e)}}
-            ref={imagePickerRef}
-          />
-        </div>
       </div>
-      <button onClick={handleTweet}>Tweet</button>
+      { currentTweetImage !== null &&
+        <div className="tweetbox__image-preview-container">
+          <div className="tweetbox__image-preview-close" onClick={() => setCurrentTweetImage(null)}>
+            <CloseIcon className="tweetbox__image-close"/>
+          </div>
+          <img src={currentTweetImage} alt="" />
+        </div>
+      }
+      <div className="tweetbox__buttons">
+        <div className="tweetbox__buttons-icons">
+          <div className="tweetbox__buttons-container" onClick={() => imagePickerRef.current.click()}>
+            <AddPhotoAlternateOutlinedIcon className="tweetbox__icon" />
+            <input
+              type="file"
+              hidden
+              placeholder="What's happening?"
+              onChange={(e) => {handleImage(e)}}
+              ref={imagePickerRef}
+            />
+          </div>
+          <div className="tweetbox__buttons-container">
+            <EmojiEmotionsOutlinedIcon className="tweetbox__icon" />
+          </div>
+        </div>
+        <button onClick={handleTweet}>Tweet</button>
+      </div>
     </div>
   );
 }

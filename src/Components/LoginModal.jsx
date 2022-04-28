@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { doc, getDoc } from 'firebase/firestore'
 import { useUserAuth } from '../Context/UserAuthContext';
+import { db } from '../Firebase/firebase'
 import '../Styles/LoginModal/LoginModal.css'
 
 function LoginModal() {
   const [error, setError] = useState('');
-  const { user, login, loginGoogle } = useUserAuth();
+  const { user, login, loginGoogle, userDoc, setUserDoc } = useUserAuth();
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
@@ -14,8 +16,14 @@ function LoginModal() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await login(email, password);
-      console.log(user);
+      const response = await login(email, password);
+      let userDocRef = doc(db, 'users', response.user.uid);
+      const userDocSnapshot = await getDoc(userDocRef);
+      if (userDocSnapshot.exists()) {
+        console.log(userDocSnapshot.data());
+        setUserDoc(userDocSnapshot.data());
+      }
+      // console.log(user);
       navigate("/home");
       setError("");
     } catch (err) {

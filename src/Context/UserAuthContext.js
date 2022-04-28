@@ -7,12 +7,14 @@ import {
     onAuthStateChanged, 
     GoogleAuthProvider
  } from 'firebase/auth' 
+ import { doc, getDoc } from 'firebase/firestore'
 import { auth } from '../Firebase/firebase'
 
 const userAuthContext = createContext();
 
 export function UserAuthContextProvider({ children }) {
     const [user, setUser] = useState(null);
+    const [userDoc, setUserDoc] = useState(null);
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -39,7 +41,7 @@ export function UserAuthContextProvider({ children }) {
     }
 
     return (
-        <userAuthContext.Provider value={{user, signUp, login, logout, loginGoogle}}>{children}</userAuthContext.Provider>
+        <userAuthContext.Provider value={{user, userDoc, setUserDoc, signUp, login, logout, loginGoogle}}>{children}</userAuthContext.Provider>
     )
 }
 

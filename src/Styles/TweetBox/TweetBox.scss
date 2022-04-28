@@ -1,13 +1,122 @@
 @import "../../Utilities/variables";
 
 .tweetbox__container {
-    .tweetbox__input-container {
-        input {
-            border: none;
-            background: $lightModeGrey20;
+    display: flex;
+    flex-direction: column;
+    ::placeholder {
+        color: $lightModeGrey;
+        font-family: $sansSerifMain;
+        font-size: 20px;
+    }
 
-            ::placeholder {
-                color: $lightModeGrey;
+    .tweetbox__input-container {
+        background: $lightModeInputBG;
+        padding: 32px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        textarea {
+            border: none;
+            background: none;
+            padding: 12px;
+            width: 100%;
+            min-height: 50px;
+            font-family: $sansSerifMain;
+            font-size: 16px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .tweetbox__image-preview-container {
+        overflow: hidden;
+        max-height: 400px;
+        position: relative;
+        object-fit: contain;
+        object-position: center;
+
+        .tweetbox__image-preview-close {
+            background-color: rgba(0, 0, 0, 0.6);
+            // backdrop-filter: blur(16px);
+            // padding: 12px;
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            border-radius: 100px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgb(26, 28, 33);
+            }
+
+            .tweetbox__image-close {
+                color: white;
+            }
+        }
+
+        img {
+            width: auto;
+            height : auto;
+            max-height: 100%;
+            max-width: 100%;
+        }
+    }
+
+    .tweetbox__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 24px;
+        background-color: $lightModeWhite50;
+        backdrop-filter: blur(16px);
+
+        .tweetbox__buttons-icons {
+            display: flex;
+            gap: 8px;
+
+            .tweetbox__buttons-container {
+                background-color: rgba(138, 180, 211, 0);
+                // padding: 4px;
+                border-radius: 50px;
+                height: 40px;
+                width: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    background-color: rgba(138, 180, 211, 0.2);
+                    cursor: pointer;
+                }
+
+                .tweetbox__icon {
+                    color: $lightModeGrey;
+                }
+            }
+        }
+
+        button {
+            padding: 10px 30px;
+            border: none;
+            // background-image: linear-gradient(to right, $mainBlue, $secondaryBlue);
+            background-color: $mainBlue;
+            border-radius: 100px;
+            color: white;
+            font-weight: 700;
+            font-family: $sansSerifMain;
+            transition: transform 0.2s ease;
+
+            &:hover {
+                cursor: pointer;
+                transform: translateY(-3px);
             }
         }
     }

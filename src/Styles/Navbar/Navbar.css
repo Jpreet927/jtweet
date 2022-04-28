@@ -1,0 +1,114 @@
+.navbar__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  padding: 24px 96px;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
+}
+
+.navbar__container .navbar__logo {
+  max-height: 24px;
+}
+
+.navbar__container ::-webkit-input-placeholder {
+  color: #8ab5d3;
+}
+
+.navbar__container :-ms-input-placeholder {
+  color: #8ab5d3;
+}
+
+.navbar__container ::-ms-input-placeholder {
+  color: #8ab5d3;
+}
+
+.navbar__container ::placeholder {
+  color: #8ab5d3;
+}
+
+.navbar__container nav {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.navbar__container nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 60px;
+}
+
+.navbar__container nav ul li {
+  list-style: none;
+  color: #8ab5d3;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.navbar__container nav ul li:hover {
+  cursor: pointer;
+  color: #47b8ff;
+}
+
+.navbar__container .navbar__search-avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 24px;
+}
+
+.navbar__container .navbar__search-avatar .navbar__search {
+  border-radius: 50px;
+  background-color: rgba(81, 155, 225, 0.2);
+  padding: 8px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar__container .navbar__search-avatar .navbar__search .navbar__search-icon {
+  color: #8ab5d3;
+}
+
+.navbar__container .navbar__search-avatar .navbar__search input {
+  border: none;
+  background: none;
+  padding: 0px 8px;
+}
+
+.navbar__container .navbar__search-avatar .navbar__search input:focus {
+  outline: none;
+}
+
+.navbar__container .navbar__search-avatar .navbar__avatar {
+  max-height: 50px;
+  max-width: 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  overflow: hidden;
+  border-radius: 100px;
+}
+
+.navbar__container .navbar__search-avatar .navbar__avatar img {
+  width: 100%;
+}
+/*# sourceMappingURL=Navbar.css.map */

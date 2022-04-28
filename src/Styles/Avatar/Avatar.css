@@ -1,0 +1,11 @@
+.avatar__container {
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 200px;
+  overflow: hidden;
+}
+
+.avatar__container img {
+  width: 100%;
+}
+/*# sourceMappingURL=Avatar.css.map */
