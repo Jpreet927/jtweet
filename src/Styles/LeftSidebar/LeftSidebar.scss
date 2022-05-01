@@ -1,0 +1,9 @@
+@import "../../Utilities/variables";
+
+.leftsidebar__container {
+  display: flex;
+  flex-direction: column;
+  gap: $homeGap;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,29 @@
+.suggested__container {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+}
+
+.suggested__container h3 {
+  font-family: "Open Sans", sans-serif;
+  color: #8ab5d3;
+}
+
+.suggested__container .suggested__profiles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 12px;
+}
+/*# sourceMappingURL=Suggested.css.map */

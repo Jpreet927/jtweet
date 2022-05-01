@@ -76,7 +76,7 @@ function TweetBox() {
   return (
     <div className="tweetbox__container">
       <div className="tweetbox__input-container">
-        <Avatar width={`70px`}/>
+        <Avatar dimension={`70px`}/>
         <textarea 
           name="" 
           id="" 

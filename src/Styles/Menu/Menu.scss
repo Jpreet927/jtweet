@@ -1,0 +1,59 @@
+@import "../../Utilities/variables";
+
+.menu__container {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 24px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: $sansSerifMain;
+
+  .menu__item-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .menu__item {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+
+      &:hover .menu__item-icon,
+      &:hover p {
+        color: $mainBlue;
+        cursor: pointer;
+      }
+
+      .menu__item-icon {
+        color: $lightModeGrey;
+        transition: color 0.2s ease;
+      }
+
+      p {
+        font-size: 20px;
+        color: $lightModeGrey;
+        transition: color 0.2s ease;
+      }
+    }
+  }
+
+  button {
+    padding: 15px 30px;
+    border: none;
+    // background-image: linear-gradient(to right, $mainBlue, $secondaryBlue);
+    background-color: $mainBlue;
+    border-radius: 100px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1em;
+    font-family: $sansSerifMain;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-3px);
+    }
+  }
+}

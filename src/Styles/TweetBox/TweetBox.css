@@ -48,10 +48,10 @@
   border: none;
   background: none;
   padding: 12px;
-  width: 100%;
-  min-height: 50px;
+  width: 87%;
+  min-height: 40px;
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .tweetbox__container .tweetbox__input-container textarea:focus {

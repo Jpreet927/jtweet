@@ -1,85 +1,88 @@
 @import "../../Utilities/variables";
 
 .navbar__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    padding: 24px 96px;
-    background-color: $lightModeWhite50;
-    backdrop-filter: blur(16px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 24px 96px;
+  background-color: $lightModeWhite50;
+  backdrop-filter: blur(16px);
+  position: absolute;
+  top: 0;
+  z-index: 50;
+  width: 100%;
 
-    .navbar__logo {
-        max-height: 24px;
-    }
+  .navbar__logo {
+    max-height: 24px;
+  }
 
-    ::placeholder {
+  ::placeholder {
+    color: $lightModeGrey;
+  }
+
+  nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    ul {
+      display: flex;
+      gap: 60px;
+
+      li {
+        list-style: none;
         color: $lightModeGrey;
+        font-family: $sansSerifMain;
+        font-weight: 500;
+        transition: color 0.2s ease;
+
+        &:hover {
+          cursor: pointer;
+          color: $mainBlue;
+        }
+      }
+    }
+  }
+
+  .navbar__search-avatar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    .navbar__search {
+      border-radius: 50px;
+      background-color: $lightModeInputBG;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+
+      .navbar__search-icon {
+        // width: 200px;
+        color: $lightModeGrey;
+      }
+
+      input {
+        border: none;
+        background: none;
+        padding: 0px 8px;
+
+        &:focus {
+          outline: none;
+        }
+        // height: 36px;
+      }
     }
 
-    nav {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        ul {
-            display: flex;
-            gap: 60px;
+    .navbar__avatar {
+      max-height: 50px;
+      max-width: 50px;
+      object-fit: contain;
+      overflow: hidden;
+      border-radius: 100px;
 
-            li {
-                list-style: none;
-                color: $lightModeGrey;
-                font-family: $sansSerifMain;
-                font-weight: 500;
-                transition: color 0.2s ease;
-                
-                &:hover {
-                    cursor: pointer;
-                    color: $mainBlue;
-                }
-            }
-        }
+      img {
+        width: 100%;
+      }
     }
-
-    .navbar__search-avatar {
-        display: flex;
-        align-items: center;
-        gap: 24px;
-
-        .navbar__search {
-            border-radius: 50px;
-            background-color: $lightModeInputBG;
-            padding: 8px 16px;
-            display: flex;
-            align-items: center;
-
-            .navbar__search-icon {
-                // width: 200px;
-                color: $lightModeGrey;
-            }
-
-            input {
-                border: none;
-                background: none;
-                padding: 0px 8px;
-
-                &:focus {
-                    outline: none;
-                }
-                // height: 36px;
-            }
-        }
-
-
-        .navbar__avatar {
-            max-height: 50px;
-            max-width: 50px;
-            object-fit: contain;
-            overflow: hidden;
-            border-radius: 100px;
-
-            img {
-                width: 100%;
-            }
-        }
-    }
+  }
 }

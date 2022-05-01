@@ -1,0 +1,20 @@
+@import "../../Utilities/variables";
+
+.suggested__container {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  h3 {
+    font-family: $sansSerifMain;
+    color: $lightModeGrey;
+  }
+
+  .suggested__profiles {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}

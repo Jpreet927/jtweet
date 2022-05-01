@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,oBAAoB,CAAC;EACnB,gBAAgB,EAAE,wBAAwB;CAC3C",
+    "sources": [
+        "Trending.scss",
+        "../../Utilities/_variables.scss"
+    ],
+    "names": [],
+    "file": "Trending.css"
+}

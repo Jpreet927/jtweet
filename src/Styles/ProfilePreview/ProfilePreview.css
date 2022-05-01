@@ -1,0 +1,50 @@
+.profilepreview__container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-family: "Open Sans", sans-serif;
+}
+
+.profilepreview__container .profilepreview__banner {
+  width: 100%;
+  overflow: hidden;
+  min-height: 33%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.profilepreview__container .profilepreview__banner img {
+  width: 100%;
+}
+
+.profilepreview__container .profilepreview__avatar {
+  position: absolute;
+  top: 39%;
+  left: 5%;
+}
+
+.profilepreview__container .profilepreview__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 36px 36px 24px;
+  color: #8ab5d3;
+}
+
+.profilepreview__container .profilepreview__details .profilepreview__details-section h3 {
+  font-size: 1em;
+}
+
+.profilepreview__container .profilepreview__details .profilepreview__details-section p {
+  font-size: 1em;
+}
+/*# sourceMappingURL=ProfilePreview.css.map */

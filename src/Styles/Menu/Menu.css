@@ -1,0 +1,79 @@
+.menu__container {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 24px 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: "Open Sans", sans-serif;
+}
+
+.menu__container .menu__item-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+}
+
+.menu__container .menu__item-nav .menu__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 28px;
+}
+
+.menu__container .menu__item-nav .menu__item:hover .menu__item-icon,
+.menu__container .menu__item-nav .menu__item:hover p {
+  color: #47b8ff;
+  cursor: pointer;
+}
+
+.menu__container .menu__item-nav .menu__item .menu__item-icon {
+  color: #8ab5d3;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.menu__container .menu__item-nav .menu__item p {
+  font-size: 20px;
+  color: #8ab5d3;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.menu__container button {
+  padding: 15px 30px;
+  border: none;
+  background-color: #47b8ff;
+  border-radius: 100px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1em;
+  font-family: "Open Sans", sans-serif;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.menu__container button:hover {
+  cursor: pointer;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+/*# sourceMappingURL=Menu.css.map */
