@@ -2,4 +2,27 @@
 
 .trending__container {
   background-color: rgba(255, 255, 255, 0.5);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+  font-family: $sansSerifMain;
+  color: $lightModeGrey;
+
+  .trending__topics {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    p {
+      font-weight: 500;
+      font-size: 14px;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
 }

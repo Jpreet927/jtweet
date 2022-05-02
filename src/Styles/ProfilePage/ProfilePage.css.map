@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,uBAAuB,CAAC;EACtB,KAAK,EAAE,IAAI;CAkBZ;;AAnBD,AAGE,uBAHqB,CAGrB,oBAAoB,CAAC;EACnB,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,IAAI;EACX,QAAQ,EAAE,MAAM;EAChB,UAAU,EAAE,KAAK;EACjB,eAAe,EAAE,MAAM;EACvB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;CAQpB;;AAlBH,AAYI,uBAZmB,CAGrB,oBAAoB,CASlB,GAAG,CAAC;EACF,KAAK,EAAE,IAAI;CAIZ",
+    "sources": [
+        "ProfilePage.scss",
+        "../../Utilities/_variables.scss"
+    ],
+    "names": [],
+    "file": "ProfilePage.css"
+}

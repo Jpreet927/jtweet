@@ -1,0 +1,24 @@
+.profilepage__container {
+  width: 100%;
+}
+
+.profilepage__container .profilepage__banner {
+  height: 550px;
+  width: 100%;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profilepage__container .profilepage__banner img {
+  width: 100%;
+}
+/*# sourceMappingURL=ProfilePage.css.map */

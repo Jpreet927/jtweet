@@ -8,7 +8,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "DM Sans", sans-serif;
   color: #8ab5d3;
 }
 
@@ -42,7 +42,7 @@
 
 .suggestedprofile__container .suggestedprofile__follow {
   color: #47b8ff;
-  font-family: "Open Sans", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-weight: 500;
   background: none;
   border: 2px solid #47b8ff;
@@ -54,6 +54,25 @@
 
 .suggestedprofile__container .suggestedprofile__follow:hover {
   background: #47b8ff;
+  color: white;
+  cursor: pointer;
+}
+
+.suggestedprofile__container .suggestedprofile__following {
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  background: #47b8ff;
+  border: 2px solid #47b8ff;
+  border-radius: 150px;
+  padding: 4px 18px;
+  -webkit-transition: color 0.2s ease, background 0.2s ease, border 0.2s ease;
+  transition: color 0.2s ease, background 0.2s ease, border 0.2s ease;
+}
+
+.suggestedprofile__container .suggestedprofile__following:hover {
+  background: #f73946;
+  border: 2px solid #f73946;
   color: white;
   cursor: pointer;
 }

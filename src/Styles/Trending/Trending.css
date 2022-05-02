@@ -1,4 +1,37 @@
 .trending__container {
   background-color: rgba(255, 255, 255, 0.5);
+  padding: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+  height: 100%;
+  font-family: "DM Sans", sans-serif;
+  color: #8ab5d3;
+}
+
+.trending__container .trending__topics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 18px;
+}
+
+.trending__container .trending__topics p {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.trending__container .trending__topics p:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 /*# sourceMappingURL=Trending.css.map */

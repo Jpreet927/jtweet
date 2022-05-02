@@ -1,0 +1,66 @@
+@import "../../Utilities/variables";
+
+.tweet__container {
+  font-family: $sansSerifMain;
+  color: $lightModeGrey;
+  //   padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: $lightModeWhite50;
+  backdrop-filter: blur(16px);
+
+  .tweet__details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 32px 12px 32px;
+
+    .tweet__details-user {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .tweet__details-time {
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .tweet__message {
+    padding: 0px 32px;
+  }
+
+  .tweet__image {
+    width: 100%;
+    overflow: hidden;
+    height: 300px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .tweet__interactions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 32px 8px;
+
+    .tweet__interactions-icons {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+
+      .tweet__interactions-icon-container {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+    }
+  }
+}

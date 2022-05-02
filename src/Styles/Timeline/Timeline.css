@@ -1,0 +1,32 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #8ab5d3;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.timeline__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 32px;
+  height: 100%;
+  overflow-y: scroll;
+}
+/*# sourceMappingURL=Timeline.css.map */

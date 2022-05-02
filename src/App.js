@@ -26,9 +26,7 @@ function App() {
   return (
     <div className="App">
       <UserAuthContextProvider>
-        <div className="app__navbar">
-          <Navbar />
-        </div>
+        <Navbar />
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />

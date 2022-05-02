@@ -7,11 +7,11 @@ function Suggested() {
     <div className="suggested__container">
       <h3>Suggested Profiles</h3>
       <div className="suggested__profiles">
-        <SuggestedProfile />
-        <SuggestedProfile />
-        <SuggestedProfile />
-        <SuggestedProfile />
-        <SuggestedProfile />
+        <SuggestedProfile isFollowing={true} />
+        <SuggestedProfile isFollowing={false} />
+        <SuggestedProfile isFollowing={true} />
+        <SuggestedProfile isFollowing={false} />
+        <SuggestedProfile isFollowing={true} />
       </div>
     </div>
   );

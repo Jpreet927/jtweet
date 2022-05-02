@@ -13,7 +13,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  font-family: "Open Sans", sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 .menu__container .menu__item-nav {
@@ -64,7 +64,7 @@
   color: white;
   font-weight: 700;
   font-size: 1.1em;
-  font-family: "Open Sans", sans-serif;
+  font-family: "DM Sans", sans-serif;
   -webkit-transition: -webkit-transform 0.2s ease;
   transition: -webkit-transform 0.2s ease;
   transition: transform 0.2s ease;
