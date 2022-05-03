@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAEA,AAAA,yBAAyB,CAAC;EACtB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,GAAG,ECcG,IAAI;EDbV,KAAK,EAAE,GAAG;CACb",
     "sources": [
         "ProfileTweets.scss",
         "../../Utilities/_variables.scss"

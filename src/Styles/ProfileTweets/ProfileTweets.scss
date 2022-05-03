@@ -1,1 +1,8 @@
 @import "../../Utilities/variables";
+
+.profiletweets__container {
+    display: flex;
+    flex-direction: column;
+    gap: $homeGap;
+    width: 50%;
+}

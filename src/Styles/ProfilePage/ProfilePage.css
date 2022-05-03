@@ -1,5 +1,8 @@
 .profilepage__container {
   width: 100%;
+  background-image: url("../../Assets/Images/Light-BG-2.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .profilepage__container .profilepage__banner {
@@ -20,5 +23,12 @@
 
 .profilepage__container .profilepage__banner img {
   width: 100%;
+}
+
+.profilepage__container .profilepage__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 32px;
 }
 /*# sourceMappingURL=ProfilePage.css.map */

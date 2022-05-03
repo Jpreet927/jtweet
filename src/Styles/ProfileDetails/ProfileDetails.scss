@@ -1,1 +1,26 @@
 @import "../../Utilities/variables";
+
+.profiledetails__container {
+    display: flex;
+    flex-direction: column;
+    gap: $homeGap;
+    font-family: $sansSerifMain;
+    color: $lightModeGrey;
+    width: 25%;
+
+    .profiledetails__user-profile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profiledetails__details {
+        display: flex;
+        flex-direction: column;
+        gap: $homeGap;
+
+        .profiledetails__details-item {
+            display: flex;
+            gap: 4px;
+        }
+    }
+}

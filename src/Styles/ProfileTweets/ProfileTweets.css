@@ -1,1 +1,12 @@
-/* No CSS *//*# sourceMappingURL=ProfileTweets.css.map */
+.profiletweets__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 32px;
+  width: 50%;
+}
+/*# sourceMappingURL=ProfileTweets.css.map */

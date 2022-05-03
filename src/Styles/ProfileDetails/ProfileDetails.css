@@ -1,1 +1,42 @@
-/* No CSS *//*# sourceMappingURL=ProfileDetails.css.map */
+.profiledetails__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 32px;
+  font-family: "DM Sans", sans-serif;
+  color: #8ab5d3;
+  width: 25%;
+}
+
+.profiledetails__container .profiledetails__user-profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profiledetails__container .profiledetails__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 32px;
+}
+
+.profiledetails__container .profiledetails__details .profiledetails__details-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4px;
+}
+/*# sourceMappingURL=ProfileDetails.css.map */
