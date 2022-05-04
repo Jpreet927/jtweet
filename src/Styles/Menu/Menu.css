@@ -13,7 +13,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .menu__container .menu__item-nav {
@@ -44,14 +44,14 @@
 }
 
 .menu__container .menu__item-nav .menu__item .menu__item-icon {
-  color: #8ab5d3;
+  color: #5379a6;
   -webkit-transition: color 0.2s ease;
   transition: color 0.2s ease;
 }
 
 .menu__container .menu__item-nav .menu__item p {
   font-size: 20px;
-  color: #8ab5d3;
+  color: #5379a6;
   -webkit-transition: color 0.2s ease;
   transition: color 0.2s ease;
 }
@@ -64,7 +64,7 @@
   color: white;
   font-weight: 700;
   font-size: 1.1em;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-transition: -webkit-transform 0.2s ease;
   transition: -webkit-transform 0.2s ease;
   transition: transform 0.2s ease;

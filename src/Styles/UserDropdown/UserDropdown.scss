@@ -1,0 +1,81 @@
+@import "../../Utilities/variables";
+
+.user-dropdown__container {
+    font-family: $sansSerifMain;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    width: 350px;
+    padding: 36px;
+    color: $lightModeGrey;
+    background: rgba(255, 255, 255, 0.971);
+    position: absolute;
+    top: 120%;
+    right: 5%;
+    z-index: 100;
+    backdrop-filter: blur(16px);
+
+    h1 {
+        font-size: 18px;
+        color: $mainBlue;
+    }
+
+    .user-dropdown__details {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        .user-dropdown__details-info {
+            display: flex;
+            flex-direction: column;
+
+            h3 {
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .user-dropdown__buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        button {
+            padding: 12px;
+            border-radius: 50px;
+            font-family: $sansSerifMain;
+            font-weight: 700;
+            transition: color 0.2s ease, border 0.2s ease, background 0.2s ease;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        #button-update {
+            background: none;
+            border: 2px solid $mainBlue;
+            color: $mainBlue;
+
+            &:hover {
+                background: $mainBlue;
+                color: white;
+            }
+        }
+
+        #button-logout {
+            background: $mainBlue;
+            border: 2px solid rgba(255, 255, 255, 0);
+            color: white;
+
+            &:hover {
+                background: none;
+                color: $mainBlue;
+                border: 2px solid $mainBlue;
+            }
+        }
+    }
+}

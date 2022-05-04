@@ -1,9 +1,12 @@
 $mainBlue: #47b8ff;
 $secondaryBlue: #87dbff;
 $unfollowRed: #f73946;
+$like: #f8525d;
+$dislike: #a17df7;
 
 // Light mode
-$lightModeGrey: #8ab5d3;
+$lightModeGrey: #5379a6;
+$lightModeGrey2: #8ab5d3;
 $lightModeGrey20: rgba(138, 180, 211, 0.2);
 $lightModeWhite: rgba(255, 255, 255, 1);
 $lightModeWhite50: rgba(255, 255, 255, 0.5);
@@ -12,9 +15,13 @@ $lightModeBlue: #dce9f4;
 $lightModeInputBG: rgba(81, 155, 225, 0.2);
 
 // Dark mode
+$darkModeGrey: #111d34;
+$darkModeTweet: #192846;
+$darkModeText: #d2ddf9;
+$darkModeSubtext: #d2ddf9;
 
 // Typography
-$sansSerifMain: "DM Sans", sans-serif;
+$sansSerifMain: "Roboto", sans-serif;
 
 // Spacing
 $homeGap: 32px;

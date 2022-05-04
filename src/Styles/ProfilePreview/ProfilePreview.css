@@ -8,7 +8,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: rgba(255, 255, 255, 0.5);
-  font-family: "DM Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .profilepreview__container .profilepreview__banner {
@@ -37,7 +37,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 36px 36px 24px;
-  color: #8ab5d3;
+  color: #5379a6;
 }
 
 .profilepreview__container .profilepreview__details .profilepreview__details-section h3 {

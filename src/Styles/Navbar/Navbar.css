@@ -24,19 +24,19 @@
 }
 
 .navbar__container ::-webkit-input-placeholder {
-  color: #8ab5d3;
+  color: #5379a6;
 }
 
 .navbar__container :-ms-input-placeholder {
-  color: #8ab5d3;
+  color: #5379a6;
 }
 
 .navbar__container ::-ms-input-placeholder {
-  color: #8ab5d3;
+  color: #5379a6;
 }
 
 .navbar__container ::placeholder {
-  color: #8ab5d3;
+  color: #5379a6;
 }
 
 .navbar__container nav {
@@ -55,8 +55,8 @@
 
 .navbar__container nav ul li {
   list-style: none;
-  color: #8ab5d3;
-  font-family: "DM Sans", sans-serif;
+  color: #5379a6;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   -webkit-transition: color 0.2s ease;
   transition: color 0.2s ease;
@@ -90,7 +90,7 @@
 }
 
 .navbar__container .navbar__search-avatar .navbar__search .navbar__search-icon {
-  color: #8ab5d3;
+  color: #5379a6;
 }
 
 .navbar__container .navbar__search-avatar .navbar__search input {

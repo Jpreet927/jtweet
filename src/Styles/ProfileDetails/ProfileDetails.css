@@ -7,9 +7,10 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 32px;
-  font-family: "DM Sans", sans-serif;
-  color: #8ab5d3;
+  font-family: "Roboto", sans-serif;
+  color: #5379a6;
   width: 25%;
+  margin-top: 75px;
 }
 
 .profiledetails__container .profiledetails__user-profile {

@@ -19,19 +19,19 @@
 }
 
 .login-modal__container ::-webkit-input-placeholder {
-  color: #8ab5d3;
+  color: #5379a6;
 }
 
 .login-modal__container :-ms-input-placeholder {
-  color: #8ab5d3;
+  color: #5379a6;
 }
 
 .login-modal__container ::-ms-input-placeholder {
-  color: #8ab5d3;
+  color: #5379a6;
 }
 
 .login-modal__container ::placeholder {
-  color: #8ab5d3;
+  color: #5379a6;
 }
 
 .login-modal__container .login-modal__form-button {

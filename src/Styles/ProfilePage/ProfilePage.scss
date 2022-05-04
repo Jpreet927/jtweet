@@ -5,6 +5,7 @@
     background-image: url("../../Assets/Images/Light-BG-2.jpg");
     background-size: cover;
     background-position: center;
+    position: relative;
 
     .profilepage__banner {
         height: 550px;
@@ -23,8 +24,15 @@
         }
     }
 
+    .profilepage__avatar {
+        position: absolute;
+        top: 450px;
+        left: 7.5%;
+    }
+
     .profilepage__content {
         display: flex;
         gap: $homeGap;
+        padding: 60px 7.5%;
     }
 }

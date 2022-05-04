@@ -1,0 +1,102 @@
+.user-dropdown__container {
+  font-family: "Roboto", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 36px;
+  width: 350px;
+  padding: 36px;
+  color: #5379a6;
+  background: rgba(255, 255, 255, 0.971);
+  position: absolute;
+  top: 120%;
+  right: 5%;
+  z-index: 100;
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
+}
+
+.user-dropdown__container h1 {
+  font-size: 18px;
+  color: #47b8ff;
+}
+
+.user-dropdown__container .user-dropdown__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+}
+
+.user-dropdown__container .user-dropdown__details .user-dropdown__details-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.user-dropdown__container .user-dropdown__details .user-dropdown__details-info h3 {
+  font-size: 16px;
+}
+
+.user-dropdown__container .user-dropdown__details .user-dropdown__details-info p {
+  font-size: 16px;
+}
+
+.user-dropdown__container .user-dropdown__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 12px;
+}
+
+.user-dropdown__container .user-dropdown__buttons button {
+  padding: 12px;
+  border-radius: 50px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  -webkit-transition: color 0.2s ease, border 0.2s ease, background 0.2s ease;
+  transition: color 0.2s ease, border 0.2s ease, background 0.2s ease;
+}
+
+.user-dropdown__container .user-dropdown__buttons button:hover {
+  cursor: pointer;
+}
+
+.user-dropdown__container .user-dropdown__buttons #button-update {
+  background: none;
+  border: 2px solid #47b8ff;
+  color: #47b8ff;
+}
+
+.user-dropdown__container .user-dropdown__buttons #button-update:hover {
+  background: #47b8ff;
+  color: white;
+}
+
+.user-dropdown__container .user-dropdown__buttons #button-logout {
+  background: #47b8ff;
+  border: 2px solid rgba(255, 255, 255, 0);
+  color: white;
+}
+
+.user-dropdown__container .user-dropdown__buttons #button-logout:hover {
+  background: none;
+  color: #47b8ff;
+  border: 2px solid #47b8ff;
+}
+/*# sourceMappingURL=UserDropdown.css.map */

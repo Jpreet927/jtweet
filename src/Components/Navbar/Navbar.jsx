@@ -14,6 +14,7 @@ function Navbar() {
 
     return (
         <div className="navbar__container">
+            {dropdownVisibility && <UserDropdown />}
             <img
                 src={require("../../Assets/Images/Logo-3D-Soft.png")}
                 className="navbar__logo"
@@ -33,11 +34,6 @@ function Navbar() {
                 </ul>
             </nav>
             <div className="navbar__search-avatar">
-                {dropdownVisibility && (
-                    <div className="navbar__dropdown">
-                        <UserDropdown />
-                    </div>
-                )}
                 <div className="navbar__search">
                     <SearchIcon className="navbar__search-icon" />
                     <input type="text" placeholder="Search" />

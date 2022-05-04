@@ -3,6 +3,7 @@
   background-image: url("../../Assets/Images/Light-BG-2.jpg");
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 
 .profilepage__container .profilepage__banner {
@@ -25,10 +26,17 @@
   width: 100%;
 }
 
+.profilepage__container .profilepage__avatar {
+  position: absolute;
+  top: 450px;
+  left: 7.5%;
+}
+
 .profilepage__container .profilepage__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 32px;
+  padding: 60px 7.5%;
 }
 /*# sourceMappingURL=ProfilePage.css.map */

@@ -10,8 +10,8 @@
           flex-direction: column;
   gap: 24px;
   height: 100%;
-  font-family: "DM Sans", sans-serif;
-  color: #8ab5d3;
+  font-family: "Roboto", sans-serif;
+  color: #5379a6;
 }
 
 .trending__container .trending__topics {
