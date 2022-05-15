@@ -109,13 +109,21 @@
   gap: 12px;
 }
 
+.tweet__container .tweet__interactions .tweet__interactions-icons .tweet__interactions-icon-container:hover {
+  cursor: pointer;
+}
+
 .tweet__container .tweet__interactions .tweet__interactions-icons .tweet__interactions-icon-container .tweet__button {
   -webkit-transition: color 0.2s ease;
   transition: color 0.2s ease;
 }
 
-.tweet__container .tweet__interactions .tweet__interactions-icons .tweet__interactions-icon-container .tweet__button:hover {
-  cursor: pointer;
+.tweet__container .tweet__interactions .tweet__interactions-icons .tweet__interactions-icon-container .tweet__liked {
+  color: #f8525d;
+}
+
+.tweet__container .tweet__interactions .tweet__interactions-icons .tweet__interactions-icon-container .tweet__disliked {
+  color: #a17df7;
 }
 
 .tweet__container .tweet__interactions .tweet__interactions-icons .tweet__interactions-icon-container #tweet-reply:hover {

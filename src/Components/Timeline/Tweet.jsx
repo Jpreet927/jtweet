@@ -30,14 +30,7 @@ function Tweet(props) {
     const [replies, setReplies] = useState([]);
     const [error, setError] = useState("");
     const generalTweetDocRef = doc(db, "all-tweets", tweet.id);
-    // const userTweetDocRef = doc(
-    //     db,
-    //     "tweets",
-    //     tweet.author,
-    //     "tweets",
-    //     tweet,
-    //     tweet.id
-    // );
+    const userTweetDocRef = doc(db, "tweets", tweet.author, "tweets", tweet.id);
 
     useEffect(() => {
         const unsubscribe = async () => {
@@ -55,31 +48,72 @@ function Tweet(props) {
         }
     }, []);
 
-    const handleLike = async () => {
-        try {
-            await updateDoc(generalTweetDocRef, {
-                likes: arrayUnion(user.uid),
-            });
+    useEffect(() => {
+        // query tweet id, check if current user has liked/disliked tweet
+        // set state
+    }, []);
 
-            // await updateDoc(userTweetDocRef, {
-            //     likes: arrayUnion(user.uid),
-            // });
-        } catch (error) {
-            setError(error.message);
+    const handleLike = async () => {
+        if (liked === false) {
+            try {
+                await updateDoc(generalTweetDocRef, {
+                    likes: arrayUnion(user.uid),
+                });
+
+                await updateDoc(userTweetDocRef, {
+                    likes: arrayUnion(user.uid),
+                });
+
+                setLiked(true);
+            } catch (error) {
+                setError(error.message);
+            }
+        } else {
+            try {
+                await updateDoc(generalTweetDocRef, {
+                    likes: arrayRemove(user.uid),
+                });
+
+                await updateDoc(userTweetDocRef, {
+                    likes: arrayRemove(user.uid),
+                });
+
+                setLiked(false);
+            } catch (error) {
+                setError(error.message);
+            }
         }
     };
 
     const handleDislike = async () => {
-        try {
-            await updateDoc(generalTweetDocRef, {
-                dislikes: arrayRemove(user.uid),
-            });
+        if (disliked === false) {
+            try {
+                await updateDoc(generalTweetDocRef, {
+                    dislikes: arrayUnion(user.uid),
+                });
 
-            // await updateDoc(userTweetDocRef, {
-            //     dislikes: arrayRemove(user.uid),
-            // });
-        } catch (error) {
-            setError(error.message);
+                await updateDoc(userTweetDocRef, {
+                    dislikes: arrayUnion(user.uid),
+                });
+
+                setDisliked(true);
+            } catch (error) {
+                setError(error.message);
+            }
+        } else {
+            try {
+                await updateDoc(generalTweetDocRef, {
+                    dislikes: arrayRemove(user.uid),
+                });
+
+                await updateDoc(userTweetDocRef, {
+                    dislikes: arrayRemove(user.uid),
+                });
+
+                setDisliked(false);
+            } catch (error) {
+                setError(error.message);
+            }
         }
     };
 
@@ -123,7 +157,11 @@ function Tweet(props) {
                     </div>
                     <div className="tweet__interactions-icon-container">
                         <FavoriteIcon
-                            className="tweet__button"
+                            className={
+                                liked === true
+                                    ? "tweet__liked"
+                                    : "tweet__button"
+                            }
                             id="tweet-like"
                             onClick={() => handleLike()}
                         />
@@ -132,7 +170,11 @@ function Tweet(props) {
 
                     <div className="tweet__interactions-icon-container">
                         <HeartBrokenIcon
-                            className="tweet__button"
+                            className={
+                                disliked === true
+                                    ? "tweet__disliked"
+                                    : "tweet__button"
+                            }
                             id="tweet-dislike"
                             onClick={() => handleDislike()}
                         />

@@ -84,7 +84,7 @@ function TweetBox() {
                 console.log(err);
             }
         } else {
-            toast.error("🦄 Wow so easy!", {
+            toast.error("Please enter your tweet in the input field!", {
                 position: "bottom-center",
                 autoClose: 5000,
                 hideProgressBar: false,

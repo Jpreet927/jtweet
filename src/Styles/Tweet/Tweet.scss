@@ -78,11 +78,20 @@
                 align-items: center;
                 gap: 12px;
 
+                &:hover {
+                    cursor: pointer;
+                }
+
                 .tweet__button {
                     transition: color 0.2s ease;
-                    &:hover {
-                        cursor: pointer;
-                    }
+                }
+
+                .tweet__liked {
+                    color: $like;
+                }
+
+                .tweet__disliked {
+                    color: $dislike;
                 }
 
                 #tweet-reply {
