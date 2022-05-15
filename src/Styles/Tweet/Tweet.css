@@ -37,6 +37,20 @@
   gap: 16px;
 }
 
+.tweet__container .tweet__details .tweet__details-user .tweet__details-avatar {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 100px;
+}
+
+.tweet__container .tweet__details .tweet__details-user .tweet__details-avatar img {
+  max-height: 100%;
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .tweet__container .tweet__details .tweet__details-time p {
   font-size: 14px;
 }
@@ -52,7 +66,7 @@
 .tweet__container .tweet__image {
   width: 100%;
   overflow: hidden;
-  height: 300px;
+  height: 400px;
 }
 
 .tweet__container .tweet__image img {

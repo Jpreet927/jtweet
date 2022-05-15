@@ -13,8 +13,10 @@ import { db, storage } from "../../Firebase/firebase";
 import AddPhotoAlternateOutlinedIcon from "@mui/icons-material/AddPhotoAlternateOutlined";
 import EmojiEmotionsOutlinedIcon from "@mui/icons-material/EmojiEmotionsOutlined";
 import CloseIcon from "@mui/icons-material/Close";
+import { ToastContainer, toast } from "react-toastify";
 import Avatar from "../Misc/Avatar";
 import "../../Styles/TweetBox/TweetBox.css";
+import "react-toastify/dist/ReactToastify.css";
 
 function TweetBox() {
     const { user } = useUserAuth();
@@ -33,46 +35,64 @@ function TweetBox() {
             author: user.uid,
         };
 
-        try {
-            // adds tweet to collection with all tweet
-            const tweetGeneralRef = collection(db, "all-tweets");
-            const tweetRef = await addDoc(tweetGeneralRef, tweet);
+        if (currentTweet !== "") {
+            try {
+                // adds tweet to collection with all tweet
+                const tweetGeneralRef = collection(db, "all-tweets");
+                const tweetRef = await addDoc(tweetGeneralRef, tweet);
 
-            // adds tweet to sub-collection containing individual users tweets
-            const tweetUserRef = doc(
-                db,
-                "tweets",
-                user.uid,
-                "tweets",
-                tweetRef.id
-            );
-            await setDoc(tweetUserRef, tweet);
+                // adds tweet to sub-collection containing individual users tweets
+                const tweetUserRef = doc(
+                    db,
+                    "tweets",
+                    user.uid,
+                    "tweets",
+                    tweetRef.id
+                );
+                await setDoc(tweetUserRef, tweet);
 
-            // uploads image to storage, updates tweet docs image path with storage reference
-            const tweetImageRef = ref(storage, `tweets/${tweetRef.id}/image`);
-            if (currentTweetImage) {
-                await uploadString(
-                    tweetImageRef,
-                    currentTweetImage,
-                    "data_url"
-                ).then(async (snapshot) => {
-                    const tweetImageURL = await getDownloadURL(tweetImageRef);
-                    await updateDoc(doc(db, "all-tweets", tweetRef.id), {
-                        image: tweetImageURL,
-                    });
-                    await updateDoc(
-                        doc(db, "tweets", user.uid, "tweets", tweetRef.id),
-                        {
+                // uploads image to storage, updates tweet docs image path with storage reference
+                const tweetImageRef = ref(
+                    storage,
+                    `tweets/${tweetRef.id}/image`
+                );
+
+                if (currentTweetImage) {
+                    await uploadString(
+                        tweetImageRef,
+                        currentTweetImage,
+                        "data_url"
+                    ).then(async (snapshot) => {
+                        const tweetImageURL = await getDownloadURL(
+                            tweetImageRef
+                        );
+                        await updateDoc(doc(db, "all-tweets", tweetRef.id), {
                             image: tweetImageURL,
-                        }
-                    );
-                });
-            }
+                        });
+                        await updateDoc(
+                            doc(db, "tweets", user.uid, "tweets", tweetRef.id),
+                            {
+                                image: tweetImageURL,
+                            }
+                        );
+                    });
+                }
 
-            setCurrentTweet("");
-            setCurrentTweetImage(null);
-        } catch (err) {
-            console.log(err);
+                setCurrentTweet("");
+                setCurrentTweetImage(null);
+            } catch (err) {
+                console.log(err);
+            }
+        } else {
+            toast.error("🦄 Wow so easy!", {
+                position: "bottom-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+            });
         }
     };
 
@@ -88,6 +108,17 @@ function TweetBox() {
 
     return (
         <div className="tweetbox__container">
+            <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
             <div className="tweetbox__input-container">
                 <Avatar dimension={`70px`} />
                 <textarea

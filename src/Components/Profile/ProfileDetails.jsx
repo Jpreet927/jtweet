@@ -3,7 +3,6 @@ import { useUserAuth } from "../../Context/UserAuthContext";
 import "../../Styles/ProfileDetails/ProfileDetails.css";
 
 function ProfileDetails(props) {
-    const { userDetails } = props;
     const { userDoc } = useUserAuth();
 
     return (
