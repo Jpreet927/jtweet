@@ -1,0 +1,52 @@
+@import "../../Utilities/variables";
+
+.tweetoptions__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
+
+    .tweetoptions__item {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 12px;
+        background: $lightModeWhite90;
+        cursor: pointer;
+        // border-bottom: 1px solid $lightModeGrey20;
+
+        .tweetoptions__icon {
+            font-size: 18px;
+        }
+
+        button {
+            padding: 12px 24px;
+            width: 100%;
+            background: none;
+            border: none;
+            font-family: $sansSerifMain;
+            color: $lightModeGrey;
+        }
+
+        &:hover {
+            background-color: $lightModeWhite50;
+        }
+    }
+
+    #tweetoptions__delete {
+        // width: 100%;
+        // background: $unfollowRed;
+        // color: white;
+        // font-weight: 500;
+
+        button {
+            border-bottom: none;
+            // color: white;
+            // font-weight: 700;
+        }
+    }
+}

@@ -1,0 +1,156 @@
+@import "../../Utilities/variables";
+
+.reply__container {
+    font-family: $sansSerifMain;
+    color: $lightModeGrey;
+    //   padding: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    background: $lightModeInputBG;
+    backdrop-filter: blur(16px);
+    position: relative;
+
+    .reply__details {
+        display: flex;
+        // align-items: center;
+        // justify-content: space-between;
+        gap: 12px;
+        padding: 24px 32px;
+
+        .reply__details-avatar {
+            width: 45px;
+            height: 45px;
+            overflow: hidden;
+            border-radius: 100px;
+
+            img {
+                max-height: 100%;
+                max-width: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .reply__details-content {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            // align-items: flex-start;
+            // text-align: left;
+
+            .reply__details-user {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+
+                .reply__details-user-info {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+
+                    h3 {
+                        font-size: 18px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                    }
+                }
+                .reply__details-time {
+                    p {
+                        font-size: 14px;
+                    }
+                }
+            }
+            .reply__message {
+                // padding: 0px 32px 24px;
+
+                p {
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+
+    .reply__image {
+        width: 100%;
+        overflow: hidden;
+        height: 400px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .reply__options-button {
+        position: absolute;
+        right: 0;
+        bottom: 48px;
+    }
+
+    .reply__interactions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 32px 8px;
+
+        .reply__interactions-icons {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+
+            .reply__interactions-icon-container {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                .reply__button {
+                    transition: color 0.2s ease;
+                }
+
+                .reply__liked {
+                    color: $like;
+                }
+
+                .reply__disliked {
+                    color: $dislike;
+                }
+
+                #reply-reply {
+                    &:hover {
+                        color: $mainBlue;
+                    }
+                }
+                #reply-like {
+                    &:hover {
+                        color: $like;
+                    }
+                }
+                #reply-dislike {
+                    &:hover {
+                        color: $dislike;
+                    }
+                }
+
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .reply__interactions-options {
+            #reply-options {
+                &:hover {
+                    color: $mainBlue;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

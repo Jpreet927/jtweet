@@ -8,7 +8,7 @@ import {
     orderBy,
     onSnapshot,
 } from "firebase/firestore";
-import Tweet from "./Tweet";
+import Tweet from "../Tweets/Tweet";
 import TweetBox from "./TweetBox";
 import "../../Styles/Timeline/Timeline.css";
 
@@ -39,7 +39,12 @@ function Timeline() {
             <TweetBox />
             <div className="timeline__tweets-container">
                 {tweets.map((tweet) => (
-                    <Tweet key={tweet.id} tweet={tweet} />
+                    <Tweet
+                        key={tweet.id}
+                        tweet={tweet}
+                        tweets={tweets}
+                        setTweets={setTweets}
+                    />
                 ))}
             </div>
         </div>

@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from "react";
 import {
+    documentId,
     collection,
     doc,
     getDoc,
+    getDocs,
     updateDoc,
+    deleteDoc,
     arrayUnion,
     arrayRemove,
     query,
     where,
+    orderBy,
+    limit,
 } from "firebase/firestore";
 import { useUserAuth } from "../../Context/UserAuthContext";
 import { db } from "../../Firebase/firebase";
 import Avatar from "../Misc/Avatar";
+import TweetOptions from "./TweetOptions";
+import Reply from "../Replies/Reply";
 import ReplyIcon from "@mui/icons-material/Reply";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import HeartBrokenIcon from "@mui/icons-material/HeartBroken";
@@ -19,19 +26,20 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import "../../Styles/Tweet/Tweet.css";
 
 function Tweet(props) {
-    const { tweet } = props;
+    const { tweet, tweets, setTweets } = props;
     const { user } = useUserAuth();
     const [authorDoc, setAuthorDoc] = useState({});
     const [validImage, setValidImage] = useState(true);
     const [liked, setLiked] = useState(false);
     const [disliked, setDisliked] = useState(false);
-    const [likes, setLikes] = useState([]);
-    const [dislikes, setDislikes] = useState([]);
     const [replies, setReplies] = useState([]);
+    const [latestReply, setLatestReply] = useState({});
+    const [optionsOpen, setOptionsOpen] = useState(false);
     const [error, setError] = useState("");
     const generalTweetDocRef = doc(db, "all-tweets", tweet.id);
     const userTweetDocRef = doc(db, "tweets", tweet.author, "tweets", tweet.id);
 
+    // get tweet author data
     useEffect(() => {
         const unsubscribe = async () => {
             const authorRef = doc(db, "users", tweet.author);
@@ -42,17 +50,56 @@ function Tweet(props) {
         return () => unsubscribe();
     }, []);
 
+    // check if tweet has an image, set state
     useEffect(() => {
         if (tweet.image === null || tweet.image === "") {
             setValidImage(false);
         }
     }, []);
 
+    // fetching relevant tweet data (likes, dislikes, replies)
     useEffect(() => {
-        // query tweet id, check if current user has liked/disliked tweet
-        // set state
+        const unsubscribe = async () => {
+            const document = await getDoc(generalTweetDocRef);
+            const likes = document.data().likes;
+            const dislikes = document.data().dislikes;
+            setReplies(document.data().replies);
+
+            if (likes.includes(user.uid)) {
+                setLiked(true);
+            }
+
+            if (dislikes.includes(user.uid)) {
+                setDisliked(true);
+            }
+        };
+
+        return () => unsubscribe();
     }, []);
 
+    useEffect(() => {
+        const unsubscribe = async () => {
+            if (replies.length > 0) {
+                const repliesRef = collection(db, "replies");
+                const q = query(
+                    repliesRef,
+                    where("uid", "in", replies),
+                    orderBy("timestamp", "desc"),
+                    limit(1)
+                );
+                const repliesSnapshot = await getDocs(q);
+                const queryReplies = [];
+                repliesSnapshot.forEach((doc) => {
+                    queryReplies.push(doc.data());
+                });
+                setLatestReply(queryReplies[0]);
+                console.log(latestReply);
+            }
+        };
+        return () => unsubscribe();
+    }, [replies]);
+
+    // update likes array for tweet and change 'liked' state
     const handleLike = async () => {
         if (liked === false) {
             try {
@@ -85,6 +132,7 @@ function Tweet(props) {
         }
     };
 
+    // update dislikes array for tweet and change 'disliked' state
     const handleDislike = async () => {
         if (disliked === false) {
             try {
@@ -119,10 +167,23 @@ function Tweet(props) {
 
     const handleReply = () => {};
 
-    const handleDelete = () => {};
+    const handleDelete = async () => {
+        if (user.uid == tweet.author) {
+            try {
+                await deleteDoc(generalTweetDocRef);
+                await deleteDoc(userTweetDocRef);
+
+                let tweetsCopy = tweets.filter((item) => item.id !== tweet.id);
+                setTweets(tweetsCopy);
+            } catch (error) {
+                setError(error.message);
+            }
+        }
+    };
 
     return (
         <div className="tweet__container">
+            {/* <TweetOptions /> */}
             <div className="tweet__details">
                 <div className="tweet__details-user">
                     <div className="tweet__details-avatar">
@@ -148,8 +209,15 @@ function Tweet(props) {
                     <img src={tweet.image} alt="" />
                 </div>
             )}
-
             <div className="tweet__interactions">
+                {optionsOpen && (
+                    <div className="tweet__options-button">
+                        <TweetOptions
+                            handleDelete={handleDelete}
+                            author={tweet.author}
+                        />
+                    </div>
+                )}
                 <div className="tweet__interactions-icons">
                     <div className="tweet__interactions-icon-container">
                         <ReplyIcon className="tweet__button" id="tweet-reply" />
@@ -185,9 +253,15 @@ function Tweet(props) {
                     <MoreHorizIcon
                         className="tweet__button"
                         id="tweet-options"
+                        onClick={() => setOptionsOpen(!optionsOpen)}
                     />
                 </div>
             </div>
+            {Object.keys(latestReply).length !== 0 && (
+                <div className="tweet__replies">
+                    <Reply reply={latestReply} />
+                </div>
+            )}
         </div>
     );
 }
