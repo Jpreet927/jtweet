@@ -19,6 +19,7 @@ import { db } from "../../Firebase/firebase";
 import Avatar from "../Misc/Avatar";
 import TweetOptions from "./TweetOptions";
 import Reply from "../Replies/Reply";
+import ReplyBox from "../Replies/ReplyBox";
 import ReplyIcon from "@mui/icons-material/Reply";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import HeartBrokenIcon from "@mui/icons-material/HeartBroken";
@@ -34,6 +35,7 @@ function Tweet(props) {
     const [disliked, setDisliked] = useState(false);
     const [replies, setReplies] = useState([]);
     const [latestReply, setLatestReply] = useState({});
+    const [replyBoxOpen, setReplyBoxOpen] = useState(false);
     const [optionsOpen, setOptionsOpen] = useState(false);
     const [error, setError] = useState("");
     const generalTweetDocRef = doc(db, "all-tweets", tweet.id);
@@ -165,7 +167,9 @@ function Tweet(props) {
         }
     };
 
-    const handleReply = () => {};
+    const handleReplyBox = () => {
+        setReplyBoxOpen(true);
+    };
 
     const handleDelete = async () => {
         if (user.uid == tweet.author) {
@@ -220,7 +224,11 @@ function Tweet(props) {
                 )}
                 <div className="tweet__interactions-icons">
                     <div className="tweet__interactions-icon-container">
-                        <ReplyIcon className="tweet__button" id="tweet-reply" />
+                        <ReplyIcon
+                            className="tweet__button"
+                            id="tweet-reply"
+                            onClick={() => handleReplyBox()}
+                        />
                         <p>{tweet.replies.length}</p>
                     </div>
                     <div className="tweet__interactions-icon-container">
@@ -260,6 +268,14 @@ function Tweet(props) {
             {Object.keys(latestReply).length !== 0 && (
                 <div className="tweet__replies">
                     <Reply reply={latestReply} />
+                </div>
+            )}
+            {replyBoxOpen && (
+                <div className="tweet__reply-box">
+                    <ReplyBox
+                        setReplyBoxOpen={setReplyBoxOpen}
+                        replyingTo={tweet}
+                    />
                 </div>
             )}
         </div>

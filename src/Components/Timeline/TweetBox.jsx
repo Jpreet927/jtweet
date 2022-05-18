@@ -33,6 +33,7 @@ function TweetBox() {
             replies: [],
             timestamp: serverTimestamp(),
             author: user.uid,
+            uid: "",
         };
 
         if (currentTweet !== "") {
@@ -40,6 +41,13 @@ function TweetBox() {
                 // adds tweet to collection with all tweet
                 const tweetGeneralRef = collection(db, "all-tweets");
                 const tweetRef = await addDoc(tweetGeneralRef, tweet);
+                console.log(tweetRef);
+
+                await updateDoc(doc(db, "all-tweets", tweetRef.id), {
+                    uid: tweetRef.id,
+                });
+
+                // const tweetGeneralRef = doc(collection(db, "all-tweets"));
 
                 // adds tweet to sub-collection containing individual users tweets
                 const tweetUserRef = doc(

@@ -1,0 +1,183 @@
+.replybox__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: rgba(81, 155, 225, 0.2);
+}
+
+.replybox__container ::-webkit-input-placeholder {
+  color: #5379a6;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+
+.replybox__container :-ms-input-placeholder {
+  color: #5379a6;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+
+.replybox__container ::-ms-input-placeholder {
+  color: #5379a6;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+
+.replybox__container ::placeholder {
+  color: #5379a6;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+
+.replybox__container .replybox__input-container {
+  padding: 16px 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+}
+
+.replybox__container .replybox__input-container textarea {
+  border: none;
+  background: none;
+  padding: 12px;
+  width: 87%;
+  min-height: 40px;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+.replybox__container .replybox__input-container textarea:focus {
+  outline: none;
+}
+
+.replybox__container .replybox__image-preview-container {
+  overflow: hidden;
+  max-height: 400px;
+  position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.replybox__container .replybox__image-preview-container .replybox__image-preview-close {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  border-radius: 100px;
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.replybox__container .replybox__image-preview-container .replybox__image-preview-close:hover {
+  cursor: pointer;
+  background-color: #1a1c21;
+}
+
+.replybox__container .replybox__image-preview-container .replybox__image-preview-close .replybox__image-close {
+  color: white;
+}
+
+.replybox__container .replybox__image-preview-container img {
+  width: auto;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.replybox__container .replybox__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 6px 24px;
+}
+
+.replybox__container .replybox__buttons .replybox__buttons-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+.replybox__container .replybox__buttons .replybox__buttons-icons .replybox__buttons-container {
+  background-color: rgba(138, 180, 211, 0);
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.replybox__container .replybox__buttons .replybox__buttons-icons .replybox__buttons-container:hover {
+  background-color: rgba(138, 180, 211, 0.2);
+  cursor: pointer;
+}
+
+.replybox__container .replybox__buttons .replybox__buttons-icons .replybox__buttons-container .replybox__icon {
+  color: #5379a6;
+}
+
+.replybox__container .replybox__buttons .replybox__buttons-reply {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+}
+
+.replybox__container .replybox__buttons .replybox__buttons-reply button {
+  padding: 6px 24px;
+  border: none;
+  background-color: #47b8ff;
+  border-radius: 100px;
+  color: white;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.replybox__container .replybox__buttons .replybox__buttons-reply button:hover {
+  cursor: pointer;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+
+.replybox__container .replybox__buttons .replybox__buttons-reply #replybox__cancel {
+  background-color: rgba(255, 255, 255, 0.666);
+  border: 2px solid #47b8ff;
+  color: #47b8ff;
+}
+/*# sourceMappingURL=ReplyBox.css.map */
