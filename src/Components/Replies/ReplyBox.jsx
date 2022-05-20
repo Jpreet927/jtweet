@@ -26,7 +26,8 @@ function ReplyBox(props) {
     const [currentReplyImage, setCurrentReplyImage] = useState(null);
     const imagePickerRef = useRef(null);
 
-    const handleReply = async () => {
+    const handleReply = async (e) => {
+        e.preventDefault();
         const reply = {
             message: currentReply,
             image: currentReplyImage,
@@ -113,6 +114,11 @@ function ReplyBox(props) {
         };
     };
 
+    const handleReplyBoxCancel = (e) => {
+        e.preventDefault();
+        setReplyBoxOpen(false);
+    };
+
     return (
         <div className="replybox__container">
             <ToastContainer
@@ -172,11 +178,11 @@ function ReplyBox(props) {
                 <div className="replybox__buttons-reply">
                     <button
                         id="replybox__cancel"
-                        onClick={() => setReplyBoxOpen(false)}
+                        onClick={(e) => handleReplyBoxCancel(e)}
                     >
                         Cancel
                     </button>
-                    <button onClick={handleReply}>Reply</button>
+                    <button onClick={(e) => handleReply(e)}>Reply</button>
                 </div>
             </div>
         </div>

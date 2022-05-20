@@ -1,0 +1,30 @@
+.tweet-page__container {
+  width: 100%;
+  min-height: 100vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-image: url("../../Assets/Images/Light-BG-2.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.tweet-page__container .tweet-page__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 180px 120px;
+}
+
+.tweet-page__container .tweet-page__main .tweet-page__tweet-container {
+  width: 55%;
+  -webkit-box-shadow: 0px 30px 30px rgba(138, 180, 211, 0.2);
+          box-shadow: 0px 30px 30px rgba(138, 180, 211, 0.2);
+}
+/*# sourceMappingURL=TweetPage.css.map */

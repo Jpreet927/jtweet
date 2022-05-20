@@ -14,6 +14,12 @@
           backdrop-filter: blur(16px);
 }
 
+.tweet__container h3,
+.tweet__container p,
+.tweet__container .tweet__button {
+  color: #5379a6;
+}
+
 .tweet__container .tweet__reply-box {
   width: 100%;
 }

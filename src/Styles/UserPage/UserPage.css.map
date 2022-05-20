@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "UserPage.scss",
+        "../../Utilities/_variables.scss"
+    ],
+    "names": [],
+    "file": "UserPage.css"
+}

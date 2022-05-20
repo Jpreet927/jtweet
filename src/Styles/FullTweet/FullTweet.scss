@@ -1,6 +1,6 @@
 @import "../../Utilities/variables";
 
-.tweet__container {
+.fulltweet__container {
     font-family: $sansSerifMain;
     color: $lightModeGrey;
     //   padding: 36px;
@@ -13,11 +13,11 @@
 
     h3,
     p,
-    .tweet__button {
+    .fulltweet__button {
         color: $lightModeGrey;
     }
 
-    .tweet__reply-box {
+    .fulltweet__reply-box {
         // position: absolute;
         // top: 0;
         // left: 0;
@@ -29,18 +29,18 @@
         // align-items: center;
     }
 
-    .tweet__details {
+    .fulltweet__details {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 24px 32px 12px 32px;
 
-        .tweet__details-user {
+        .fulltweet__details-user {
             display: flex;
             align-items: center;
             gap: 16px;
 
-            .tweet__details-avatar {
+            .fulltweet__details-avatar {
                 width: 60px;
                 height: 60px;
                 overflow: hidden;
@@ -54,14 +54,14 @@
             }
         }
 
-        .tweet__details-time {
+        .fulltweet__details-time {
             p {
                 font-size: 14px;
             }
         }
     }
 
-    .tweet__message {
+    .fulltweet__message {
         padding: 0px 32px;
 
         p {
@@ -69,7 +69,7 @@
         }
     }
 
-    .tweet__image {
+    .fulltweet__image {
         width: 100%;
         overflow: hidden;
         height: 400px;
@@ -81,25 +81,25 @@
         }
     }
 
-    .tweet__interactions {
+    .fulltweet__interactions {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0px 32px 8px;
         position: relative;
 
-        .tweet__options-button {
+        .fulltweet__options-button {
             position: absolute;
             right: 0;
             bottom: 48px;
         }
 
-        .tweet__interactions-icons {
+        .fulltweet__interactions-icons {
             display: flex;
             align-items: center;
             gap: 48px;
 
-            .tweet__interactions-icon-container {
+            .fulltweet__interactions-icon-container {
                 display: flex;
                 align-items: center;
                 gap: 12px;
@@ -108,15 +108,15 @@
                     cursor: pointer;
                 }
 
-                .tweet__button {
+                .fulltweet__button {
                     transition: color 0.2s ease;
                 }
 
-                .tweet__liked {
+                .fulltweet__liked {
                     color: $like;
                 }
 
-                .tweet__disliked {
+                .fulltweet__disliked {
                     color: $dislike;
                 }
 
@@ -142,7 +142,7 @@
             }
         }
 
-        .tweet__interactions-options {
+        .fulltweet__interactions-options {
             #tweet-options {
                 &:hover {
                     color: $mainBlue;

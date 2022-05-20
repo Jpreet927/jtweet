@@ -8,9 +8,6 @@ import "../Styles/ProfilePage/ProfilePage.css";
 
 function ProfilePage() {
     const { userDoc } = useUserAuth();
-    const [profileTweets, setProfileTweets] = useState([]);
-    const [profile, setProfile] = useState({});
-    // query to get tweets posted by logged in user
 
     useEffect(() => {
         console.log(userDoc);

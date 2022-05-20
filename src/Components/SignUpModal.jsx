@@ -41,6 +41,8 @@ function SignUpModal(props) {
                 tweets: [],
                 following: [],
                 followers: [],
+                verified: false,
+                uid: response.user.uid,
             });
 
             await addDoc(

@@ -6,6 +6,8 @@ import LoginPage from "./Pages/LoginPage";
 import SignUpPage from "./Pages/SignUpPage";
 import MessagingPage from "./Pages/MessagingPage";
 import ProfilePage from "./Pages/ProfilePage";
+import TweetPage from "./Pages/TweetPage";
+import UserPage from "./Pages/UserPage";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import { UserAuthContextProvider } from "./Context/UserAuthContext";
 import { useUserAuth } from "./Context/UserAuthContext";
@@ -57,6 +59,8 @@ function App() {
                             </ProtectedRoute>
                         }
                     />
+                    <Route path="/tweets/:id" element={<TweetPage />} />
+                    <Route path="/:id" element={<UserPage />} />
                 </Routes>
             </UserAuthContextProvider>
         </div>

@@ -14,6 +14,7 @@ import {
     orderBy,
     limit,
 } from "firebase/firestore";
+import { Link } from "react-router-dom";
 import { useUserAuth } from "../../Context/UserAuthContext";
 import { db } from "../../Firebase/firebase";
 import Avatar from "../Misc/Avatar";
@@ -38,8 +39,14 @@ function Tweet(props) {
     const [replyBoxOpen, setReplyBoxOpen] = useState(false);
     const [optionsOpen, setOptionsOpen] = useState(false);
     const [error, setError] = useState("");
-    const generalTweetDocRef = doc(db, "all-tweets", tweet.id);
-    const userTweetDocRef = doc(db, "tweets", tweet.author, "tweets", tweet.id);
+    const generalTweetDocRef = doc(db, "all-tweets", tweet.uid);
+    const userTweetDocRef = doc(
+        db,
+        "tweets",
+        tweet.author,
+        "tweets",
+        tweet.uid
+    );
 
     // get tweet author data
     useEffect(() => {
@@ -95,14 +102,15 @@ function Tweet(props) {
                     queryReplies.push(doc.data());
                 });
                 setLatestReply(queryReplies[0]);
-                console.log(latestReply);
+                // console.log(latestReply);
             }
         };
         return () => unsubscribe();
     }, [replies]);
 
     // update likes array for tweet and change 'liked' state
-    const handleLike = async () => {
+    const handleLike = async (e) => {
+        e.preventDefault();
         if (liked === false) {
             try {
                 await updateDoc(generalTweetDocRef, {
@@ -135,7 +143,8 @@ function Tweet(props) {
     };
 
     // update dislikes array for tweet and change 'disliked' state
-    const handleDislike = async () => {
+    const handleDislike = async (e) => {
+        e.preventDefault();
         if (disliked === false) {
             try {
                 await updateDoc(generalTweetDocRef, {
@@ -167,8 +176,14 @@ function Tweet(props) {
         }
     };
 
-    const handleReplyBox = () => {
+    const handleReplyBox = (e) => {
+        e.preventDefault();
         setReplyBoxOpen(true);
+    };
+
+    const handleOptionsOpen = (e) => {
+        e.preventDefault();
+        setOptionsOpen(!optionsOpen);
     };
 
     const handleDelete = async () => {
@@ -187,97 +202,105 @@ function Tweet(props) {
 
     return (
         <div className="tweet__container">
-            {/* <TweetOptions /> */}
-            <div className="tweet__details">
-                <div className="tweet__details-user">
-                    <div className="tweet__details-avatar">
-                        <img
-                            src={authorDoc.avatar}
-                            alt={`${authorDoc.name} avatar`}
+            <Link
+                to={`/tweets/${tweet.id}`}
+                state={{ tweet: { tweet }, author: { authorDoc } }}
+                style={{ textDecoration: "none" }}
+            >
+                {/* <TweetOptions /> */}
+                <div className="tweet__details">
+                    <div className="tweet__details-user">
+                        <Link to={`/${tweet.author}`}>
+                            <div className="tweet__details-avatar">
+                                <img
+                                    src={authorDoc.avatar}
+                                    alt={`${authorDoc.name} avatar`}
+                                />
+                            </div>
+                        </Link>
+                        <div className="tweet__details-user-info">
+                            <h3>{authorDoc.name}</h3>
+                            <p>{`@${authorDoc.username}`}</p>
+                        </div>
+                    </div>
+                    <div className="tweet__details-time">
+                        {/* <p>{tweet.timestamp.toDate().toDateString()}</p> */}
+                    </div>
+                </div>
+                <div className="tweet__message">
+                    <p>{tweet.message}</p>
+                </div>
+                {validImage && (
+                    <div className="tweet__image">
+                        <img src={tweet.image} alt="" />
+                    </div>
+                )}
+                <div className="tweet__interactions">
+                    {optionsOpen && (
+                        <div className="tweet__options-button">
+                            <TweetOptions
+                                handleDelete={handleDelete}
+                                author={tweet.author}
+                            />
+                        </div>
+                    )}
+                    <div className="tweet__interactions-icons">
+                        <div className="tweet__interactions-icon-container">
+                            <ReplyIcon
+                                className="tweet__button"
+                                id="tweet-reply"
+                                onClick={(e) => handleReplyBox(e)}
+                            />
+                            <p>{tweet.replies.length}</p>
+                        </div>
+                        <div className="tweet__interactions-icon-container">
+                            <FavoriteIcon
+                                className={
+                                    liked === true
+                                        ? "tweet__liked"
+                                        : "tweet__button"
+                                }
+                                id="tweet-like"
+                                onClick={(e) => handleLike(e)}
+                            />
+                            <p>{tweet.likes.length}</p>
+                        </div>
+
+                        <div className="tweet__interactions-icon-container">
+                            <HeartBrokenIcon
+                                className={
+                                    disliked === true
+                                        ? "tweet__disliked"
+                                        : "tweet__button"
+                                }
+                                id="tweet-dislike"
+                                onClick={(e) => handleDislike(e)}
+                            />
+                            <p>{tweet.dislikes.length}</p>
+                        </div>
+                    </div>
+                    <div className="tweet__interactions-options">
+                        <MoreHorizIcon
+                            className="tweet__button"
+                            id="tweet-options"
+                            onClick={(e) => handleOptionsOpen(e)}
                         />
                     </div>
-                    <div className="tweet__details-user-info">
-                        <h3>{authorDoc.name}</h3>
-                        <p>{`@${authorDoc.username}`}</p>
+                </div>
+                {Object.keys(latestReply).length !== 0 && (
+                    <div className="tweet__replies">
+                        <Reply reply={latestReply} />
                     </div>
-                </div>
-                <div className="tweet__details-time">
-                    {/* <p>{tweet.timestamp.toDate().toDateString()}</p> */}
-                </div>
-            </div>
-            <div className="tweet__message">
-                <p>{tweet.message}</p>
-            </div>
-            {validImage && (
-                <div className="tweet__image">
-                    <img src={tweet.image} alt="" />
-                </div>
-            )}
-            <div className="tweet__interactions">
-                {optionsOpen && (
-                    <div className="tweet__options-button">
-                        <TweetOptions
-                            handleDelete={handleDelete}
-                            author={tweet.author}
+                )}
+                {replyBoxOpen && (
+                    <div className="tweet__reply-box">
+                        <ReplyBox
+                            setReplyBoxOpen={setReplyBoxOpen}
+                            replyingTo={tweet}
                         />
                     </div>
                 )}
-                <div className="tweet__interactions-icons">
-                    <div className="tweet__interactions-icon-container">
-                        <ReplyIcon
-                            className="tweet__button"
-                            id="tweet-reply"
-                            onClick={() => handleReplyBox()}
-                        />
-                        <p>{tweet.replies.length}</p>
-                    </div>
-                    <div className="tweet__interactions-icon-container">
-                        <FavoriteIcon
-                            className={
-                                liked === true
-                                    ? "tweet__liked"
-                                    : "tweet__button"
-                            }
-                            id="tweet-like"
-                            onClick={() => handleLike()}
-                        />
-                        <p>{tweet.likes.length}</p>
-                    </div>
-
-                    <div className="tweet__interactions-icon-container">
-                        <HeartBrokenIcon
-                            className={
-                                disliked === true
-                                    ? "tweet__disliked"
-                                    : "tweet__button"
-                            }
-                            id="tweet-dislike"
-                            onClick={() => handleDislike()}
-                        />
-                        <p>{tweet.dislikes.length}</p>
-                    </div>
-                </div>
-                <div className="tweet__interactions-options">
-                    <MoreHorizIcon
-                        className="tweet__button"
-                        id="tweet-options"
-                        onClick={() => setOptionsOpen(!optionsOpen)}
-                    />
-                </div>
-            </div>
-            {Object.keys(latestReply).length !== 0 && (
-                <div className="tweet__replies">
-                    <Reply reply={latestReply} />
-                </div>
-            )}
-            {replyBoxOpen && (
-                <div className="tweet__reply-box">
-                    <ReplyBox
-                        setReplyBoxOpen={setReplyBoxOpen}
-                        replyingTo={tweet}
-                    />
-                </div>
-            )}
+            </Link>
         </div>
     );
 }

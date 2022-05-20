@@ -13,7 +13,7 @@ function Avatar(props) {
 
     return (
         <div className="avatar__container" style={avatarStyle}>
-            <img src={userDoc.avatar} alt="" />
+            <img src={userDoc?.avatar} alt="" />
         </div>
     );
 }
