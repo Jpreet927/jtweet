@@ -191,8 +191,12 @@ function Tweet(props) {
             try {
                 await deleteDoc(generalTweetDocRef);
                 await deleteDoc(userTweetDocRef);
-
-                let tweetsCopy = tweets.filter((item) => item.id !== tweet.id);
+                await updateDoc(doc(db, "users", user.uid), {
+                    tweets: arrayRemove(tweet.uid),
+                });
+                let tweetsCopy = tweets.filter(
+                    (item) => item.uid !== tweet.uid
+                );
                 setTweets(tweetsCopy);
             } catch (error) {
                 setError(error.message);

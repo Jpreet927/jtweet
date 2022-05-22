@@ -7,6 +7,10 @@ import {
     onSnapshot,
     where,
     orderBy,
+    updateDoc,
+    arrayRemove,
+    arrayUnion,
+    getDoc,
 } from "firebase/firestore";
 import { useUserAuth } from "../Context/UserAuthContext";
 import { db } from "../Firebase/firebase";
@@ -15,11 +19,16 @@ import "../Styles/UserPage/UserPage.css";
 import Tweet from "../Components/Tweets/Tweet";
 
 function UserPage() {
-    const { userDoc } = useUserAuth();
     const params = useParams();
+    const { user } = useUserAuth();
     const [userProfile, setUserProfile] = useState({});
     const [userTweets, setUserTweets] = useState([]);
+    const [isFollowing, setIsFollowing] = useState(false);
+    const [following, setFollowing] = useState("Follow");
+    const profileUserDocRef = doc(db, "users", params.id);
+    const loggedUserDocRef = doc(db, "users", user.uid);
 
+    // fetch all profile users details
     useEffect(
         () =>
             onSnapshot(query(doc(db, "users", params.id)), (snapshot) => {
@@ -29,6 +38,7 @@ function UserPage() {
         []
     );
 
+    // fetch all profile users tweets
     useEffect(
         () =>
             onSnapshot(
@@ -48,6 +58,60 @@ function UserPage() {
         []
     );
 
+    // check if logged in user is following profile user, then set states accordingly
+    useEffect(() => {
+        const unsubscribe = async () => {
+            const profileUserDoc = await getDoc(profileUserDocRef);
+            const profileUserFollowers = profileUserDoc.data().followers;
+
+            if (profileUserFollowers.includes(user.uid)) {
+                setIsFollowing(true);
+                setFollowing("Following");
+            }
+        };
+
+        return () => unsubscribe();
+    }, []);
+
+    const handleFollowMouseOver = () => {
+        isFollowing ? setFollowing("Unfollow") : setFollowing("Follow");
+    };
+
+    const handleFollowMouseLeave = () => {
+        isFollowing ? setFollowing("Following") : setFollowing("Follow");
+    };
+
+    const handleFollow = async () => {
+        // write to firebase - add logged in user to profiles followers, add profile to logged in users following
+        if (isFollowing === true) {
+            // unfollow
+            try {
+                await updateDoc(profileUserDocRef, {
+                    followers: arrayRemove(user.uid),
+                });
+                await updateDoc(loggedUserDocRef, {
+                    following: arrayRemove(params.id),
+                });
+
+                setIsFollowing(false);
+            } catch (err) {}
+        } else {
+            // follow
+            try {
+                await updateDoc(profileUserDocRef, {
+                    followers: arrayUnion(user.uid),
+                });
+                await updateDoc(loggedUserDocRef, {
+                    following: arrayUnion(params.id),
+                });
+
+                setIsFollowing(true);
+            } catch (err) {}
+        }
+        isFollowing ? setFollowing("Follow") : setFollowing("Following");
+        setIsFollowing(!isFollowing);
+    };
+
     return (
         <>
             <Navbar />
@@ -55,11 +119,49 @@ function UserPage() {
                 <div className="userpage__banner">
                     <img src={userProfile.banner} alt="" />
                 </div>
-                <div className="userpage__avatar">
-                    {/* <Avatar dimension={"200px"} /> */}
-                    <img src={userProfile.avatar} alt="" />
+                <div className="userpage__avatar-follow-container">
+                    <div className="userpage__avatar">
+                        {/* <Avatar dimension={"200px"} /> */}
+                        <img src={userProfile.avatar} alt="" />
+                    </div>
+                    <div
+                        className={
+                            isFollowing
+                                ? "userpage__follow-following userpage__follow-container"
+                                : "userpage__follow-container"
+                        }
+                    >
+                        <button
+                            onClick={() => handleFollow()}
+                            onMouseOver={handleFollowMouseOver}
+                            onMouseLeave={handleFollowMouseLeave}
+                        >
+                            {following}
+                        </button>
+                    </div>
                 </div>
                 <div className="userpage__content">
+                    <div className="userpage__content-stats">
+                        <div className="profiledetails__user-profile">
+                            <h1>{userProfile.name}</h1>
+                            <h3>@{userProfile.username}</h3>
+                            <p>{userProfile.bio}</p>
+                        </div>
+                        <div className="profiledetails__details">
+                            <div className="profiledetails__details-item">
+                                <h3>{userProfile.tweets?.length}</h3>
+                                <h3>Tweets</h3>
+                            </div>
+                            <div className="profiledetails__details-item">
+                                <h3>{userProfile.following?.length}</h3>
+                                <h3>Following</h3>
+                            </div>
+                            <div className="profiledetails__details-item">
+                                <h3>{userProfile.followers?.length}</h3>
+                                <h3>Followers</h3>
+                            </div>
+                        </div>
+                    </div>
                     <div className="userpage__user-tweets">
                         {userTweets.map((tweet) => (
                             <Tweet key={tweet.uid} tweet={tweet} />

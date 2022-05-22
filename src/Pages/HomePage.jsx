@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { doc, onSnapshot } from "firebase/firestore";
 import { useUserAuth } from "../Context/UserAuthContext";
+import { db } from "../Firebase/firebase";
 import Navbar from "../Components/Navbar/Navbar";
 import Timeline from "../Components/Timeline/Timeline";
 import LeftSidebar from "../Components/LeftSidebar/LeftSidebar";
@@ -12,6 +14,13 @@ function HomePage() {
     const navigate = useNavigate();
     const [tweets, setTweets] = useState([]);
     const [error, setError] = useState("");
+
+    useEffect(() => {
+        onSnapshot(doc(db, "users", user.uid), (snapshot) => {
+            setUserDoc(snapshot.data());
+            console.log("setting user doc from homepage:", snapshot.data());
+        });
+    }, []);
 
     const handleLogout = async () => {
         try {

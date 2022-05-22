@@ -12,6 +12,8 @@
   background: rgba(255, 255, 255, 0.5);
   -webkit-backdrop-filter: blur(16px);
           backdrop-filter: blur(16px);
+  -webkit-box-shadow: 0px 20px 20px rgba(60, 156, 225, 0.099);
+          box-shadow: 0px 20px 20px rgba(60, 156, 225, 0.099);
 }
 
 .tweet__container h3,
@@ -52,6 +54,8 @@
   height: 60px;
   overflow: hidden;
   border-radius: 100px;
+  -webkit-box-shadow: 0px 10px 15px rgba(60, 156, 225, 0.186);
+          box-shadow: 0px 10px 15px rgba(60, 156, 225, 0.186);
 }
 
 .tweet__container .tweet__details .tweet__details-user .tweet__details-avatar img {
@@ -59,6 +63,8 @@
   max-width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  -webkit-box-shadow: 0px 10px 20px rgba(60, 156, 225, 0.3);
+          box-shadow: 0px 10px 20px rgba(60, 156, 225, 0.3);
 }
 
 .tweet__container .tweet__details .tweet__details-time p {
@@ -66,7 +72,7 @@
 }
 
 .tweet__container .tweet__message {
-  padding: 0px 32px;
+  padding: 16px 32px;
 }
 
 .tweet__container .tweet__message p {
@@ -96,8 +102,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0px 32px 8px;
+  padding: 12px 32px;
   position: relative;
+  border-top: 1px solid rgba(138, 180, 211, 0.2);
 }
 
 .tweet__container .tweet__interactions .tweet__options-button {

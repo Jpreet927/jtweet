@@ -9,6 +9,7 @@
     gap: 12px;
     background: $lightModeWhite50;
     backdrop-filter: blur(16px);
+    box-shadow: 0px 20px 20px rgba(60, 156, 225, 0.099);
     // position: relative;
 
     h3,
@@ -45,11 +46,13 @@
                 height: 60px;
                 overflow: hidden;
                 border-radius: 100px;
+                box-shadow: 0px 10px 15px rgba(60, 156, 225, 0.186);
 
                 img {
                     max-height: 100%;
                     max-width: 100%;
                     object-fit: contain;
+                    box-shadow: 0px 10px 20px rgba(60, 156, 225, 0.3);
                 }
             }
         }
@@ -62,7 +65,7 @@
     }
 
     .tweet__message {
-        padding: 0px 32px;
+        padding: 16px 32px;
 
         p {
             line-height: 20px;
@@ -85,8 +88,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0px 32px 8px;
+        padding: 12px 32px;
         position: relative;
+        border-top: 1px solid $lightModeGrey20;
 
         .tweet__options-button {
             position: absolute;

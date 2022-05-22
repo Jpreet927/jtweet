@@ -6,6 +6,7 @@ import {
     setDoc,
     updateDoc,
     serverTimestamp,
+    arrayUnion,
 } from "firebase/firestore";
 import { ref, uploadString, getDownloadURL } from "firebase/storage";
 import { useUserAuth } from "../../Context/UserAuthContext";
@@ -47,8 +48,6 @@ function TweetBox() {
                     uid: tweetRef.id,
                 });
 
-                // const tweetGeneralRef = doc(collection(db, "all-tweets"));
-
                 // adds tweet to sub-collection containing individual users tweets
                 const tweetUserRef = doc(
                     db,
@@ -58,6 +57,11 @@ function TweetBox() {
                     tweetRef.id
                 );
                 await setDoc(tweetUserRef, tweet);
+
+                // adds tweet reference to user doc
+                await updateDoc(doc(db, "users", user.uid), {
+                    tweets: arrayUnion(tweetRef.id),
+                });
 
                 // uploads image to storage, updates tweet docs image path with storage reference
                 const tweetImageRef = ref(

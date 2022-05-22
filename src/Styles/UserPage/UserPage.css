@@ -1,1 +1,149 @@
-/* No CSS *//*# sourceMappingURL=UserPage.css.map */
+.userpage__container {
+  width: 100%;
+  background-image: url("../../Assets/Images/Light-BG-2.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+}
+
+.userpage__container .userpage__banner {
+  max-height: 550px;
+  width: 100%;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.userpage__container .userpage__banner img {
+  width: 100%;
+}
+
+.userpage__container .userpage__avatar-follow-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0px 12.5%;
+  height: 50px;
+}
+
+.userpage__container .userpage__avatar-follow-container .userpage__avatar {
+  width: 250px;
+  height: 250px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1000;
+  -webkit-box-shadow: 0px 30px 30px rgba(60, 156, 225, 0.3);
+          box-shadow: 0px 30px 30px rgba(60, 156, 225, 0.3);
+}
+
+.userpage__container .userpage__avatar-follow-container .userpage__avatar img {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  z-index: 1000;
+}
+
+.userpage__container .userpage__avatar-follow-container .userpage__follow-container button {
+  padding: 16px 48px;
+  border-radius: 50px;
+  background: white;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  color: #47b8ff;
+  font-weight: 700;
+  font-size: 16px;
+  -webkit-box-shadow: 0px 10px 20px rgba(60, 156, 225, 0.3);
+          box-shadow: 0px 10px 20px rgba(60, 156, 225, 0.3);
+  -webkit-transition: background 0.5s ease, color 0.5s ease, -webkit-transform 0.5s ease;
+  transition: background 0.5s ease, color 0.5s ease, -webkit-transform 0.5s ease;
+  transition: background 0.5s ease, color 0.5s ease, transform 0.5s ease;
+  transition: background 0.5s ease, color 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.userpage__container .userpage__avatar-follow-container .userpage__follow-container button:hover {
+  background: #fafafa;
+  cursor: pointer;
+  -webkit-transform: translateY(-55%);
+          transform: translateY(-55%);
+}
+
+.userpage__container .userpage__avatar-follow-container .userpage__follow-following button {
+  background: #47b8ff;
+  color: white;
+}
+
+.userpage__container .userpage__avatar-follow-container .userpage__follow-following button:hover {
+  background: #f73946;
+}
+
+.userpage__container .userpage__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 32px;
+  padding: 0px 12.5%;
+  width: 100%;
+}
+
+.userpage__container .userpage__content .userpage__content-stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 32px;
+  width: 25%;
+  margin-top: 7.5%;
+}
+
+.userpage__container .userpage__content .userpage__content-stats .profiledetails__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+
+.userpage__container .userpage__content .userpage__content-stats .profiledetails__details .profiledetails__details-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 6px;
+}
+
+.userpage__container .userpage__content .userpage__user-tweets {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 32px;
+  margin-top: 0%;
+}
+/*# sourceMappingURL=UserPage.css.map */
