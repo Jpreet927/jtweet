@@ -2,32 +2,13 @@
 
 .tweet__container {
     font-family: $sansSerifMain;
-    color: $lightModeGrey;
-    //   padding: 36px;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    background: $lightModeWhite50;
     backdrop-filter: blur(16px);
-    box-shadow: 0px 20px 20px rgba(60, 156, 225, 0.099);
-    // position: relative;
-
-    h3,
-    p,
-    .tweet__button {
-        color: $lightModeGrey;
-    }
 
     .tweet__reply-box {
-        // position: absolute;
-        // top: 0;
-        // left: 0;
-        // background: $darkModeGrey50;
         width: 100%;
-        // height: 100vh;
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
     }
 
     .tweet__details {
@@ -46,13 +27,11 @@
                 height: 60px;
                 overflow: hidden;
                 border-radius: 100px;
-                box-shadow: 0px 10px 15px rgba(60, 156, 225, 0.186);
 
                 img {
                     max-height: 100%;
                     max-width: 100%;
                     object-fit: contain;
-                    box-shadow: 0px 10px 20px rgba(60, 156, 225, 0.3);
                 }
             }
         }
@@ -153,6 +132,52 @@
                     cursor: pointer;
                 }
             }
+        }
+    }
+}
+
+.light.tweet__container {
+    background: $lightModeWhite90;
+    box-shadow: $lightModeShadow;
+
+    h3,
+    p,
+    .tweet__button {
+        color: $lightModeGrey;
+    }
+
+    .tweet__interactions {
+        border-top: 1px solid $lightModeGrey20;
+    }
+
+    .tweet__details-avatar {
+        box-shadow: $lightModeShadow;
+
+        img {
+            box-shadow: $lightModeShadow;
+        }
+    }
+}
+
+.dark.tweet__container {
+    background: $darkModeTweet;
+    box-shadow: $darkModeShadow;
+
+    h3,
+    p,
+    .tweet__button {
+        color: $darkModeText;
+    }
+
+    .tweet__interactions {
+        border-top: 1px solid $darkModeGrey50;
+    }
+
+    .tweet__details-avatar {
+        box-shadow: $darkModeShadow;
+
+        img {
+            box-shadow: $darkModeShadow;
         }
     }
 }

@@ -10,7 +10,6 @@
           align-items: center;
   position: relative;
   padding: 18px 96px;
-  background-color: rgba(255, 255, 255, 0.9);
   -webkit-backdrop-filter: blur(16px);
           backdrop-filter: blur(16px);
   position: absolute;
@@ -55,7 +54,6 @@
 
 .navbar__container nav ul li {
   list-style: none;
-  color: #5379a6;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   -webkit-transition: color 0.2s ease;
@@ -79,7 +77,6 @@
 
 .navbar__container .navbar__search-avatar .navbar__search {
   border-radius: 50px;
-  background-color: rgba(81, 155, 225, 0.2);
   padding: 8px 16px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -87,10 +84,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.navbar__container .navbar__search-avatar .navbar__search .navbar__search-icon {
-  color: #5379a6;
 }
 
 .navbar__container .navbar__search-avatar .navbar__search input {
@@ -118,5 +111,37 @@
 
 .navbar__container .navbar__search-avatar .navbar__avatar img {
   width: 100%;
+}
+
+.light.navbar__container {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.light.navbar__container li {
+  color: #5379a6;
+}
+
+.light.navbar__container .navbar__search {
+  background-color: rgba(81, 155, 225, 0.2);
+}
+
+.light.navbar__container .navbar__search-icon {
+  color: #5379a6;
+}
+
+.dark.navbar__container {
+  background-color: rgba(17, 29, 52, 0.5);
+}
+
+.dark.navbar__container li {
+  color: #e0e7f0;
+}
+
+.dark.navbar__container .navbar__search {
+  background-color: rgba(25, 40, 70, 0.621);
+}
+
+.dark.navbar__container .navbar__search-icon {
+  color: #e0e7f0;
 }
 /*# sourceMappingURL=Navbar.css.map */

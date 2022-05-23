@@ -7,7 +7,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.5);
   font-family: "Roboto", sans-serif;
 }
 
@@ -37,7 +36,6 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 36px 36px 24px;
-  color: #5379a6;
 }
 
 .profilepreview__container .profilepreview__details .profilepreview__details-section h3 {
@@ -46,5 +44,21 @@
 
 .profilepreview__container .profilepreview__details .profilepreview__details-section p {
   font-size: 1em;
+}
+
+.light.profilepreview__container {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.light.profilepreview__container .profilepreview__details {
+  color: #5379a6;
+}
+
+.dark.profilepreview__container {
+  background-color: rgba(25, 40, 70, 0.621);
+}
+
+.dark.profilepreview__container .profilepreview__details {
+  color: #e0e7f0;
 }
 /*# sourceMappingURL=ProfilePreview.css.map */

@@ -3,22 +3,13 @@
 .update__container {
     display: flex;
     flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgb(254, 254, 254);
     backdrop-filter: blur(30px);
     width: 600px;
     font-family: $sansSerifMain;
+    z-index: 150;
 
     ::placeholder {
         color: $lightModeGrey2;
-    }
-
-    label {
-        color: $lightModeGrey;
     }
 
     .update__heading {
@@ -26,6 +17,10 @@
         justify-content: space-between;
         align-items: center;
         padding: 12px 24px;
+
+        .update__close-icon {
+            cursor: pointer;
+        }
     }
 
     .update__banner {
@@ -54,10 +49,8 @@
             flex-grow: 1;
 
             input {
-                background: $lightModeInputBG;
                 border: none;
-                padding: 12px;
-                color: $lightModeGrey;
+                padding: 12px 18px;
                 border-radius: 32px;
                 width: 100%;
             }
@@ -67,9 +60,7 @@
     .update__bio {
         padding: 0px 32px 32px 32px;
         textarea {
-            background: $lightModeInputBG;
             border: none;
-            color: $lightModeGrey;
             // border-radius: 24px;
             width: 100%;
         }
@@ -90,5 +81,49 @@
             font-weight: 500;
             font-size: 14px;
         }
+    }
+}
+
+.light.update__container {
+    background-color: $lightModeWhite90;
+
+    .update__heading {
+        color: $lightModeGrey;
+    }
+
+    label {
+        color: $lightModeGrey;
+    }
+
+    input {
+        background: $lightModeInputBG;
+        color: $lightModeGrey;
+    }
+
+    textarea {
+        background: $lightModeInputBG;
+        color: $lightModeGrey;
+    }
+}
+
+.dark.update__container {
+    background-color: $darkModeTweet;
+
+    .update__heading {
+        color: $darkModeText;
+    }
+
+    label {
+        color: $darkModeSubtext;
+    }
+
+    input {
+        background: $darkModeGrey;
+        color: $darkModeText;
+    }
+
+    textarea {
+        background: $darkModeGrey;
+        color: $darkModeText;
     }
 }

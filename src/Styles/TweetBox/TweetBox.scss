@@ -10,7 +10,6 @@
     }
 
     .tweetbox__input-container {
-        background: $lightModeInputBG;
         padding: 32px;
         display: flex;
         align-items: center;
@@ -64,7 +63,7 @@
 
         img {
             width: auto;
-            height : auto;
+            height: auto;
             max-height: 100%;
             max-width: 100%;
         }
@@ -75,7 +74,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 12px 24px;
-        background-color: $lightModeWhite50;
+        // background-color: $lightModeWhite90;
         backdrop-filter: blur(16px);
 
         .tweetbox__buttons-icons {
@@ -98,7 +97,7 @@
                 }
 
                 .tweetbox__icon {
-                    color: $lightModeGrey;
+                    // color: $lightModeGrey;
                 }
             }
         }
@@ -119,5 +118,37 @@
                 transform: translateY(-3px);
             }
         }
+    }
+}
+
+.light.tweetbox__container {
+    background: $lightModeInputBG;
+
+    .tweetbox__buttons {
+        background-color: $lightModeWhite90;
+    }
+
+    .tweetbox__icon {
+        color: $lightModeGrey;
+    }
+
+    textarea {
+        color: black;
+    }
+}
+
+.dark.tweetbox__container {
+    background: $darkModeTweet;
+
+    .tweetbox__buttons {
+        background-color: $darkModeGrey;
+    }
+
+    .tweetbox__icon {
+        color: $darkModeText;
+    }
+
+    textarea {
+        color: $darkModeText;
     }
 }

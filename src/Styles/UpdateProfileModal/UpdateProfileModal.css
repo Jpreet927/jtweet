@@ -6,14 +6,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #fefefe;
   -webkit-backdrop-filter: blur(30px);
           backdrop-filter: blur(30px);
   width: 600px;
   font-family: "Roboto", sans-serif;
+  z-index: 150;
 }
 
 .update__container ::-webkit-input-placeholder {
@@ -32,10 +29,6 @@
   color: #8ab5d3;
 }
 
-.update__container label {
-  color: #5379a6;
-}
-
 .update__container .update__heading {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -47,6 +40,10 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 12px 24px;
+}
+
+.update__container .update__heading .update__close-icon {
+  cursor: pointer;
 }
 
 .update__container .update__banner {
@@ -88,10 +85,8 @@
 }
 
 .update__container .update__pfp-name .update__name input {
-  background: rgba(81, 155, 225, 0.2);
   border: none;
-  padding: 12px;
-  color: #5379a6;
+  padding: 12px 18px;
   border-radius: 32px;
   width: 100%;
 }
@@ -101,9 +96,7 @@
 }
 
 .update__container .update__bio textarea {
-  background: rgba(81, 155, 225, 0.2);
   border: none;
-  color: #5379a6;
   width: 100%;
 }
 
@@ -126,5 +119,49 @@
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 14px;
+}
+
+.light.update__container {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.light.update__container .update__heading {
+  color: #5379a6;
+}
+
+.light.update__container label {
+  color: #5379a6;
+}
+
+.light.update__container input {
+  background: rgba(81, 155, 225, 0.2);
+  color: #5379a6;
+}
+
+.light.update__container textarea {
+  background: rgba(81, 155, 225, 0.2);
+  color: #5379a6;
+}
+
+.dark.update__container {
+  background-color: rgba(25, 40, 70, 0.621);
+}
+
+.dark.update__container .update__heading {
+  color: #e0e7f0;
+}
+
+.dark.update__container label {
+  color: #d2ddf9;
+}
+
+.dark.update__container input {
+  background: #0a1324;
+  color: #e0e7f0;
+}
+
+.dark.update__container textarea {
+  background: #0a1324;
+  color: #e0e7f0;
 }
 /*# sourceMappingURL=UpdateProfileModal.css.map */

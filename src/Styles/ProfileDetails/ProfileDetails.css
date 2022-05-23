@@ -8,7 +8,6 @@
           flex-direction: column;
   gap: 32px;
   font-family: "Roboto", sans-serif;
-  color: #5379a6;
   width: 25%;
   margin-top: 75px;
 }
@@ -39,5 +38,13 @@
   display: -ms-flexbox;
   display: flex;
   gap: 4px;
+}
+
+.light.profiledetails__container {
+  color: #5379a6;
+}
+
+.dark.profiledetails__container {
+  color: #e0e7f0;
 }
 /*# sourceMappingURL=ProfileDetails.css.map */

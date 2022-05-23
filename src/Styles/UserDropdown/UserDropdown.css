@@ -10,8 +10,6 @@
   gap: 36px;
   width: 350px;
   padding: 36px;
-  color: #5379a6;
-  background: rgba(255, 255, 255, 0.971);
   position: absolute;
   top: 120%;
   right: 5%;
@@ -98,5 +96,15 @@
   background: none;
   color: #47b8ff;
   border: 2px solid #47b8ff;
+}
+
+.light.user-dropdown__container {
+  background: rgba(255, 255, 255, 0.9);
+  color: #5379a6;
+}
+
+.dark.user-dropdown__container {
+  background: #0a1324;
+  color: #e0e7f0;
 }
 /*# sourceMappingURL=UserDropdown.css.map */

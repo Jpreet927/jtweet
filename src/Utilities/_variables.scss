@@ -13,13 +13,18 @@ $lightModeWhite50: rgba(255, 255, 255, 0.5);
 $lightModeWhite90: rgba(255, 255, 255, 0.9);
 $lightModeBlue: #dce9f4;
 $lightModeInputBG: rgba(81, 155, 225, 0.2);
+$lightModeBG: url("../../Assets/Images/Light-BG-2.jpg");
+$lightModeShadow: 0px 10px 20px rgba(60, 156, 225, 0.3);
 
 // Dark mode
-$darkModeGrey: #111d34;
+$darkModeGrey: rgb(10, 19, 36);
 $darkModeGrey50: rgba(17, 29, 52, 0.5);
-$darkModeTweet: #192846;
-$darkModeText: #d2ddf9;
+$darkModeTweet: rgba(25, 40, 70, 0.621);
+$darkModeTweet50: #192846;
+$darkModeText: #e0e7f0;
 $darkModeSubtext: #d2ddf9;
+$darkModeBG: url("../../Assets/Images/Dark-BG.jpg");
+$darkModeShadow: 0px 10px 20px rgba(41, 69, 122, 0.148);
 
 // Typography
 $sansSerifMain: "Roboto", sans-serif;

@@ -1,45 +1,59 @@
 @import "../../Utilities/variables";
 
 .profilepreview__container {
-  position: relative;
-  //   height: 100px;
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.5);
-  font-family: $sansSerifMain;
-
-  .profilepreview__banner {
-    width: 100%;
-    overflow: hidden;
-    min-height: 33%;
-    // max-height: 33%;
-    object-fit: contain;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  .profilepreview__avatar {
-    position: absolute;
-    top: 39%;
-    left: 5%;
-  }
-
-  .profilepreview__details {
+    position: relative;
+    //   height: 100px;
     display: flex;
-    justify-content: space-between;
-    padding: 36px 36px 24px;
-    color: $lightModeGrey;
+    flex-direction: column;
+    font-family: $sansSerifMain;
 
-    .profilepreview__details-section {
-      h3 {
-        font-size: 1em;
-      }
+    .profilepreview__banner {
+        width: 100%;
+        overflow: hidden;
+        min-height: 33%;
+        // max-height: 33%;
+        object-fit: contain;
 
-      p {
-        font-size: 1em;
-      }
+        img {
+            width: 100%;
+        }
     }
-  }
+
+    .profilepreview__avatar {
+        position: absolute;
+        top: 39%;
+        left: 5%;
+    }
+
+    .profilepreview__details {
+        display: flex;
+        justify-content: space-between;
+        padding: 36px 36px 24px;
+
+        .profilepreview__details-section {
+            h3 {
+                font-size: 1em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+        }
+    }
+}
+
+.light.profilepreview__container {
+    background-color: $lightModeWhite90;
+
+    .profilepreview__details {
+        color: $lightModeGrey;
+    }
+}
+
+.dark.profilepreview__container {
+    background-color: $darkModeTweet;
+
+    .profilepreview__details {
+        color: $darkModeText;
+    }
 }

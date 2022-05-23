@@ -114,6 +114,21 @@
   gap: 32px;
   width: 25%;
   margin-top: 7.5%;
+  color: #5379a6;
+}
+
+.userpage__container .userpage__content .userpage__content-stats .profiledetails__user-profile {
+  width: 80%;
+}
+
+.userpage__container .userpage__content .userpage__content-stats .profiledetails__user-profile h3 {
+  font-weight: 400;
+}
+
+.userpage__container .userpage__content .userpage__content-stats hr {
+  border: none;
+  border-top: 1px solid #8ab5d3;
+  width: 80%;
 }
 
 .userpage__container .userpage__content .userpage__content-stats .profiledetails__details {

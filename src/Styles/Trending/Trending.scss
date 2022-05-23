@@ -1,28 +1,36 @@
 @import "../../Utilities/variables";
 
 .trending__container {
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 36px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  height: 100%;
-  font-family: $sansSerifMain;
-  color: $lightModeGrey;
-
-  .trending__topics {
+    padding: 36px;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 24px;
+    height: 100%;
+    font-family: $sansSerifMain;
 
-    p {
-      font-weight: 500;
-      font-size: 14px;
+    .trending__topics {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
 
-      &:hover {
-        text-decoration: underline;
-        cursor: pointer;
-      }
+        p {
+            font-weight: 500;
+            font-size: 14px;
+
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
     }
-  }
+}
+
+.light.trending__container {
+    background-color: $lightModeWhite90;
+    color: $lightModeGrey;
+}
+
+.dark.trending__container {
+    background-color: $darkModeTweet;
+    color: $darkModeText;
 }

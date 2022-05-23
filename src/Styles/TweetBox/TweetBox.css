@@ -33,7 +33,6 @@
 }
 
 .tweetbox__container .tweetbox__input-container {
-  background: rgba(81, 155, 225, 0.2);
   padding: 32px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -114,7 +113,6 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 12px 24px;
-  background-color: rgba(255, 255, 255, 0.5);
   -webkit-backdrop-filter: blur(16px);
           backdrop-filter: blur(16px);
 }
@@ -147,10 +145,6 @@
   cursor: pointer;
 }
 
-.tweetbox__container .tweetbox__buttons .tweetbox__buttons-icons .tweetbox__buttons-container .tweetbox__icon {
-  color: #5379a6;
-}
-
 .tweetbox__container .tweetbox__buttons button {
   padding: 10px 30px;
   border: none;
@@ -169,5 +163,37 @@
   cursor: pointer;
   -webkit-transform: translateY(-3px);
           transform: translateY(-3px);
+}
+
+.light.tweetbox__container {
+  background: rgba(81, 155, 225, 0.2);
+}
+
+.light.tweetbox__container .tweetbox__buttons {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.light.tweetbox__container .tweetbox__icon {
+  color: #5379a6;
+}
+
+.light.tweetbox__container textarea {
+  color: black;
+}
+
+.dark.tweetbox__container {
+  background: rgba(25, 40, 70, 0.621);
+}
+
+.dark.tweetbox__container .tweetbox__buttons {
+  background-color: #0a1324;
+}
+
+.dark.tweetbox__container .tweetbox__icon {
+  color: #e0e7f0;
+}
+
+.dark.tweetbox__container textarea {
+  color: #e0e7f0;
 }
 /*# sourceMappingURL=TweetBox.css.map */

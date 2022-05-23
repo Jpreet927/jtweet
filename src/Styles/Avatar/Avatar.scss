@@ -1,10 +1,19 @@
+@import "../../Utilities/variables";
+
 .avatar__container {
     object-fit: contain;
     border-radius: 200px;
     overflow: hidden;
-    box-shadow: 0px 10px 20px rgba(60, 156, 225, 0.3);
 
     img {
         width: 100%;
     }
+}
+
+.light.avatar__container {
+    box-shadow: $lightModeShadow;
+}
+
+.dark.avatar__container {
+    box-shadow: $darkModeShadow;
 }

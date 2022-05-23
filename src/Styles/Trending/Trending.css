@@ -1,5 +1,4 @@
 .trending__container {
-  background-color: rgba(255, 255, 255, 0.5);
   padding: 36px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11,7 +10,6 @@
   gap: 24px;
   height: 100%;
   font-family: "Roboto", sans-serif;
-  color: #5379a6;
 }
 
 .trending__container .trending__topics {
@@ -33,5 +31,15 @@
 .trending__container .trending__topics p:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.light.trending__container {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #5379a6;
+}
+
+.dark.trending__container {
+  background-color: rgba(25, 40, 70, 0.621);
+  color: #e0e7f0;
 }
 /*# sourceMappingURL=Trending.css.map */

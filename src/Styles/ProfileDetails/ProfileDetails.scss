@@ -5,7 +5,6 @@
     flex-direction: column;
     gap: $homeGap;
     font-family: $sansSerifMain;
-    color: $lightModeGrey;
     width: 25%;
     margin-top: 75px;
 
@@ -24,4 +23,12 @@
             gap: 4px;
         }
     }
+}
+
+.light.profiledetails__container {
+    color: $lightModeGrey;
+}
+
+.dark.profiledetails__container {
+    color: $darkModeText;
 }

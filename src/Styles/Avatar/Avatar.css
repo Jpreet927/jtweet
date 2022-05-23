@@ -3,11 +3,19 @@
      object-fit: contain;
   border-radius: 200px;
   overflow: hidden;
-  -webkit-box-shadow: 0px 10px 20px rgba(60, 156, 225, 0.3);
-          box-shadow: 0px 10px 20px rgba(60, 156, 225, 0.3);
 }
 
 .avatar__container img {
   width: 100%;
+}
+
+.light.avatar__container {
+  -webkit-box-shadow: 0px 10px 20px rgba(60, 156, 225, 0.3);
+          box-shadow: 0px 10px 20px rgba(60, 156, 225, 0.3);
+}
+
+.dark.avatar__container {
+  -webkit-box-shadow: 0px 10px 20px rgba(41, 69, 122, 0.148);
+          box-shadow: 0px 10px 20px rgba(41, 69, 122, 0.148);
 }
 /*# sourceMappingURL=Avatar.css.map */
