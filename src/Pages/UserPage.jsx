@@ -145,8 +145,9 @@ function UserPage() {
                         <div className="profiledetails__user-profile">
                             <h1>{userProfile.name}</h1>
                             <h3>@{userProfile.username}</h3>
-                            <p>{userProfile.bio}</p>
+                            <p id="profiledetails__bio">{userProfile.bio}</p>
                         </div>
+                        <hr />
                         <div className="profiledetails__details">
                             <div className="profiledetails__details-item">
                                 <h3>{userProfile.tweets?.length}</h3>

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useThemeContext } from "../../Context/ThemeContext";
 import Avatar from "../Misc/Avatar";
 import UserDropdown from "./UserDropdown";
 import SearchIcon from "@mui/icons-material/Search";
 import "../../Styles/Navbar/Navbar.css";
 
 function Navbar() {
+    const { theme } = useThemeContext();
     const [dropdownVisibility, setDropdownVisibility] = useState(false);
 
     const handleAvatarClick = () => {
@@ -13,7 +15,7 @@ function Navbar() {
     };
 
     return (
-        <div className="navbar__container">
+        <div className={`${theme} navbar__container`}>
             {dropdownVisibility && <UserDropdown />}
             <img
                 src={require("../../Assets/Images/Logo-3D-Soft.png")}

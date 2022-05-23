@@ -13,6 +13,7 @@ import { UserAuthContextProvider } from "./Context/UserAuthContext";
 import { useUserAuth } from "./Context/UserAuthContext";
 // import { db } from './Firebase/firebase'
 import "./Styles/App.css";
+import { ThemeProvider } from "./Context/ThemeContext";
 
 function App() {
     const [tweets, setTweets] = useState([]);
@@ -29,40 +30,42 @@ function App() {
 
     return (
         <div className="App">
-            <UserAuthContextProvider>
-                <Routes>
-                    <Route path="/" element={<LoginPage />} />
+            <ThemeProvider>
+                <UserAuthContextProvider>
+                    <Routes>
+                        <Route path="/" element={<LoginPage />} />
 
-                    {/* <Navbar /> */}
-                    <Route path="/signup" element={<SignUpPage />} />
-                    <Route
-                        path="/home"
-                        element={
-                            <ProtectedRoute>
-                                <HomePage />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/messages"
-                        element={
-                            <ProtectedRoute>
-                                <MessagingPage />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/profile"
-                        element={
-                            <ProtectedRoute>
-                                <ProfilePage />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route path="/tweets/:id" element={<TweetPage />} />
-                    <Route path="/:id" element={<UserPage />} />
-                </Routes>
-            </UserAuthContextProvider>
+                        {/* <Navbar /> */}
+                        <Route path="/signup" element={<SignUpPage />} />
+                        <Route
+                            path="/home"
+                            element={
+                                <ProtectedRoute>
+                                    <HomePage />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/messages"
+                            element={
+                                <ProtectedRoute>
+                                    <MessagingPage />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/profile"
+                            element={
+                                <ProtectedRoute>
+                                    <ProfilePage />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route path="/tweets/:id" element={<TweetPage />} />
+                        <Route path="/:id" element={<UserPage />} />
+                    </Routes>
+                </UserAuthContextProvider>
+            </ThemeProvider>
         </div>
     );
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { doc, onSnapshot } from "firebase/firestore";
 import { useUserAuth } from "../Context/UserAuthContext";
+import { useThemeContext } from "../Context/ThemeContext";
 import { db } from "../Firebase/firebase";
 import Navbar from "../Components/Navbar/Navbar";
 import Timeline from "../Components/Timeline/Timeline";
@@ -11,6 +12,7 @@ import "../Styles/HomePage/HomePage.css";
 
 function HomePage() {
     const { user, userDoc, setUserDoc, logout } = useUserAuth();
+    const { theme } = useThemeContext();
     const navigate = useNavigate();
     const [tweets, setTweets] = useState([]);
     const [error, setError] = useState("");
@@ -34,7 +36,7 @@ function HomePage() {
     };
 
     return (
-        <div className="home__container">
+        <div className={`${theme} home__container`}>
             <Navbar />
             <div className="home__main">
                 <div className="home__left-section">

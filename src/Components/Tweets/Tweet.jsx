@@ -16,6 +16,7 @@ import {
 } from "firebase/firestore";
 import { Link } from "react-router-dom";
 import { useUserAuth } from "../../Context/UserAuthContext";
+import { useThemeContext } from "../../Context/ThemeContext";
 import { db } from "../../Firebase/firebase";
 import Avatar from "../Misc/Avatar";
 import TweetOptions from "./TweetOptions";
@@ -30,6 +31,7 @@ import "../../Styles/Tweet/Tweet.css";
 function Tweet(props) {
     const { tweet, tweets, setTweets } = props;
     const { user } = useUserAuth();
+    const { theme } = useThemeContext();
     const [authorDoc, setAuthorDoc] = useState({});
     const [validImage, setValidImage] = useState(true);
     const [liked, setLiked] = useState(false);
@@ -205,7 +207,7 @@ function Tweet(props) {
     };
 
     return (
-        <div className="tweet__container">
+        <div className={`${theme} tweet__container`}>
             <Link
                 to={`/tweets/${tweet.id}`}
                 state={{ tweet: { tweet }, author: { authorDoc } }}
@@ -214,7 +216,13 @@ function Tweet(props) {
                 {/* <TweetOptions /> */}
                 <div className="tweet__details">
                     <div className="tweet__details-user">
-                        <Link to={`/${tweet.author}`}>
+                        <Link
+                            to={
+                                user.uid === tweet.author
+                                    ? "/profile"
+                                    : `/${tweet.author}`
+                            }
+                        >
                             <div className="tweet__details-avatar">
                                 <img
                                     src={authorDoc.avatar}

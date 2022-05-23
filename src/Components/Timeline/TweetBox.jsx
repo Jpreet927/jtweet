@@ -10,6 +10,7 @@ import {
 } from "firebase/firestore";
 import { ref, uploadString, getDownloadURL } from "firebase/storage";
 import { useUserAuth } from "../../Context/UserAuthContext";
+import { useThemeContext } from "../../Context/ThemeContext";
 import { db, storage } from "../../Firebase/firebase";
 import AddPhotoAlternateOutlinedIcon from "@mui/icons-material/AddPhotoAlternateOutlined";
 import EmojiEmotionsOutlinedIcon from "@mui/icons-material/EmojiEmotionsOutlined";
@@ -21,6 +22,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function TweetBox() {
     const { user } = useUserAuth();
+    const { theme } = useThemeContext();
     const [currentTweet, setCurrentTweet] = useState("");
     const [currentTweetImage, setCurrentTweetImage] = useState(null);
     const imagePickerRef = useRef(null);
@@ -28,7 +30,7 @@ function TweetBox() {
     const handleTweet = async () => {
         const tweet = {
             message: currentTweet,
-            image: currentTweetImage,
+            // image: currentTweetImage,
             likes: [],
             dislikes: [],
             replies: [],
@@ -119,7 +121,7 @@ function TweetBox() {
     };
 
     return (
-        <div className="tweetbox__container">
+        <div className={`${theme} tweetbox__container`}>
             <ToastContainer
                 position="bottom-center"
                 autoClose={5000}

@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { useUserAuth } from "../../Context/UserAuthContext";
+import { useThemeContext } from "../../Context/ThemeContext";
 import "../../Styles/ProfileDetails/ProfileDetails.css";
 
 function ProfileDetails(props) {
     const { userDoc } = useUserAuth();
+    const { theme } = useThemeContext();
 
     return (
-        <div className="profiledetails__container">
+        <div className={`${theme} profiledetails__container`}>
             <div className="profiledetails__user-profile">
                 <h1>{userDoc.name}</h1>
-                <h3>{userDoc.username}</h3>
+                <h3>@{userDoc.username}</h3>
                 <p>{userDoc.bio}</p>
             </div>
             <div className="profiledetails__details">

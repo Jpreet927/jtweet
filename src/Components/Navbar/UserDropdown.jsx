@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../Context/UserAuthContext";
+import { useThemeContext } from "../../Context/ThemeContext";
 import Avatar from "../Misc/Avatar";
 import UpdateProfileModal from "../Profile/UpdateProfileModal";
 import "../../Styles/UserDropdown/UserDropdown.css";
 
 function UserDropdown() {
     const { userDoc, setUserDoc, logout } = useUserAuth();
+    const { theme, handleThemeToggle } = useThemeContext();
     const navigate = useNavigate();
     const [updateVisible, setUpdateVisible] = useState(false);
 
@@ -30,12 +32,7 @@ function UserDropdown() {
 
     return (
         <>
-            {updateVisible && (
-                <UpdateProfileModal
-                    handleUpdateInvisible={handleUpdateInvisible}
-                />
-            )}
-            <div className="user-dropdown__container">
+            <div className={`${theme} user-dropdown__container`}>
                 <h1>User Settings</h1>
                 <div className="user-dropdown__details">
                     <div className="user-dropdown__details-avatar">
@@ -57,9 +54,9 @@ function UserDropdown() {
                 <div className="user-dropdown__buttons">
                     <button
                         id="button-update"
-                        onClick={() => setUpdateVisible(true)}
+                        onClick={() => handleThemeToggle()}
                     >
-                        Update Profile
+                        Toggle Theme
                     </button>
                     <button id="button-logout" onClick={handleLogout}>
                         Logout

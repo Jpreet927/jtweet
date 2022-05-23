@@ -1,13 +1,15 @@
 import React from "react";
 import { useUserAuth } from "../../Context/UserAuthContext";
+import { useThemeContext } from "../../Context/ThemeContext";
 import Avatar from "../Misc/Avatar";
 import "../../Styles/ProfilePreview/ProfilePreview.css";
 
 function ProfilePreview() {
     const { userDoc } = useUserAuth();
+    const { theme } = useThemeContext();
 
     return (
-        <div className="profilepreview__container">
+        <div className={`${theme} profilepreview__container`}>
             <div className="profilepreview__banner">
                 <img src={userDoc.banner} alt="" />
             </div>
