@@ -1,14 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { collection, getDocs, onSnapshot, query } from "firebase/firestore";
+import { db } from "../../Firebase/firebase";
 import { useThemeContext } from "../../Context/ThemeContext";
 import Avatar from "../Misc/Avatar";
 import UserDropdown from "./UserDropdown";
+import SearchItem from "./SearchItem";
 import SearchIcon from "@mui/icons-material/Search";
 import "../../Styles/Navbar/Navbar.css";
 
 function Navbar() {
     const { theme } = useThemeContext();
     const [dropdownVisibility, setDropdownVisibility] = useState(false);
+    const [searchResults, setSearchResults] = useState("");
+    const [allUsers, setAllUsers] = useState([]);
+
+    useEffect(() => {
+        const usersCollectionRef = collection(db, "users");
+        onSnapshot(usersCollectionRef, (snapshot) => {
+            setAllUsers(snapshot.docs.map((doc) => doc.data()));
+        });
+    }, []);
 
     const handleAvatarClick = () => {
         setDropdownVisibility(!dropdownVisibility);
@@ -38,11 +50,40 @@ function Navbar() {
             <div className="navbar__search-avatar">
                 <div className="navbar__search">
                     <SearchIcon className="navbar__search-icon" />
-                    <input type="text" placeholder="Search" />
+                    <input
+                        type="text"
+                        placeholder="Search"
+                        value={searchResults}
+                        onChange={(e) => setSearchResults(e.target.value)}
+                    />
                 </div>
                 <div className="navbar__avatar" onClick={handleAvatarClick}>
                     <Avatar dimension={"50px"} />
                 </div>
+                {searchResults.length > 0 ? (
+                    <div className="navbar__search-results">
+                        {allUsers
+                            .filter((user) => {
+                                if (
+                                    user.name
+                                        .toLowerCase()
+                                        .includes(
+                                            searchResults.toLowerCase()
+                                        ) ||
+                                    user.username
+                                        .toLowerCase()
+                                        .includes(searchResults.toLowerCase())
+                                ) {
+                                    return user;
+                                }
+                            })
+                            .map((user) => (
+                                <SearchItem key={user.uid} user={user} />
+                            ))}
+                    </div>
+                ) : (
+                    ""
+                )}
             </div>
         </div>
     );
