@@ -63,7 +63,7 @@ function Tweet(props) {
 
     // check if tweet has an image, set state
     useEffect(() => {
-        if (tweet.image === null || tweet.image === "") {
+        if (tweet.image === null || tweet.image === "" || !tweet.image) {
             setValidImage(false);
         }
     }, []);

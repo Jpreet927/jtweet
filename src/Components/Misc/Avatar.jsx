@@ -14,8 +14,12 @@ function Avatar(props) {
     // }, [userDoc, user]);
 
     const avatarStyle = {
+        minWidth: dimension,
+        minHeight: dimension,
         width: dimension,
         height: dimension,
+        // maxWidth: dimension,
+        // maxHeight: dimension,
     };
 
     return (

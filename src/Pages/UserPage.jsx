@@ -13,6 +13,7 @@ import {
     getDoc,
 } from "firebase/firestore";
 import { useUserAuth } from "../Context/UserAuthContext";
+import { useThemeContext } from "../Context/ThemeContext";
 import { db } from "../Firebase/firebase";
 import Navbar from "../Components/Navbar/Navbar";
 import "../Styles/UserPage/UserPage.css";
@@ -21,6 +22,7 @@ import Tweet from "../Components/Tweets/Tweet";
 function UserPage() {
     const params = useParams();
     const { user } = useUserAuth();
+    const { theme } = useThemeContext();
     const [userProfile, setUserProfile] = useState({});
     const [userTweets, setUserTweets] = useState([]);
     const [isFollowing, setIsFollowing] = useState(false);
@@ -115,7 +117,7 @@ function UserPage() {
     return (
         <>
             <Navbar />
-            <div className="userpage__container">
+            <div className={`${theme} userpage__container`}>
                 <div className="userpage__banner">
                     <img src={userProfile.banner} alt="" />
                 </div>

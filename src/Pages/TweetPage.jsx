@@ -39,12 +39,6 @@ function TweetPage() {
         console.log("tweet from useeffect:", tweet);
     }, [tweet]);
 
-    // useEffect(() => {
-    //     console.log("tweet", tweet);
-    //     console.log("author", author);
-    //     console.log("param", params.id);
-    // }, []);
-
     useEffect(() => {
         const unsubscribe = async () => {
             if (tweet.replies && tweet.replies.length > 0) {
@@ -64,9 +58,7 @@ function TweetPage() {
             }
         };
         return () => unsubscribe();
-    }, [db]);
-
-    useEffect(() => {});
+    }, []);
 
     return (
         <div className="tweet-page__container">
