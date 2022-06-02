@@ -9,8 +9,8 @@ An interpolation of Twitter created with React and Firebase.
 - Create posts with the option for adding images
 - Customize your profile (bio, avatar, banner)
 - View user profiles to see their posts or follow them
-- Interact with posts (like, reply) -> in progress
-- Search for other users -> in progress
+- Interact with posts (like, reply) 
+- Search for other users
 - Realtime messaging -> in progress
 
 ### Technologies Used
