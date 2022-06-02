@@ -29,7 +29,7 @@ function ProfilePage() {
             )}
             <div className={`${theme} profilepage__container`}>
                 <div className="profilepage__banner">
-                    <img src={userDoc.banner} alt="" />
+                    <img src={userDoc?.banner} alt="" />
                 </div>
                 <div className="profilepage__avatar-button-container">
                     <div className="profilepage__avatar">

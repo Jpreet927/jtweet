@@ -25,7 +25,7 @@ function Suggested() {
                     where(
                         "uid",
                         "not-in",
-                        userDoc.following.concat(userDoc.uid)
+                        userDoc?.following.concat(userDoc?.uid)
                     ),
                     limit(5)
                 ),

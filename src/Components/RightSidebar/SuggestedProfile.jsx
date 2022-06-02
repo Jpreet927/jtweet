@@ -26,7 +26,7 @@ function SuggestedProfile(props) {
             // unfollow
             try {
                 await updateDoc(profileUserDocRef, {
-                    followers: arrayRemove(userDoc.uid),
+                    followers: arrayRemove(userDoc?.uid),
                 });
                 await updateDoc(loggedUserDocRef, {
                     following: arrayRemove(user.uid),
@@ -36,7 +36,7 @@ function SuggestedProfile(props) {
             // follow
             try {
                 await updateDoc(profileUserDocRef, {
-                    followers: arrayUnion(userDoc.uid),
+                    followers: arrayUnion(userDoc?.uid),
                 });
                 await updateDoc(loggedUserDocRef, {
                     following: arrayUnion(user.uid),

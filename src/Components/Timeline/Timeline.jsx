@@ -45,7 +45,7 @@ function Timeline() {
                     where(
                         "author",
                         "in",
-                        userDoc.following.concat(userDoc.uid)
+                        userDoc?.following.concat(userDoc?.uid)
                     ),
                     orderBy("timestamp", "desc")
                 ),

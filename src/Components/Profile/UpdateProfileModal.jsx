@@ -27,11 +27,11 @@ function UpdateProfileModal(props) {
     const { handleUpdateInvisible, setUpdateModalOpen } = props;
     const { user, userDoc } = useUserAuth();
     const { theme } = useThemeContext();
-    const [banner, setBanner] = useState(userDoc.banner);
-    const [avatar, setAvatar] = useState(userDoc.avatar);
-    const [name, setName] = useState(userDoc.name);
-    const [username, setUsername] = useState(userDoc.username);
-    const [bio, setBio] = useState(userDoc.bio);
+    const [banner, setBanner] = useState(userDoc?.banner);
+    const [avatar, setAvatar] = useState(userDoc?.avatar);
+    const [name, setName] = useState(userDoc?.name);
+    const [username, setUsername] = useState(userDoc?.username);
+    const [bio, setBio] = useState(userDoc?.bio);
     const [error, setError] = useState("");
     const avatarPickerRef = useRef(null);
     const bannerPickerRef = useRef(null);
