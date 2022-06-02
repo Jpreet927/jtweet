@@ -4,7 +4,6 @@
     font-family: $sansSerifMain;
     width: 100%;
     height: 100vh;
-    background-image: url("../../Assets/Images/Auth-BG.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -19,4 +18,12 @@
         top: 50%;
         transform: translateY(-50%);
     }
+}
+
+.light.login__container {
+    background-image: url("../../Assets/Images/Auth-BG.jpg");
+}
+
+.dark.login__container {
+    background-image: url("../../Assets/Images/Auth-Dark-BG.jpg");
 }

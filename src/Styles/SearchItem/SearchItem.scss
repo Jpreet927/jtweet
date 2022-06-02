@@ -1,24 +1,33 @@
 @import "../../Utilities/variables";
 
-.suggestedprofile__container {
+.searchitem__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: $sansSerifMain;
+    padding: 16px;
+    width: 300px;
+    border-bottom: 1px solid $lightModeGrey20;
+    background-color: $lightModeWhite;
     color: $lightModeGrey;
+    transition: background-color 0.2s ease;
 
-    .suggestedprofile__details {
+    &:hover {
+        background-color: $lightModeBlue;
+        cursor: pointer;
+    }
+
+    .searchitem__details {
         display: flex;
         align-items: center;
         gap: 12px;
 
-        .suggestedprofile__avatar {
-            min-width: 50px;
-            min-height: 50px;
+        .searchitem__avatar {
             width: 50px;
             height: 50px;
             border-radius: 50%;
             overflow: hidden;
+            box-shadow: $lightModeShadow;
 
             img {
                 min-width: 100%;
@@ -29,7 +38,7 @@
             }
         }
 
-        .suggestedprofile__details-name {
+        .searchitem__details-name {
             display: flex;
             flex-direction: column;
 
@@ -43,7 +52,7 @@
         }
     }
 
-    .suggestedprofile__follow {
+    .searchitem__follow {
         color: $mainBlue;
         font-family: $sansSerifMain;
         font-weight: 500;
@@ -60,7 +69,7 @@
         }
     }
 
-    .suggestedprofile__following {
+    .searchitem__following {
         color: white;
         font-family: $sansSerifMain;
         font-weight: 500;

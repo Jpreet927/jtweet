@@ -47,10 +47,12 @@
 }
 
 .tweet__container .tweet__details .tweet__details-user .tweet__details-avatar img {
+  min-width: 100%;
+  min-height: 100%;
   max-height: 100%;
   max-width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .tweet__container .tweet__details .tweet__details-time p {

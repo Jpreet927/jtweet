@@ -1,6 +1,5 @@
 .userpage__container {
   width: 100%;
-  background-image: url("../../Assets/Images/Light-BG-2.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -52,10 +51,12 @@
 }
 
 .userpage__container .userpage__avatar-follow-container .userpage__avatar img {
+  min-width: 100%;
+  min-height: 100%;
   max-width: 100%;
   max-height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: 1000;
 }
 
@@ -114,7 +115,6 @@
   gap: 32px;
   width: 25%;
   margin-top: 7.5%;
-  color: #5379a6;
 }
 
 .userpage__container .userpage__content .userpage__content-stats .profiledetails__user-profile {
@@ -123,12 +123,6 @@
 
 .userpage__container .userpage__content .userpage__content-stats .profiledetails__user-profile h3 {
   font-weight: 400;
-}
-
-.userpage__container .userpage__content .userpage__content-stats hr {
-  border: none;
-  border-top: 1px solid #8ab5d3;
-  width: 80%;
 }
 
 .userpage__container .userpage__content .userpage__content-stats .profiledetails__details {
@@ -160,5 +154,39 @@
           flex-direction: column;
   gap: 32px;
   margin-top: 0%;
+}
+
+.light.userpage__container {
+  background-image: url("../../Assets/Images/Light-BG-2.jpg");
+}
+
+.light.userpage__container .userpage__content-stats {
+  color: #5379a6;
+}
+
+.light.userpage__container hr {
+  border: none;
+  width: 80%;
+  border-top: 1px solid #8ab5d3;
+}
+
+.dark.userpage__container {
+  background-image: url("../../Assets/Images/Dark-BG.jpg");
+}
+
+.dark.userpage__container .userpage__content-stats {
+  color: #0a1324;
+}
+
+.dark.userpage__container hr {
+  border: none;
+  width: 80%;
+  border-top: 1px solid #55607e;
+}
+
+.dark.userpage__container h1,
+.dark.userpage__container h3,
+.dark.userpage__container p {
+  color: #e0e7f0;
 }
 /*# sourceMappingURL=UserPage.css.map */

@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { doc, getDoc, onSnapshot } from "firebase/firestore";
 import { useUserAuth } from "../Context/UserAuthContext";
+import { useThemeContext } from "../Context/ThemeContext";
 import { db } from "../Firebase/firebase";
 import "../Styles/LoginModal/LoginModal.css";
 
 function LoginModal() {
     const [error, setError] = useState("");
     const { user, login, loginGoogle, userDoc, setUserDoc } = useUserAuth();
+    const { theme } = useThemeContext();
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -43,7 +45,7 @@ function LoginModal() {
     };
 
     return (
-        <div className="login-modal__container">
+        <div className={`${theme} login-modal__container`}>
             <form
                 action=""
                 className="login-modal__form"

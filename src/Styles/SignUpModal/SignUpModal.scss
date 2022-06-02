@@ -1,7 +1,6 @@
 @import "../../Utilities/variables";
 
 .signup-modal__container {
-    background-color: $lightModeWhite50;
     width: 500px;
     height: 600px;
     padding: 48px;
@@ -39,7 +38,7 @@
         h3 {
             font-size: 24px;
         }
-        
+
         input {
             background-color: $lightModeGrey20;
             border: none;
@@ -98,5 +97,46 @@
             color: rgb(237, 48, 64);
             font-weight: 500;
         }
+    }
+}
+
+.light.signup-modal__container {
+    .signup-modal__container {
+        background-color: $lightModeWhite50;
+    }
+
+    .signup-modal__form-button {
+        color: $lightModeWhite;
+    }
+
+    input {
+        background-color: $lightModeGrey20;
+    }
+
+    .signup-modal__google-container {
+        background-color: $lightModeWhite;
+    }
+}
+
+.dark.signup-modal__container {
+    background-color: $darkModeGrey50;
+
+    .signup-modal__form-button {
+        color: $darkModeGrey;
+    }
+
+    input {
+        background-color: $darkModeTweet;
+    }
+
+    .signup-modal__google-container {
+        background-color: $lightModeWhite;
+    }
+
+    h3,
+    input,
+    .signup-modal__link,
+    .signup-modal__form-button {
+        color: $darkModeText;
     }
 }

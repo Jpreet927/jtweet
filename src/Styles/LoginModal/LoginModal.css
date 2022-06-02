@@ -1,5 +1,4 @@
 .login-modal__container {
-  background-color: rgba(255, 255, 255, 0.5);
   width: 500px;
   height: 600px;
   padding: 48px;
@@ -38,7 +37,6 @@
   border: none;
   background-color: #47b8ff;
   padding: 16px;
-  color: white;
   font-size: 14px;
   font-weight: 700;
   border-radius: 100px;
@@ -70,7 +68,6 @@
 }
 
 .login-modal__container .login-modal__form input {
-  background-color: rgba(138, 180, 211, 0.2);
   border: none;
   padding: 16px;
   -ms-flex-negative: 0;
@@ -82,7 +79,6 @@
 }
 
 .login-modal__container .login-modal__google-container {
-  background-color: white;
   padding: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -141,5 +137,44 @@
 .login-modal__container .login-modal__redirect .login-modal__error {
   color: #ed3040;
   font-weight: 500;
+}
+
+.light.login-modal__container {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.light.login-modal__container .login-modal__form-button {
+  color: white;
+}
+
+.light.login-modal__container input {
+  background-color: rgba(138, 180, 211, 0.2);
+}
+
+.light.login-modal__container .login-modal__google-container {
+  background-color: white;
+}
+
+.dark.login-modal__container {
+  background-color: rgba(17, 29, 52, 0.5);
+}
+
+.dark.login-modal__container .login-modal__form-button {
+  color: #0a1324;
+}
+
+.dark.login-modal__container input {
+  background-color: rgba(25, 40, 70, 0.621);
+}
+
+.dark.login-modal__container .login-modal__google-container {
+  background-color: white;
+}
+
+.dark.login-modal__container h3,
+.dark.login-modal__container input,
+.dark.login-modal__container .login-modal__link,
+.dark.login-modal__container .login-modal__form-button {
+  color: #e0e7f0;
 }
 /*# sourceMappingURL=LoginModal.css.map */

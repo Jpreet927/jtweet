@@ -73,6 +73,7 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 24px;
+  position: relative;
 }
 
 .navbar__container .navbar__search-avatar .navbar__search {
@@ -113,6 +114,14 @@
   width: 100%;
 }
 
+.navbar__container .navbar__search-avatar .navbar__search-results {
+  position: absolute;
+  top: 60px;
+  right: 40px;
+  -webkit-box-shadow: 0px 10px 20px rgba(60, 156, 225, 0.3);
+          box-shadow: 0px 10px 20px rgba(60, 156, 225, 0.3);
+}
+
 .light.navbar__container {
   background-color: rgba(255, 255, 255, 0.9);
 }
@@ -130,7 +139,7 @@
 }
 
 .dark.navbar__container {
-  background-color: rgba(17, 29, 52, 0.5);
+  background-color: rgba(9, 18, 37, 0.75);
 }
 
 .dark.navbar__container li {

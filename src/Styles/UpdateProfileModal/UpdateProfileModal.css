@@ -29,6 +29,10 @@
   color: #8ab5d3;
 }
 
+.update__container .update__icon {
+  color: #e0e7f0;
+}
+
 .update__container .update__heading {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,6 +54,48 @@
   width: 100%;
   height: 200px;
   overflow: hidden;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.update__container .update__banner .update__banner-icon {
+  background: rgba(0, 0, 0, 0.506);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.update__container .update__banner .update__banner-icon .update__icon {
+  font-size: 18px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.update__container .update__banner .update__banner-icon .update__icon:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .update__container .update__banner img {
@@ -68,6 +114,71 @@
   gap: 32px;
   padding: 32px;
   width: 100%;
+}
+
+.update__container .update__pfp-name .update__pfp {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.update__container .update__pfp-name .update__pfp .update__pfp-icon {
+  background: rgba(0, 0, 0, 0.506);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.update__container .update__pfp-name .update__pfp .update__pfp-icon .update__icon {
+  font-size: 18px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.update__container .update__pfp-name .update__pfp .update__pfp-icon .update__icon:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.update__container .update__pfp-name .update__pfp .update__pfp-image {
+  height: 150px;
+  width: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.update__container .update__pfp-name .update__pfp .update__pfp-image img {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .update__container .update__pfp-name .update__name {
@@ -108,17 +219,37 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  gap: 1em;
 }
 
 .update__container .update__button button {
-  padding: 16px 32px;
+  padding: 14px 32px;
   border-radius: 100px;
-  border: none;
-  background: #47b8ff;
-  color: white;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 14px;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.update__container .update__button button:hover {
+  -webkit-transform: translateY(-10%);
+          transform: translateY(-10%);
+  cursor: pointer;
+}
+
+.update__container .update__button #update__cancel {
+  border: 2px solid #47b8ff;
+  background: none;
+  color: #47b8ff;
+}
+
+.update__container .update__button #update__save {
+  border: none;
+  background: #47b8ff;
+  color: white;
 }
 
 .light.update__container {
@@ -152,7 +283,7 @@
 }
 
 .dark.update__container label {
-  color: #d2ddf9;
+  color: #55607e;
 }
 
 .dark.update__container input {

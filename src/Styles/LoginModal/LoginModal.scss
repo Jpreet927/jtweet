@@ -1,7 +1,6 @@
 @import "../../Utilities/variables";
 
 .login-modal__container {
-    background-color: $lightModeWhite50;
     width: 500px;
     height: 600px;
     padding: 48px;
@@ -19,7 +18,6 @@
         border: none;
         background-color: $mainBlue;
         padding: 16px;
-        color: $lightModeWhite;
         font-size: 14px;
         font-weight: 700;
         border-radius: 100px;
@@ -39,9 +37,8 @@
         h3 {
             font-size: 32px;
         }
-        
+
         input {
-            background-color: $lightModeGrey20;
             border: none;
             padding: 16px;
             flex-shrink: 0;
@@ -53,7 +50,6 @@
     }
 
     .login-modal__google-container {
-        background-color: $lightModeWhite;
         padding: 16px;
         display: flex;
         gap: 12px;
@@ -98,5 +94,44 @@
             color: rgb(237, 48, 64);
             font-weight: 500;
         }
+    }
+}
+
+.light.login-modal__container {
+    background-color: $lightModeWhite50;
+
+    .login-modal__form-button {
+        color: $lightModeWhite;
+    }
+
+    input {
+        background-color: $lightModeGrey20;
+    }
+
+    .login-modal__google-container {
+        background-color: $lightModeWhite;
+    }
+}
+
+.dark.login-modal__container {
+    background-color: $darkModeGrey50;
+
+    .login-modal__form-button {
+        color: $darkModeGrey;
+    }
+
+    input {
+        background-color: $darkModeTweet;
+    }
+
+    .login-modal__google-container {
+        background-color: $lightModeWhite;
+    }
+
+    h3,
+    input,
+    .login-modal__link,
+    .login-modal__form-button {
+        color: $darkModeText;
     }
 }

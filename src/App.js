@@ -17,16 +17,6 @@ import { ThemeProvider } from "./Context/ThemeContext";
 
 function App() {
     const [tweets, setTweets] = useState([]);
-    // const { user } = useUserAuth();
-
-    // useEffect(() => {
-    //   db.collection('tweets').onSnapshot((snapshot) => {
-    //     setTweets(snapshot.docs.map((doc) => ({
-    //       id: doc.id,
-    //       tweet: doc.data()
-    //     })))
-    //   })
-    // })
 
     return (
         <div className="App">

@@ -1,5 +1,4 @@
 .signup-modal__container {
-  background-color: rgba(255, 255, 255, 0.5);
   width: 500px;
   height: 600px;
   padding: 48px;
@@ -141,5 +140,44 @@
 .signup-modal__container .signup-modal__redirect .signup-modal__error {
   color: #ed3040;
   font-weight: 500;
+}
+
+.light.signup-modal__container .signup-modal__container {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.light.signup-modal__container .signup-modal__form-button {
+  color: white;
+}
+
+.light.signup-modal__container input {
+  background-color: rgba(138, 180, 211, 0.2);
+}
+
+.light.signup-modal__container .signup-modal__google-container {
+  background-color: white;
+}
+
+.dark.signup-modal__container {
+  background-color: rgba(17, 29, 52, 0.5);
+}
+
+.dark.signup-modal__container .signup-modal__form-button {
+  color: #0a1324;
+}
+
+.dark.signup-modal__container input {
+  background-color: rgba(25, 40, 70, 0.621);
+}
+
+.dark.signup-modal__container .signup-modal__google-container {
+  background-color: white;
+}
+
+.dark.signup-modal__container h3,
+.dark.signup-modal__container input,
+.dark.signup-modal__container .signup-modal__link,
+.dark.signup-modal__container .signup-modal__form-button {
+  color: #e0e7f0;
 }
 /*# sourceMappingURL=SignUpModal.css.map */

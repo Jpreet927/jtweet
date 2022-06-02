@@ -1,12 +1,16 @@
 @import "../../Utilities/variables";
 
 .avatar__container {
-    object-fit: contain;
+    // object-fit: contain;
     border-radius: 200px;
     overflow: hidden;
 
     img {
-        width: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
     }
 }
 

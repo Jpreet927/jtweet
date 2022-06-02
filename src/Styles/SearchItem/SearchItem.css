@@ -1,4 +1,4 @@
-.suggestedprofile__container {
+.searchitem__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,10 +9,21 @@
       -ms-flex-align: center;
           align-items: center;
   font-family: "Roboto", sans-serif;
+  padding: 16px;
+  width: 300px;
+  border-bottom: 1px solid rgba(138, 180, 211, 0.2);
+  background-color: white;
   color: #5379a6;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
-.suggestedprofile__container .suggestedprofile__details {
+.searchitem__container:hover {
+  background-color: #dce9f4;
+  cursor: pointer;
+}
+
+.searchitem__container .searchitem__details {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,16 +33,16 @@
   gap: 12px;
 }
 
-.suggestedprofile__container .suggestedprofile__details .suggestedprofile__avatar {
-  min-width: 50px;
-  min-height: 50px;
+.searchitem__container .searchitem__details .searchitem__avatar {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   overflow: hidden;
+  -webkit-box-shadow: 0px 10px 20px rgba(60, 156, 225, 0.3);
+          box-shadow: 0px 10px 20px rgba(60, 156, 225, 0.3);
 }
 
-.suggestedprofile__container .suggestedprofile__details .suggestedprofile__avatar img {
+.searchitem__container .searchitem__details .searchitem__avatar img {
   min-width: 100%;
   min-height: 100%;
   max-width: 100%;
@@ -40,7 +51,7 @@
      object-fit: cover;
 }
 
-.suggestedprofile__container .suggestedprofile__details .suggestedprofile__details-name {
+.searchitem__container .searchitem__details .searchitem__details-name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,15 +61,15 @@
           flex-direction: column;
 }
 
-.suggestedprofile__container .suggestedprofile__details .suggestedprofile__details-name h3 {
+.searchitem__container .searchitem__details .searchitem__details-name h3 {
   font-size: 1em;
 }
 
-.suggestedprofile__container .suggestedprofile__details .suggestedprofile__details-name p {
+.searchitem__container .searchitem__details .searchitem__details-name p {
   font-size: 0.8em;
 }
 
-.suggestedprofile__container .suggestedprofile__follow {
+.searchitem__container .searchitem__follow {
   color: #47b8ff;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
@@ -70,13 +81,13 @@
   transition: color 0.2s ease, background 0.2s ease;
 }
 
-.suggestedprofile__container .suggestedprofile__follow:hover {
+.searchitem__container .searchitem__follow:hover {
   background: #47b8ff;
   color: white;
   cursor: pointer;
 }
 
-.suggestedprofile__container .suggestedprofile__following {
+.searchitem__container .searchitem__following {
   color: white;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
@@ -88,10 +99,10 @@
   transition: color 0.2s ease, background 0.2s ease, border 0.2s ease;
 }
 
-.suggestedprofile__container .suggestedprofile__following:hover {
+.searchitem__container .searchitem__following:hover {
   background: #f73946;
   border: 2px solid #f73946;
   color: white;
   cursor: pointer;
 }
-/*# sourceMappingURL=SuggestedProfile.css.map */
+/*# sourceMappingURL=SearchItem.css.map */

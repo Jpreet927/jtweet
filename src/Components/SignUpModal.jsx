@@ -8,12 +8,14 @@ import {
     serverTimestamp,
 } from "firebase/firestore";
 import { useUserAuth } from "../Context/UserAuthContext";
+import { useThemeContext } from "../Context/ThemeContext";
 import { db } from "../Firebase/firebase";
 import "../Styles/SignUpModal/SignUpModal.css";
 
 function SignUpModal(props) {
     const { error, setError } = props;
     const { user, signUp } = useUserAuth();
+    const { theme } = useThemeContext();
     const navigate = useNavigate();
     const [name, setName] = useState("");
     const [username, setUsername] = useState("");
@@ -68,7 +70,7 @@ function SignUpModal(props) {
     };
 
     return (
-        <div className="signup-modal__container">
+        <div className={`${theme} signup-modal__container`}>
             <form
                 action=""
                 className="signup-modal__form"

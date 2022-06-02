@@ -46,6 +46,7 @@
         display: flex;
         align-items: center;
         gap: 24px;
+        position: relative;
 
         .navbar__search {
             border-radius: 50px;
@@ -80,6 +81,13 @@
                 width: 100%;
             }
         }
+
+        .navbar__search-results {
+            position: absolute;
+            top: 60px;
+            right: 40px;
+            box-shadow: $lightModeShadow;
+        }
     }
 }
 
@@ -100,7 +108,7 @@
 }
 
 .dark.navbar__container {
-    background-color: $darkModeGrey50;
+    background-color: $darkModeNavbar;
 
     li {
         color: $darkModeText;
