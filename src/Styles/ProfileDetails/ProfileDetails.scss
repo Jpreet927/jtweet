@@ -5,12 +5,17 @@
     flex-direction: column;
     gap: $homeGap;
     font-family: $sansSerifMain;
-    width: 25%;
+    width: 20%;
     margin-top: 75px;
 
     .profiledetails__user-profile {
         display: flex;
         flex-direction: column;
+
+        h3 {
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
     }
 
     .profiledetails__details {
@@ -23,6 +28,11 @@
             gap: 4px;
         }
     }
+
+    hr {
+        border: none;
+        width: 100%;
+    }
 }
 
 .light.profiledetails__container {
@@ -31,4 +41,18 @@
 
 .dark.profiledetails__container {
     color: $darkModeText;
+
+    .profiledetails__user-profile {
+        h3 {
+            color: $darkModeSubtext;
+        }
+
+        p {
+            color: $darkModeSubtext;
+        }
+    }
+
+    hr {
+        border-top: 1px solid $darkModeSubtext;
+    }
 }

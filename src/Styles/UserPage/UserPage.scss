@@ -85,7 +85,7 @@
     .userpage__content {
         display: flex;
         gap: $homeGap;
-        padding: 0px 12.5%;
+        padding: 0px 12.5% 120px;
         width: 100%;
 
         .userpage__content-stats {
@@ -99,6 +99,7 @@
                 width: 80%;
                 h3 {
                     font-weight: 400;
+                    margin-bottom: 24px;
                 }
             }
 
@@ -151,9 +152,20 @@
         border-top: 1px solid $darkModeSubtext;
     }
 
-    h1,
-    h3,
-    p {
-        color: $darkModeText;
+    .profiledetails__user-profile {
+        h1 {
+            color: $darkModeText;
+        }
+
+        h3,
+        p {
+            color: $darkModeSubtext;
+        }
+    }
+
+    .profiledetails__details {
+        h3 {
+            color: $darkModeText;
+        }
     }
 }

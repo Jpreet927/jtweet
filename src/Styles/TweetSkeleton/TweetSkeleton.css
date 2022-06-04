@@ -1,0 +1,74 @@
+.tweetskeleton__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 12px;
+}
+
+.tweetskeleton__container .tweetskeleton__reply-box {
+  width: 100%;
+}
+
+.tweetskeleton__container .tweetskeleton__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 24px 32px 12px 32px;
+}
+
+.tweetskeleton__container .tweetskeleton__details .tweetskeleton__details-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+}
+
+.tweetskeleton__container .tweetskeleton__details .tweetskeleton__details-user .tweetskeleton__details-avatar {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 100px;
+}
+
+.tweetskeleton__container .tweetskeleton__message {
+  padding: 16px 32px;
+}
+
+.tweetskeleton__container .tweetskeleton__message p {
+  line-height: 20px;
+}
+
+.tweetskeleton__container .tweetskeleton__image {
+  width: 100%;
+  overflow: hidden;
+  height: 400px;
+}
+
+.tweetskeleton__container .tweetskeleton__interactions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12px 32px;
+  position: relative;
+  border-top: 1px solid rgba(138, 180, 211, 0.2);
+}
+/*# sourceMappingURL=TweetSkeleton.css.map */

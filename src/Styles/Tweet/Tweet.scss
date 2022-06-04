@@ -165,10 +165,19 @@
     background: $darkModeTweet;
     box-shadow: $darkModeShadow;
 
-    h3,
+    h3 {
+        color: $darkModeText;
+    }
+
     p,
     .tweet__button {
-        color: $darkModeText;
+        color: $lightModeGrey;
+    }
+
+    .tweet__message {
+        p {
+            color: $darkModeText;
+        }
     }
 
     .tweet__interactions {

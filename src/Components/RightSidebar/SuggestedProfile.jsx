@@ -18,7 +18,7 @@ function SuggestedProfile(props) {
     const [following, setFollowing] = useState(isFollowing);
     const [buttonText, setButtonText] = useState("Following");
     const profileUserDocRef = doc(db, "users", user.uid);
-    const loggedUserDocRef = doc(db, "users", userDoc.uid);
+    const loggedUserDocRef = userDoc ? doc(db, "users", userDoc?.uid) : "";
 
     const handleFollow = async () => {
         // write to firebase - add logged in user to profiles followers, add profile to logged in users following

@@ -1,4 +1,5 @@
 import React from "react";
+import Skeleton from "react-loading-skeleton";
 import { useUserAuth } from "../../Context/UserAuthContext";
 import { useThemeContext } from "../../Context/ThemeContext";
 import Avatar from "../Misc/Avatar";
@@ -11,7 +12,7 @@ function ProfilePreview() {
     return (
         <div className={`${theme} profilepreview__container`}>
             <div className="profilepreview__banner">
-                <img src={userDoc?.banner} alt="" />
+                {<img src={userDoc?.banner} alt="" /> || <Skeleton />}
             </div>
             <div className="profilepreview__avatar">
                 <Avatar dimension="70px" />

@@ -191,9 +191,16 @@
           box-shadow: 0px 10px 20px rgba(41, 69, 122, 0.148);
 }
 
-.dark.tweet__container h3,
+.dark.tweet__container h3 {
+  color: #e0e7f0;
+}
+
 .dark.tweet__container p,
 .dark.tweet__container .tweet__button {
+  color: #5379a6;
+}
+
+.dark.tweet__container .tweet__message p {
   color: #e0e7f0;
 }
 

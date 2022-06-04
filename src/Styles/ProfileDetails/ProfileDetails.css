@@ -8,7 +8,7 @@
           flex-direction: column;
   gap: 32px;
   font-family: "Roboto", sans-serif;
-  width: 25%;
+  width: 20%;
   margin-top: 75px;
 }
 
@@ -20,6 +20,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.profiledetails__container .profiledetails__user-profile h3 {
+  margin-bottom: 24px;
+  font-weight: 400;
 }
 
 .profiledetails__container .profiledetails__details {
@@ -40,11 +45,28 @@
   gap: 4px;
 }
 
+.profiledetails__container hr {
+  border: none;
+  width: 100%;
+}
+
 .light.profiledetails__container {
   color: #5379a6;
 }
 
 .dark.profiledetails__container {
   color: #e0e7f0;
+}
+
+.dark.profiledetails__container .profiledetails__user-profile h3 {
+  color: #788ea8;
+}
+
+.dark.profiledetails__container .profiledetails__user-profile p {
+  color: #788ea8;
+}
+
+.dark.profiledetails__container hr {
+  border-top: 1px solid #788ea8;
 }
 /*# sourceMappingURL=ProfileDetails.css.map */

@@ -92,7 +92,7 @@
   display: -ms-flexbox;
   display: flex;
   gap: 32px;
-  padding: 24px 12.5%;
+  padding: 24px 12.5% 120px;
 }
 
 .light.profilepage__container {

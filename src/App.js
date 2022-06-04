@@ -14,6 +14,7 @@ import { useUserAuth } from "./Context/UserAuthContext";
 // import { db } from './Firebase/firebase'
 import "./Styles/App.css";
 import { ThemeProvider } from "./Context/ThemeContext";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 function App() {
     const [tweets, setTweets] = useState([]);
@@ -22,38 +23,40 @@ function App() {
         <div className="App">
             <ThemeProvider>
                 <UserAuthContextProvider>
-                    <Routes>
-                        <Route path="/" element={<LoginPage />} />
+                    <SkeletonTheme baseColor="#192846" highlightColor="#28395d">
+                        <Routes>
+                            <Route path="/" element={<LoginPage />} />
 
-                        {/* <Navbar /> */}
-                        <Route path="/signup" element={<SignUpPage />} />
-                        <Route
-                            path="/home"
-                            element={
-                                <ProtectedRoute>
-                                    <HomePage />
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            path="/messages"
-                            element={
-                                <ProtectedRoute>
-                                    <MessagingPage />
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            path="/profile"
-                            element={
-                                <ProtectedRoute>
-                                    <ProfilePage />
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route path="/tweets/:id" element={<TweetPage />} />
-                        <Route path="/:id" element={<UserPage />} />
-                    </Routes>
+                            {/* <Navbar /> */}
+                            <Route path="/signup" element={<SignUpPage />} />
+                            <Route
+                                path="/home"
+                                element={
+                                    <ProtectedRoute>
+                                        <HomePage />
+                                    </ProtectedRoute>
+                                }
+                            />
+                            <Route
+                                path="/messages"
+                                element={
+                                    <ProtectedRoute>
+                                        <MessagingPage />
+                                    </ProtectedRoute>
+                                }
+                            />
+                            <Route
+                                path="/profile"
+                                element={
+                                    <ProtectedRoute>
+                                        <ProfilePage />
+                                    </ProtectedRoute>
+                                }
+                            />
+                            <Route path="/tweets/:id" element={<TweetPage />} />
+                            <Route path="/:id" element={<UserPage />} />
+                        </Routes>
+                    </SkeletonTheme>
                 </UserAuthContextProvider>
             </ThemeProvider>
         </div>

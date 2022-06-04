@@ -1,0 +1,60 @@
+@import "../../Utilities/variables";
+
+.tweetskeleton__container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .tweetskeleton__reply-box {
+        width: 100%;
+    }
+
+    .tweetskeleton__details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px 32px 12px 32px;
+
+        .tweetskeleton__details-user {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            .tweetskeleton__details-avatar {
+                width: 60px;
+                height: 60px;
+                overflow: hidden;
+                border-radius: 100px;
+            }
+        }
+    }
+
+    .tweetskeleton__message {
+        padding: 16px 32px;
+
+        p {
+            line-height: 20px;
+        }
+    }
+
+    .tweetskeleton__image {
+        width: 100%;
+        overflow: hidden;
+        height: 400px;
+    }
+
+    .tweetskeleton__interactions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 32px;
+        position: relative;
+        border-top: 1px solid $lightModeGrey20;
+    }
+}
+
+.light.tweetskeleton__container {
+}
+
+.dark.tweetskeleton__container {
+}

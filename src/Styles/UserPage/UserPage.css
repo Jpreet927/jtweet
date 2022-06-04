@@ -100,7 +100,7 @@
   display: -ms-flexbox;
   display: flex;
   gap: 32px;
-  padding: 0px 12.5%;
+  padding: 0px 12.5% 120px;
   width: 100%;
 }
 
@@ -123,6 +123,7 @@
 
 .userpage__container .userpage__content .userpage__content-stats .profiledetails__user-profile h3 {
   font-weight: 400;
+  margin-bottom: 24px;
 }
 
 .userpage__container .userpage__content .userpage__content-stats .profiledetails__details {
@@ -181,12 +182,19 @@
 .dark.userpage__container hr {
   border: none;
   width: 80%;
-  border-top: 1px solid #55607e;
+  border-top: 1px solid #788ea8;
 }
 
-.dark.userpage__container h1,
-.dark.userpage__container h3,
-.dark.userpage__container p {
+.dark.userpage__container .profiledetails__user-profile h1 {
+  color: #e0e7f0;
+}
+
+.dark.userpage__container .profiledetails__user-profile h3,
+.dark.userpage__container .profiledetails__user-profile p {
+  color: #788ea8;
+}
+
+.dark.userpage__container .profiledetails__details h3 {
   color: #e0e7f0;
 }
 /*# sourceMappingURL=UserPage.css.map */

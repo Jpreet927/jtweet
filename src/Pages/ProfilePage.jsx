@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Skeleton from "react-loading-skeleton";
 import { useUserAuth } from "../Context/UserAuthContext";
 import { useThemeContext } from "../Context/ThemeContext";
 import Navbar from "../Components/Navbar/Navbar";
@@ -7,14 +8,17 @@ import ProfileDetails from "../Components/Profile/ProfileDetails";
 import UpdateProfileModal from "../Components/Profile/UpdateProfileModal";
 import Avatar from "../Components/Misc/Avatar";
 import "../Styles/ProfilePage/ProfilePage.css";
+import "react-loading-skeleton/dist/skeleton.css";
 
 function ProfilePage() {
     const { userDoc } = useUserAuth();
     const { theme } = useThemeContext();
     const [updateModalOpen, setUpdateModalOpen] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         console.log(userDoc);
+        setLoading(false);
     }, []);
 
     return (
@@ -29,7 +33,11 @@ function ProfilePage() {
             )}
             <div className={`${theme} profilepage__container`}>
                 <div className="profilepage__banner">
-                    <img src={userDoc?.banner} alt="" />
+                    {loading ? (
+                        <Skeleton />
+                    ) : (
+                        <img src={userDoc?.banner} alt="" />
+                    )}
                 </div>
                 <div className="profilepage__avatar-button-container">
                     <div className="profilepage__avatar">
