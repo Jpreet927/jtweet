@@ -10,20 +10,21 @@ import TweetPage from "./Pages/TweetPage";
 import UserPage from "./Pages/UserPage";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import { UserAuthContextProvider } from "./Context/UserAuthContext";
-import { useUserAuth } from "./Context/UserAuthContext";
+
 // import { db } from './Firebase/firebase'
 import "./Styles/App.css";
-import { ThemeProvider } from "./Context/ThemeContext";
+import { ThemeProvider, useThemeContext } from "./Context/ThemeContext";
 import { SkeletonTheme } from "react-loading-skeleton";
 
 function App() {
-    const [tweets, setTweets] = useState([]);
-
     return (
         <div className="App">
             <ThemeProvider>
                 <UserAuthContextProvider>
-                    <SkeletonTheme baseColor="#192846" highlightColor="#28395d">
+                    <SkeletonTheme
+                        baseColor={"#192846"}
+                        highlightColor={"#28395d"}
+                    >
                         <Routes>
                             <Route path="/" element={<LoginPage />} />
 

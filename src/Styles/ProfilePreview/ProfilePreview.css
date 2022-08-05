@@ -1,6 +1,5 @@
 .profilepreview__container {
   position: relative;
-  height: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,8 +13,8 @@
 .profilepreview__container .profilepreview__banner {
   width: 100%;
   overflow: hidden;
-  min-height: 100px;
-  max-height: 100px;
+  min-height: 150px;
+  max-height: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,9 +36,16 @@
 }
 
 .profilepreview__container .profilepreview__avatar {
-  position: absolute;
-  top: 39%;
-  left: 5%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding-left: 7.5%;
+  margin: 0px;
+}
+
+.profilepreview__container .profilepreview__user-info {
+  margin-top: -54px;
+  margin-left: 27%;
+  margin-bottom: 24px;
 }
 
 .profilepreview__container .profilepreview__details {
@@ -49,11 +55,18 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 36px 36px 24px;
+  padding: 0px 36px 24px 36px;
 }
 
 .profilepreview__container .profilepreview__details .profilepreview__details-section h3 {
   font-size: 1em;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.profilepreview__container .profilepreview__details .profilepreview__details-section h3:hover {
+  color: #47b8ff;
+  cursor: pointer;
 }
 
 .profilepreview__container .profilepreview__details .profilepreview__details-section p {
@@ -64,6 +77,10 @@
   background-color: rgba(255, 255, 255, 0.9);
 }
 
+.light.profilepreview__container .profilepreview__user-info {
+  color: #5379a6;
+}
+
 .light.profilepreview__container .profilepreview__details {
   color: #5379a6;
 }
@@ -72,7 +89,13 @@
   background-color: rgba(25, 40, 70, 0.621);
 }
 
+.dark.profilepreview__container .profilepreview__user-info,
 .dark.profilepreview__container .profilepreview__details {
   color: #e0e7f0;
+}
+
+.dark.profilepreview__container .profilepreview__user-info p,
+.dark.profilepreview__container .profilepreview__details p {
+  color: #788ea8;
 }
 /*# sourceMappingURL=ProfilePreview.css.map */

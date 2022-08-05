@@ -18,7 +18,7 @@
 }
 
 .dark.avatar__container {
-  -webkit-box-shadow: 0px 10px 20px rgba(41, 69, 122, 0.148);
-          box-shadow: 0px 10px 20px rgba(41, 69, 122, 0.148);
+  -webkit-box-shadow: 0px 10px 15px rgba(41, 69, 122, 0.52);
+          box-shadow: 0px 10px 15px rgba(41, 69, 122, 0.52);
 }
 /*# sourceMappingURL=Avatar.css.map */

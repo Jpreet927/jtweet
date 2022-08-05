@@ -34,6 +34,7 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 16px;
+  width: 100%;
 }
 
 .tweetskeleton__container .tweetskeleton__details .tweetskeleton__details-user .tweetskeleton__details-avatar {
@@ -41,6 +42,10 @@
   height: 60px;
   overflow: hidden;
   border-radius: 100px;
+}
+
+.tweetskeleton__container .tweetskeleton__details .tweetskeleton__details-user .tweetskeleton__details-user-info {
+  width: 30%;
 }
 
 .tweetskeleton__container .tweetskeleton__message {
@@ -58,17 +63,6 @@
 }
 
 .tweetskeleton__container .tweetskeleton__interactions {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   padding: 12px 32px;
-  position: relative;
-  border-top: 1px solid rgba(138, 180, 211, 0.2);
 }
 /*# sourceMappingURL=TweetSkeleton.css.map */

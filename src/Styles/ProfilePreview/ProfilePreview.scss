@@ -2,7 +2,7 @@
 
 .profilepreview__container {
     position: relative;
-    height: 300px;
+    // height: 300px;
     display: flex;
     flex-direction: column;
     font-family: $sansSerifMain;
@@ -10,8 +10,8 @@
     .profilepreview__banner {
         width: 100%;
         overflow: hidden;
-        min-height: 100px;
-        max-height: 100px;
+        min-height: 150px;
+        max-height: 150px;
         // object-fit: contain;
         display: flex;
         justify-content: center;
@@ -27,19 +27,33 @@
     }
 
     .profilepreview__avatar {
-        position: absolute;
-        top: 39%;
-        left: 5%;
+        // position: absolute;
+        transform: translateY(-50%);
+        // margin-bottom: -500px;
+        padding-left: 7.5%;
+        margin: 0px;
+    }
+
+    .profilepreview__user-info {
+        margin-top: -54px;
+        margin-left: 27%;
+        margin-bottom: 24px;
     }
 
     .profilepreview__details {
         display: flex;
         justify-content: space-between;
-        padding: 36px 36px 24px;
+        padding: 0px 36px 24px 36px;
 
         .profilepreview__details-section {
             h3 {
                 font-size: 1em;
+                transition: color 0.2s ease;
+
+                &:hover {
+                    color: $mainBlue;
+                    cursor: pointer;
+                }
             }
 
             p {
@@ -52,6 +66,10 @@
 .light.profilepreview__container {
     background-color: $lightModeWhite90;
 
+    .profilepreview__user-info {
+        color: $lightModeGrey;
+    }
+
     .profilepreview__details {
         color: $lightModeGrey;
     }
@@ -60,7 +78,12 @@
 .dark.profilepreview__container {
     background-color: $darkModeTweet;
 
+    .profilepreview__user-info,
     .profilepreview__details {
         color: $darkModeText;
+
+        p {
+            color: $darkModeSubtext;
+        }
     }
 }

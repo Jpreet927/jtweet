@@ -311,15 +311,15 @@ function Tweet(props) {
                                 <Reply reply={latestReply} />
                             </div>
                         )}
-                        {replyBoxOpen && (
-                            <div className="tweet__reply-box">
-                                <ReplyBox
-                                    setReplyBoxOpen={setReplyBoxOpen}
-                                    replyingTo={tweet}
-                                />
-                            </div>
-                        )}
                     </Link>
+                    {replyBoxOpen && (
+                        <div className="tweet__reply-box">
+                            <ReplyBox
+                                setReplyBoxOpen={setReplyBoxOpen}
+                                replyingTo={tweet}
+                            />
+                        </div>
+                    )}
                 </div>
             )}
         </>

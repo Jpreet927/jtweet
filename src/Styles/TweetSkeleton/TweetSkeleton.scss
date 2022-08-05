@@ -19,12 +19,17 @@
             display: flex;
             align-items: center;
             gap: 16px;
+            width: 100%;
 
             .tweetskeleton__details-avatar {
                 width: 60px;
                 height: 60px;
                 overflow: hidden;
                 border-radius: 100px;
+            }
+
+            .tweetskeleton__details-user-info {
+                width: 30%;
             }
         }
     }
@@ -44,17 +49,12 @@
     }
 
     .tweetskeleton__interactions {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         padding: 12px 32px;
-        position: relative;
-        border-top: 1px solid $lightModeGrey20;
     }
 }
 
-.light.tweetskeleton__container {
-}
+// .light.tweetskeleton__container {
+// }
 
-.dark.tweetskeleton__container {
-}
+// .dark.tweetskeleton__container {
+// }

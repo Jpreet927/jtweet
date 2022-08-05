@@ -14,15 +14,20 @@ function HomePage() {
     const { user, userDoc, setUserDoc, logout } = useUserAuth();
     const { theme } = useThemeContext();
     const navigate = useNavigate();
+
     const [tweets, setTweets] = useState([]);
     const [error, setError] = useState("");
 
     useEffect(() => {
-        onSnapshot(doc(db, "users", user.uid), (snapshot) => {
-            setUserDoc(snapshot.data());
-            console.log("setting user doc from homepage:", snapshot.data());
-        });
-    }, []);
+        let uid = user?.uid;
+
+        if (user) {
+            onSnapshot(doc(db, "users", uid), (snapshot) => {
+                setUserDoc(snapshot.data());
+                console.log("setting user doc from homepage:", snapshot.data());
+            });
+        }
+    }, [user]);
 
     const handleLogout = async () => {
         try {

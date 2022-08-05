@@ -22,27 +22,8 @@ function Timeline() {
     const [tweets, setTweets] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // useEffect(
-    //     () =>
-    //         onSnapshot(
-    //             query(
-    //                 collection(db, "all-tweets"),
-    //                 orderBy("timestamp", "desc")
-    //             ),
-    //             (snapshot) => {
-    //                 setTweets(
-    //                     snapshot.docs.map((doc) => ({
-    //                         id: doc.id,
-    //                         ...doc.data(),
-    //                     }))
-    //                 );
-    //             }
-    //         ),
-    //     []
-    // );
-
-    useEffect(
-        () =>
+    useEffect(() => {
+        if (userDoc) {
             onSnapshot(
                 query(
                     collection(db, "all-tweets"),
@@ -62,9 +43,9 @@ function Timeline() {
                     );
                     setLoading(false);
                 }
-            ),
-        []
-    );
+            );
+        }
+    }, []);
 
     return (
         <div className="timeline__container">
@@ -73,7 +54,7 @@ function Timeline() {
                 <TweetSkeleton />
             ) : (
                 <div className="timeline__tweets-container">
-                    <TweetSkeleton />
+                    {/* <TweetSkeleton /> */}
                     {tweets.map((tweet) => (
                         <Tweet
                             key={tweet.id}

@@ -17,8 +17,8 @@ function Suggested() {
     const { userDoc } = useUserAuth();
     const [suggestedUsers, setSuggestedUsers] = useState([]);
 
-    useEffect(
-        () =>
+    useEffect(() => {
+        if (userDoc) {
             onSnapshot(
                 query(
                     collection(db, "users"),
@@ -33,9 +33,9 @@ function Suggested() {
                     setSuggestedUsers(snapshot.docs.map((doc) => doc.data()));
                     console.log(snapshot.docs.map((doc) => doc.data()));
                 }
-            ),
-        []
-    );
+            );
+        }
+    }, []);
 
     return (
         <div className={`${theme} suggested__container`}>

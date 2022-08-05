@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAEA,AAAA,wBAAwB,CAAC;EACvB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,GAAG,EC6BK,IAAI;ED5BZ,MAAM,EAAE,IAAI;CACb",
+    "mappings": "AAEA,AAAA,wBAAwB,CAAC;EACvB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,GAAG,EC8BK,IAAI;ED7BZ,MAAM,EAAE,IAAI;CACb",
     "sources": [
         "RightSidebar.scss",
         "../../Utilities/_variables.scss"
