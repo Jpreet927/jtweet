@@ -6,29 +6,24 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: rgba(81, 155, 225, 0.2);
 }
 
 .replybox__container ::-webkit-input-placeholder {
-  color: #5379a6;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
 }
 
 .replybox__container :-ms-input-placeholder {
-  color: #5379a6;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
 }
 
 .replybox__container ::-ms-input-placeholder {
-  color: #5379a6;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
 }
 
 .replybox__container ::placeholder {
-  color: #5379a6;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
 }
@@ -124,7 +119,6 @@
 }
 
 .replybox__container .replybox__buttons .replybox__buttons-icons .replybox__buttons-container {
-  background-color: rgba(138, 180, 211, 0);
   border-radius: 50px;
   height: 40px;
   width: 40px;
@@ -140,12 +134,7 @@
 }
 
 .replybox__container .replybox__buttons .replybox__buttons-icons .replybox__buttons-container:hover {
-  background-color: rgba(138, 180, 211, 0.2);
   cursor: pointer;
-}
-
-.replybox__container .replybox__buttons .replybox__buttons-icons .replybox__buttons-container .replybox__icon {
-  color: #5379a6;
 }
 
 .replybox__container .replybox__buttons .replybox__buttons-reply {
@@ -158,7 +147,6 @@
 .replybox__container .replybox__buttons .replybox__buttons-reply button {
   padding: 6px 24px;
   border: none;
-  background-color: #47b8ff;
   border-radius: 100px;
   color: white;
   font-weight: 700;
@@ -175,9 +163,105 @@
           transform: translateY(-3px);
 }
 
-.replybox__container .replybox__buttons .replybox__buttons-reply #replybox__cancel {
+.light.replybox__container {
+  background: rgba(81, 155, 225, 0.2);
+}
+
+.light.replybox__container ::-webkit-input-placeholder {
+  color: #5379a6;
+}
+
+.light.replybox__container :-ms-input-placeholder {
+  color: #5379a6;
+}
+
+.light.replybox__container ::-ms-input-placeholder {
+  color: #5379a6;
+}
+
+.light.replybox__container ::placeholder {
+  color: #5379a6;
+}
+
+.light.replybox__container .replybox__buttons-container {
+  background-color: rgba(138, 180, 211, 0);
+}
+
+.light.replybox__container .replybox__buttons-container:hover {
+  background-color: rgba(138, 180, 211, 0.2);
+}
+
+.light.replybox__container .replybox__buttons-container .replybox__icon {
+  color: #5379a6;
+}
+
+.light.replybox__container .replybox__buttons-reply {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+}
+
+.light.replybox__container .replybox__buttons-reply button {
+  background-color: #47b8ff;
+}
+
+.light.replybox__container .replybox__buttons-reply #replybox__cancel {
   background-color: rgba(255, 255, 255, 0.666);
   border: 2px solid #47b8ff;
   color: #47b8ff;
+}
+
+.dark.replybox__container {
+  background: #0a1324;
+}
+
+.dark.replybox__container ::-webkit-input-placeholder {
+  color: #5379a6;
+}
+
+.dark.replybox__container :-ms-input-placeholder {
+  color: #5379a6;
+}
+
+.dark.replybox__container ::-ms-input-placeholder {
+  color: #5379a6;
+}
+
+.dark.replybox__container ::placeholder {
+  color: #5379a6;
+}
+
+.dark.replybox__container .replybox__buttons-container {
+  background-color: rgba(138, 180, 211, 0);
+}
+
+.dark.replybox__container .replybox__buttons-container:hover {
+  background-color: rgba(138, 180, 211, 0.2);
+}
+
+.dark.replybox__container .replybox__buttons-container .replybox__icon {
+  color: #5379a6;
+}
+
+.dark.replybox__container .replybox__buttons-reply {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+}
+
+.dark.replybox__container .replybox__buttons-reply button {
+  background-color: #47b8ff;
+}
+
+.dark.replybox__container .replybox__buttons-reply #replybox__cancel {
+  background-color: #192846;
+  border: 2px solid #47b8ff;
+  color: #47b8ff;
+}
+
+.dark.replybox__container textarea {
+  color: white;
 }
 /*# sourceMappingURL=ReplyBox.css.map */

@@ -3,9 +3,7 @@
 .replybox__container {
     display: flex;
     flex-direction: column;
-    background: $lightModeInputBG;
     ::placeholder {
-        color: $lightModeGrey;
         font-family: $sansSerifMain;
         font-size: 20px;
     }
@@ -40,8 +38,6 @@
 
         .replybox__image-preview-close {
             background-color: rgba(0, 0, 0, 0.6);
-            // backdrop-filter: blur(16px);
-            // padding: 12px;
             position: absolute;
             right: 12px;
             top: 12px;
@@ -75,16 +71,12 @@
         align-items: center;
         justify-content: space-between;
         padding: 6px 24px;
-        // background-color: $lightModeInputBG;
-        // backdrop-filter: blur(16px);
 
         .replybox__buttons-icons {
             display: flex;
             gap: 8px;
 
             .replybox__buttons-container {
-                background-color: rgba(138, 180, 211, 0);
-                // padding: 4px;
                 border-radius: 50px;
                 height: 40px;
                 width: 40px;
@@ -93,12 +85,7 @@
                 align-items: center;
 
                 &:hover {
-                    background-color: rgba(138, 180, 211, 0.2);
                     cursor: pointer;
-                }
-
-                .replybox__icon {
-                    color: $lightModeGrey;
                 }
             }
         }
@@ -110,8 +97,6 @@
             button {
                 padding: 6px 24px;
                 border: none;
-                // background-image: linear-gradient(to right, $mainBlue, $secondaryBlue);
-                background-color: $mainBlue;
                 border-radius: 100px;
                 color: white;
                 font-weight: 700;
@@ -123,12 +108,78 @@
                     transform: translateY(-3px);
                 }
             }
-
-            #replybox__cancel {
-                background-color: rgba(255, 255, 255, 0.666);
-                border: 2px solid $mainBlue;
-                color: $mainBlue;
-            }
         }
+    }
+}
+
+.light.replybox__container {
+    background: $lightModeInputBG;
+    ::placeholder {
+        color: $lightModeGrey;
+    }
+
+    .replybox__buttons-container {
+        background-color: rgba(138, 180, 211, 0);
+
+        &:hover {
+            background-color: rgba(138, 180, 211, 0.2);
+        }
+
+        .replybox__icon {
+            color: $lightModeGrey;
+        }
+    }
+
+    .replybox__buttons-reply {
+        display: flex;
+        gap: 12px;
+
+        button {
+            background-color: $mainBlue;
+        }
+
+        #replybox__cancel {
+            background-color: rgba(255, 255, 255, 0.666);
+            border: 2px solid $mainBlue;
+            color: $mainBlue;
+        }
+    }
+}
+
+.dark.replybox__container {
+    background: $darkModeGrey;
+    ::placeholder {
+        color: $lightModeGrey;
+    }
+
+    .replybox__buttons-container {
+        background-color: rgba(138, 180, 211, 0);
+
+        &:hover {
+            background-color: rgba(138, 180, 211, 0.2);
+        }
+
+        .replybox__icon {
+            color: $lightModeGrey;
+        }
+    }
+
+    .replybox__buttons-reply {
+        display: flex;
+        gap: 12px;
+
+        button {
+            background-color: $mainBlue;
+        }
+
+        #replybox__cancel {
+            background-color: #192846;
+            border: 2px solid $mainBlue;
+            color: $mainBlue;
+        }
+    }
+
+    textarea {
+        color: white;
     }
 }

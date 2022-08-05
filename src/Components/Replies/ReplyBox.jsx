@@ -10,6 +10,7 @@ import {
 } from "firebase/firestore";
 import { ref, uploadString, getDownloadURL } from "firebase/storage";
 import { useUserAuth } from "../../Context/UserAuthContext";
+import { useThemeContext } from "../../Context/ThemeContext";
 import { db, storage } from "../../Firebase/firebase";
 import AddPhotoAlternateOutlinedIcon from "@mui/icons-material/AddPhotoAlternateOutlined";
 import EmojiEmotionsOutlinedIcon from "@mui/icons-material/EmojiEmotionsOutlined";
@@ -22,6 +23,7 @@ import "react-toastify/dist/ReactToastify.css";
 function ReplyBox(props) {
     const { setReplyBoxOpen, replyingTo } = props;
     const { user } = useUserAuth();
+    const { theme } = useThemeContext();
     const [currentReply, setCurrentReply] = useState("");
     const [currentReplyImage, setCurrentReplyImage] = useState(null);
     const imagePickerRef = useRef(null);
@@ -120,7 +122,10 @@ function ReplyBox(props) {
     };
 
     return (
-        <div className="replybox__container">
+        <div
+            className={`${theme} replybox__container`}
+            onClick={(e) => e.stopPropagation()}
+        >
             <ToastContainer
                 position="bottom-center"
                 autoClose={5000}
