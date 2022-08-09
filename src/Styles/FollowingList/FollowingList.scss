@@ -1,0 +1,42 @@
+@import "../../Utilities/variables";
+
+.followinglist__container {
+    font-family: $sansSerifMain;
+    display: flex;
+    flex-direction: column;
+
+    .followinglist__header {
+        display: flex;
+        justify-content: space-between;
+        padding: 36px;
+
+        h3 {
+            font-size: 1.4em;
+        }
+
+        .followinglist__icon {
+            transition: transform 0.2s ease;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .followinglist__items {
+        display: flex;
+        flex-direction: column;
+        // gap: 16px;
+        // padding: 36px;
+        min-height: 100%;
+        background-color: $darkModeNavbar;
+        min-height: 500px;
+        max-height: 500px;
+    }
+}
+
+.dark.followinglist__container {
+    background-color: $darkModeTweet;
+    color: $darkModeText;
+}

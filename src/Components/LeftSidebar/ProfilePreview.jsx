@@ -13,26 +13,46 @@ function ProfilePreview() {
     const [followingOpen, setFollowingOpen] = useState(false);
     const [followersOpen, setFollowersOpen] = useState(false);
 
+    const handleFollowersOpen = () => {
+        setFollowersOpen(true);
+        setFollowingOpen(false);
+    };
+
+    const handleFollowingOpen = () => {
+        setFollowingOpen(true);
+        setFollowersOpen(false);
+    };
+
     return (
-        <div className={`${theme} profilepreview__container`}>
-            <div className="profilepreview__banner">
-                {<img src={userDoc?.banner} alt="" /> || <Skeleton />}
-            </div>
-            <div className="profilepreview__avatar">
-                <Avatar dimension="70px" />
-            </div>
-            <div className="profilepreview__user-info">
-                <h3>{userDoc?.name}</h3>
-                <p>@{userDoc?.username}</p>
-            </div>
-            <div className="profilepreview__details">
-                <div className="profilepreview__details-section">
-                    <h3>Tweets</h3>
-                    <p>{userDoc?.tweets?.length}</p>
+        <>
+            <div className={`${theme} profilepreview__container`}>
+                <div className="profilepreview__banner">
+                    {<img src={userDoc?.banner} alt="" /> || <Skeleton />}
                 </div>
-                <div className="profilepreview__details-section">
-                    <h3 onClick={() => setFollowingOpen(true)}>Following</h3>
-                    <p>{userDoc?.following?.length}</p>
+                <div className="profilepreview__avatar">
+                    <Avatar dimension="70px" />
+                </div>
+                <div className="profilepreview__user-info">
+                    <h3>{userDoc?.name}</h3>
+                    <p>@{userDoc?.username}</p>
+                </div>
+                <div className="profilepreview__details">
+                    <div className="profilepreview__details-section">
+                        <h3>Tweets</h3>
+                        <p>{userDoc?.tweets?.length}</p>
+                    </div>
+                    <div className="profilepreview__details-section">
+                        <h3 onClick={handleFollowingOpen}>Following</h3>
+                        <p>{userDoc?.following?.length}</p>
+                    </div>
+                    <div className="profilepreview__details-section">
+                        <h3 onClick={handleFollowersOpen}>Followers</h3>
+                        <p>{userDoc?.followers?.length}</p>
+                    </div>
+                </div>
+            </div>
+            {followingOpen || followersOpen ? (
+                <div className={`${theme} profilepreview__modals`}>
                     {followingOpen && (
                         <div>
                             <FollowingList
@@ -40,18 +60,16 @@ function ProfilePreview() {
                             />
                         </div>
                     )}
-                </div>
-                <div className="profilepreview__details-section">
-                    <h3 onClick={() => setFollowersOpen(true)}>Followers</h3>
-                    <p>{userDoc?.followers?.length}</p>
                     {followersOpen && (
                         <div>
                             <FollowerList setFollowersOpen={setFollowersOpen} />
                         </div>
                     )}
                 </div>
-            </div>
-        </div>
+            ) : (
+                ""
+            )}
+        </>
     );
 }
 

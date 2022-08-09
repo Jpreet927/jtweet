@@ -1,0 +1,57 @@
+.followinglist__container {
+  font-family: "Roboto", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.followinglist__container .followinglist__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 36px;
+}
+
+.followinglist__container .followinglist__header h3 {
+  font-size: 1.4em;
+}
+
+.followinglist__container .followinglist__header .followinglist__icon {
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.followinglist__container .followinglist__header .followinglist__icon:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.followinglist__container .followinglist__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100%;
+  background-color: rgba(9, 18, 37, 0.75);
+  min-height: 500px;
+  max-height: 500px;
+}
+
+.dark.followinglist__container {
+  background-color: rgba(25, 40, 70, 0.621);
+  color: #e0e7f0;
+}
+/*# sourceMappingURL=FollowingList.css.map */

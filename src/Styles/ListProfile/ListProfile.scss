@@ -1,0 +1,62 @@
+@import "../../Utilities/variables";
+
+.listprofile__container {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 36px;
+    transition: background-color 0.2s ease;
+
+    .listprofile__details {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+
+        .listprofile__avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: $lightModeShadow;
+
+            img {
+                min-width: 100%;
+                min-height: 100%;
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .listprofile__details-name {
+            display: flex;
+            flex-direction: column;
+
+            h3 {
+                font-size: 1em;
+            }
+
+            p {
+                font-size: 0.8em;
+            }
+        }
+    }
+}
+
+.dark.listprofile__container {
+    border-bottom: 1px solid $darkModeTweet;
+
+    &:hover {
+        background-color: $darkModeTweet;
+    }
+
+    h3 {
+        color: $darkModeText;
+    }
+
+    p,
+    .listprofile__icon {
+        color: $darkModeSubtext;
+    }
+}

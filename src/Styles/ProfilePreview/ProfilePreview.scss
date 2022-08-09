@@ -63,6 +63,19 @@
     }
 }
 
+.profilepreview__modals {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 40;
+    backdrop-filter: blur(24px);
+}
+
 .light.profilepreview__container {
     background-color: $lightModeWhite90;
 
@@ -86,4 +99,8 @@
             color: $darkModeSubtext;
         }
     }
+}
+
+.dark.profilepreview__modals {
+    background-color: rgba(0, 0, 0, 0.237);
 }
