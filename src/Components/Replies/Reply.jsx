@@ -15,6 +15,7 @@ import {
     limit,
 } from "firebase/firestore";
 import { useUserAuth } from "../../Context/UserAuthContext";
+import { useThemeContext } from "../../Context/ThemeContext";
 import { db } from "../../Firebase/firebase";
 import TweetOptions from "../Tweets/TweetOptions";
 import ReplyIcon from "@mui/icons-material/Reply";
@@ -26,6 +27,7 @@ import "../../Styles/Reply/Reply.css";
 function Reply(props) {
     const { reply } = props;
     const { user } = useUserAuth();
+    const { theme } = useThemeContext();
     const [authorDoc, setAuthorDoc] = useState({});
     const [validImage, setValidImage] = useState(true);
     const [liked, setLiked] = useState(false);
@@ -33,75 +35,80 @@ function Reply(props) {
     const [replies, setReplies] = useState([]);
     const [optionsOpen, setOptionsOpen] = useState(false);
     const [error, setError] = useState("");
-    const generalReplyDocRef = doc(db, "replies", reply.uid);
+    // const generalReplyDocRef = doc(db, "replies", reply?.uid);
 
     // get reply author data
     useEffect(() => {
-        const unsubscribe = async () => {
-            const authorRef = doc(db, "users", reply.author);
-            const document = await getDoc(authorRef);
-            setAuthorDoc(document.data());
-        };
+        if (reply) {
+            console.log(reply);
+            const unsubscribe = async () => {
+                const authorRef = doc(db, "users", reply.author);
+                const document = await getDoc(authorRef);
+                setAuthorDoc(document.data());
+            };
 
-        return () => unsubscribe();
-    }, []);
+            return () => unsubscribe();
+        }
+    }, [reply]);
 
     // check if tweet has an image, set state
     useEffect(() => {
-        if (reply.image === null || reply.image === "") {
-            setValidImage(false);
-        }
-    }, []);
-
-    // update likes array for tweet and change 'liked' state
-    const handleLike = async () => {
-        if (liked === false) {
-            try {
-                await updateDoc(generalReplyDocRef, {
-                    likes: arrayUnion(user.uid),
-                });
-
-                setLiked(true);
-            } catch (error) {
-                setError(error.message);
-            }
-        } else {
-            try {
-                await updateDoc(generalReplyDocRef, {
-                    likes: arrayRemove(user.uid),
-                });
-
-                setLiked(false);
-            } catch (error) {
-                setError(error.message);
+        if (reply) {
+            if (reply.image === null || reply.image === "") {
+                setValidImage(false);
             }
         }
-    };
+    }, [reply]);
 
-    // update dislikes array for tweet and change 'disliked' state
-    const handleDislike = async () => {
-        if (disliked === false) {
-            try {
-                await updateDoc(generalReplyDocRef, {
-                    dislikes: arrayUnion(user.uid),
-                });
+    // // update likes array for tweet and change 'liked' state
+    // const handleLike = async () => {
+    //     if (liked === false) {
+    //         try {
+    //             await updateDoc(generalReplyDocRef, {
+    //                 likes: arrayUnion(user.uid),
+    //             });
 
-                setDisliked(true);
-            } catch (error) {
-                setError(error.message);
-            }
-        } else {
-            try {
-                await updateDoc(generalReplyDocRef, {
-                    dislikes: arrayRemove(user.uid),
-                });
+    //             setLiked(true);
+    //         } catch (error) {
+    //             setError(error.message);
+    //         }
+    //     } else {
+    //         try {
+    //             await updateDoc(generalReplyDocRef, {
+    //                 likes: arrayRemove(user.uid),
+    //             });
 
-                setDisliked(false);
-            } catch (error) {
-                setError(error.message);
-            }
-        }
-    };
+    //             setLiked(false);
+    //         } catch (error) {
+    //             setError(error.message);
+    //         }
+    //     }
+    // };
+
+    // // update dislikes array for tweet and change 'disliked' state
+    // const handleDislike = async () => {
+    //     if (disliked === false) {
+    //         try {
+    //             await updateDoc(generalReplyDocRef, {
+    //                 dislikes: arrayUnion(user.uid),
+    //             });
+
+    //             setDisliked(true);
+    //         } catch (error) {
+    //             setError(error.message);
+    //         }
+    //     } else {
+    //         try {
+    //             await updateDoc(generalReplyDocRef, {
+    //                 dislikes: arrayRemove(user.uid),
+    //             });
+
+    //             setDisliked(false);
+    //         } catch (error) {
+    //             setError(error.message);
+    //         }
+    //     }
+    // };
 
     const handleReply = () => {};
 
@@ -118,7 +125,7 @@ function Reply(props) {
     };
 
     return (
-        <div className="reply__container">
+        <div className={`${theme} reply__container`}>
             {/* <replyOptions /> */}
             <div className="reply__details">
                 <div className="reply__details-avatar">

@@ -1,6 +1,5 @@
 .reply__container {
   font-family: "Roboto", sans-serif;
-  color: #5379a6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,7 +8,6 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0px;
-  background: rgba(81, 155, 225, 0.2);
   -webkit-backdrop-filter: blur(16px);
           backdrop-filter: blur(16px);
   position: relative;
@@ -172,5 +170,19 @@
 .reply__container .reply__interactions .reply__interactions-options #reply-options:hover {
   color: #47b8ff;
   cursor: pointer;
+}
+
+.light.reply__container {
+  color: #5379a6;
+  background: rgba(81, 155, 225, 0.2);
+}
+
+.dark.reply__container {
+  color: #e0e7f0;
+  background: #0a1324;
+}
+
+.dark.reply__container .reply__message p {
+  color: #e0e7f0;
 }
 /*# sourceMappingURL=Reply.css.map */

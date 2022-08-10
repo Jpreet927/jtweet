@@ -2,12 +2,10 @@
 
 .reply__container {
     font-family: $sansSerifMain;
-    color: $lightModeGrey;
     //   padding: 36px;
     display: flex;
     flex-direction: column;
     gap: 0px;
-    background: $lightModeInputBG;
     backdrop-filter: blur(16px);
     position: relative;
 
@@ -151,6 +149,22 @@
                     cursor: pointer;
                 }
             }
+        }
+    }
+}
+
+.light.reply__container {
+    color: $lightModeGrey;
+    background: $lightModeInputBG;
+}
+
+.dark.reply__container {
+    color: $darkModeText;
+    background: $darkModeGrey;
+
+    .reply__message {
+        p {
+            color: $darkModeText;
         }
     }
 }

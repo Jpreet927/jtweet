@@ -11,12 +11,14 @@ import {
     orderBy,
 } from "firebase/firestore";
 import { db } from "../Firebase/firebase";
+import { useThemeContext } from "../Context/ThemeContext";
 import Navbar from "../Components/Navbar/Navbar";
 import FullTweet from "../Components/Tweets/FullTweet";
 import Reply from "../Components/Replies/Reply";
 import "../Styles/TweetPage/TweetPage.css";
 
 function TweetPage() {
+    const { theme } = useThemeContext();
     const location = useLocation();
     const params = useParams();
     const [tweet, setTweet] = useState({});
@@ -61,7 +63,7 @@ function TweetPage() {
     }, []);
 
     return (
-        <div className="tweet-page__container">
+        <div className={`${theme} tweet-page__container`}>
             <Navbar />
             <div className="tweet-page__main">
                 <div className="tweet-page__tweet-container">

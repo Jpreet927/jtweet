@@ -16,8 +16,10 @@ import { useUserAuth } from "../Context/UserAuthContext";
 import { useThemeContext } from "../Context/ThemeContext";
 import { db } from "../Firebase/firebase";
 import Navbar from "../Components/Navbar/Navbar";
-import "../Styles/UserPage/UserPage.css";
 import Tweet from "../Components/Tweets/Tweet";
+import FollowingList from "../Components/User/FollowingList";
+import FollowerList from "../Components/User/FollowerList";
+import "../Styles/UserPage/UserPage.css";
 
 function UserPage() {
     const params = useParams();
@@ -27,6 +29,8 @@ function UserPage() {
     const [userTweets, setUserTweets] = useState([]);
     const [isFollowing, setIsFollowing] = useState(false);
     const [following, setFollowing] = useState("Follow");
+    const [followingOpen, setFollowingOpen] = useState(false);
+    const [followersOpen, setFollowersOpen] = useState(false);
     const profileUserDocRef = doc(db, "users", params.id);
     const loggedUserDocRef = doc(db, "users", user.uid);
 
@@ -117,6 +121,26 @@ function UserPage() {
     return (
         <>
             <Navbar />
+            {followingOpen || followersOpen ? (
+                <div className={`${theme} profilepage__modals`}>
+                    {followingOpen && (
+                        <div>
+                            <FollowingList
+                                setFollowingOpenUserPage={setFollowingOpen}
+                            />
+                        </div>
+                    )}
+                    {followersOpen && (
+                        <div>
+                            <FollowerList
+                                setFollowersOpenUserPage={setFollowersOpen}
+                            />
+                        </div>
+                    )}
+                </div>
+            ) : (
+                ""
+            )}
             <div className={`${theme} userpage__container`}>
                 <div className="userpage__banner">
                     <img src={userProfile.banner} alt="" />

@@ -1,6 +1,90 @@
+.fulltweet__enlarged-image {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
+  z-index: 60;
+}
+
+.fulltweet__enlarged-image .fulltweet__enlarged-image-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fulltweet__enlarged-image .fulltweet__enlarged-image-container .fulltweet__icon-bg {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  z-index: 65;
+  padding: 12px;
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
+  -webkit-transition: background-color 0.2s ease, -webkit-transform 0.2s ease;
+  transition: background-color 0.2s ease, -webkit-transform 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.fulltweet__enlarged-image .fulltweet__enlarged-image-container .fulltweet__icon-bg:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  cursor: pointer;
+}
+
+.fulltweet__enlarged-image .fulltweet__enlarged-image-container .fulltweet__icon-bg .fulltweet__icon {
+  color: white;
+}
+
+.fulltweet__enlarged-image .fulltweet__enlarged-image-container img {
+  max-height: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.fulltweet__enlarged-image .fulltweet__enlarged-image-container img .fulltweet__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .fulltweet__container {
   font-family: "Roboto", sans-serif;
-  color: #5379a6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,15 +93,8 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 12px;
-  background: rgba(255, 255, 255, 0.5);
   -webkit-backdrop-filter: blur(16px);
           backdrop-filter: blur(16px);
-}
-
-.fulltweet__container h3,
-.fulltweet__container p,
-.fulltweet__container .fulltweet__button {
-  color: #5379a6;
 }
 
 .fulltweet__container .fulltweet__reply-box {
@@ -84,6 +161,10 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.fulltweet__container .fulltweet__image img:hover {
+  cursor: pointer;
 }
 
 .fulltweet__container .fulltweet__interactions {
@@ -162,5 +243,31 @@
 .fulltweet__container .fulltweet__interactions .fulltweet__interactions-options #tweet-options:hover {
   color: #47b8ff;
   cursor: pointer;
+}
+
+.light.fulltweet__container {
+  color: #5379a6;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.light.fulltweet__container h3,
+.light.fulltweet__container p,
+.light.fulltweet__container .fulltweet__button {
+  color: #5379a6;
+}
+
+.dark.fulltweet__container {
+  color: #e0e7f0;
+  background: #0a1324;
+}
+
+.dark.fulltweet__container h3,
+.dark.fulltweet__container .fulltweet__message p {
+  color: #e0e7f0;
+}
+
+.dark.fulltweet__container p,
+.dark.fulltweet__container .fulltweet__button {
+  color: #788ea8;
 }
 /*# sourceMappingURL=FullTweet.css.map */

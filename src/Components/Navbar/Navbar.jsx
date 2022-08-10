@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { collection, getDocs, onSnapshot, query } from "firebase/firestore";
 import { db } from "../../Firebase/firebase";
+import { useUserAuth } from "../../Context/UserAuthContext";
 import { useThemeContext } from "../../Context/ThemeContext";
 import Avatar from "../Misc/Avatar";
 import UserDropdown from "./UserDropdown";
@@ -10,6 +11,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import "../../Styles/Navbar/Navbar.css";
 
 function Navbar() {
+    const { userDoc } = useUserAuth();
     const { theme } = useThemeContext();
     const [dropdownVisibility, setDropdownVisibility] = useState(false);
     const [searchResults, setSearchResults] = useState("");
@@ -42,7 +44,7 @@ function Navbar() {
                     <Link to="/messages" style={{ textDecoration: "none" }}>
                         <li>Messages</li>
                     </Link>
-                    <Link to="/profile" style={{ textDecoration: "none" }}>
+                    <Link to={`/profile`} style={{ textDecoration: "none" }}>
                         <li>Profile</li>
                     </Link>
                 </ul>

@@ -12,6 +12,7 @@ import {
     query,
 } from "firebase/firestore";
 import { useUserAuth } from "../../Context/UserAuthContext";
+import { useThemeContext } from "../../Context/ThemeContext";
 import { db } from "../../Firebase/firebase";
 import TweetOptions from "./TweetOptions";
 import ReplyBox from "../Replies/ReplyBox";
@@ -19,11 +20,13 @@ import ReplyIcon from "@mui/icons-material/Reply";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import HeartBrokenIcon from "@mui/icons-material/HeartBroken";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import CloseIcon from "@mui/icons-material/Close";
 import "../../Styles/FullTweet/FullTweet.css";
 
 function FullTweet(props) {
     const { tweet, author, tweetid } = props;
     const { user } = useUserAuth();
+    const { theme } = useThemeContext();
     // const [tweet, setTweet] = useState({});
     const [validImage, setValidImage] = useState(true);
     const [liked, setLiked] = useState(false);
@@ -33,6 +36,7 @@ function FullTweet(props) {
     const [replies, setReplies] = useState(0);
     const [optionsOpen, setOptionsOpen] = useState(false);
     const [replyBoxOpen, setReplyBoxOpen] = useState(false);
+    const [fullImageOpen, setFullImageOpen] = useState(false);
     const [error, setError] = useState("");
     const generalTweetDocRef = doc(db, "all-tweets", tweetid);
     // const userTweetDocRef = doc(db, "tweets", author, "tweets", tweetid);
@@ -42,7 +46,7 @@ function FullTweet(props) {
         if (tweet.image === null || tweet.image === "") {
             setValidImage(false);
         }
-    }, [tweet]);
+    }, []);
 
     const handleLike = async () => {
         if (liked === false) {
@@ -50,10 +54,6 @@ function FullTweet(props) {
                 await updateDoc(generalTweetDocRef, {
                     likes: arrayUnion(user.uid),
                 });
-
-                // await updateDoc(userTweetDocRef, {
-                //     likes: arrayUnion(user.uid),
-                // });
 
                 setLiked(true);
             } catch (error) {
@@ -64,10 +64,6 @@ function FullTweet(props) {
                 await updateDoc(generalTweetDocRef, {
                     likes: arrayRemove(user.uid),
                 });
-
-                // await updateDoc(userTweetDocRef, {
-                //     likes: arrayRemove(user.uid),
-                // });
 
                 setLiked(false);
             } catch (error) {
@@ -84,10 +80,6 @@ function FullTweet(props) {
                     dislikes: arrayUnion(user.uid),
                 });
 
-                // await updateDoc(userTweetDocRef, {
-                //     dislikes: arrayUnion(user.uid),
-                // });
-
                 setDisliked(true);
             } catch (error) {
                 setError(error.message);
@@ -97,10 +89,6 @@ function FullTweet(props) {
                 await updateDoc(generalTweetDocRef, {
                     dislikes: arrayRemove(user.uid),
                 });
-
-                // await updateDoc(userTweetDocRef, {
-                //     dislikes: arrayRemove(user.uid),
-                // });
 
                 setDisliked(false);
             } catch (error) {
@@ -125,96 +113,114 @@ function FullTweet(props) {
     };
 
     return (
-        <div className="fulltweet__container">
-            {/* <TweetOptions /> */}
-            <div className="fulltweet__details">
-                <div className="fulltweet__details-user">
-                    <Link to={`/${tweet.author}`}>
-                        <div className="fulltweet__details-avatar">
-                            <img
-                                src={author.avatar}
-                                alt={`${author.name} avatar`}
+        <>
+            {fullImageOpen && (
+                <div className="fulltweet__enlarged-image">
+                    <div className="fulltweet__enlarged-image-container">
+                        <div className="fulltweet__icon-bg">
+                            <CloseIcon
+                                className="fulltweet__icon"
+                                onClick={() => setFullImageOpen(false)}
                             />
                         </div>
-                    </Link>
-                    <div className="fulltweet__details-user-info">
-                        <h3>{author.name}</h3>
-                        <p>{`@${author.username}`}</p>
+                        <img src={tweet.image} alt="" />
                     </div>
                 </div>
-                <div className="fulltweet__details-time">
-                    {/* <p>{tweet.timestamp.toDate().toDateString()}</p> */}
-                </div>
-            </div>
-            <div className="fulltweet__message">
-                <p>{tweet.message}</p>
-            </div>
-            {validImage && (
-                <div className="fulltweet__image">
-                    <img src={tweet.image} alt="" />
-                </div>
             )}
-            <div className="fulltweet__interactions">
-                {optionsOpen && (
-                    <div className="fulltweet__options-button">
-                        <TweetOptions
-                            handleDelete={handleDelete}
-                            author={tweet.author}
+            <div className={`${theme} fulltweet__container`}>
+                {/* <TweetOptions /> */}
+                <div className="fulltweet__details">
+                    <div className="fulltweet__details-user">
+                        <Link to={`/${tweet.author}`}>
+                            <div className="fulltweet__details-avatar">
+                                <img
+                                    src={author.avatar}
+                                    alt={`${author.name} avatar`}
+                                />
+                            </div>
+                        </Link>
+                        <div className="fulltweet__details-user-info">
+                            <h3>{author.name}</h3>
+                            <p>{`@${author.username}`}</p>
+                        </div>
+                    </div>
+                    <div className="fulltweet__details-time">
+                        <p>{tweet.timestamp.toDate().toDateString()}</p>
+                    </div>
+                </div>
+                <div className="fulltweet__message">
+                    <p>{tweet.message}</p>
+                </div>
+                {validImage && (
+                    <div
+                        className="fulltweet__image"
+                        onClick={() => setFullImageOpen(true)}
+                    >
+                        <img src={tweet.image} alt="" />
+                    </div>
+                )}
+                <div className="fulltweet__interactions">
+                    {optionsOpen && (
+                        <div className="fulltweet__options-button">
+                            <TweetOptions
+                                handleDelete={handleDelete}
+                                author={tweet.author}
+                            />
+                        </div>
+                    )}
+                    <div className="fulltweet__interactions-icons">
+                        <div className="fulltweet__interactions-icon-container">
+                            <ReplyIcon
+                                className="fulltweet__button"
+                                id="tweet-reply"
+                                onClick={() => handleReplyBox()}
+                            />
+                            <p>{tweet.replies?.length}</p>
+                        </div>
+                        <div className="fulltweet__interactions-icon-container">
+                            <FavoriteIcon
+                                className={
+                                    liked === true
+                                        ? "fulltweet__liked"
+                                        : "fulltweet__button"
+                                }
+                                id="tweet-like"
+                                onClick={() => handleLike()}
+                            />
+                            <p>{tweet.likes?.length}</p>
+                        </div>
+
+                        <div className="fulltweet__interactions-icon-container">
+                            <HeartBrokenIcon
+                                className={
+                                    disliked === true
+                                        ? "fulltweet__disliked"
+                                        : "fulltweet__button"
+                                }
+                                id="tweet-dislike"
+                                onClick={() => handleDislike()}
+                            />
+                            <p>{tweet.dislikes?.length}</p>
+                        </div>
+                    </div>
+                    <div className="fulltweet__interactions-options">
+                        <MoreHorizIcon
+                            className="fulltweet__button"
+                            id="tweet-options"
+                            onClick={() => setOptionsOpen(!optionsOpen)}
+                        />
+                    </div>
+                </div>
+                {replyBoxOpen && (
+                    <div className="fulltweet__reply-box">
+                        <ReplyBox
+                            setReplyBoxOpen={setReplyBoxOpen}
+                            replyingTo={tweet}
                         />
                     </div>
                 )}
-                <div className="fulltweet__interactions-icons">
-                    <div className="fulltweet__interactions-icon-container">
-                        <ReplyIcon
-                            className="fulltweet__button"
-                            id="tweet-reply"
-                            onClick={() => handleReplyBox()}
-                        />
-                        <p>{tweet.replies?.length}</p>
-                    </div>
-                    <div className="fulltweet__interactions-icon-container">
-                        <FavoriteIcon
-                            className={
-                                liked === true
-                                    ? "fulltweet__liked"
-                                    : "fulltweet__button"
-                            }
-                            id="tweet-like"
-                            onClick={() => handleLike()}
-                        />
-                        <p>{tweet.likes?.length}</p>
-                    </div>
-
-                    <div className="fulltweet__interactions-icon-container">
-                        <HeartBrokenIcon
-                            className={
-                                disliked === true
-                                    ? "fulltweet__disliked"
-                                    : "fulltweet__button"
-                            }
-                            id="tweet-dislike"
-                            onClick={() => handleDislike()}
-                        />
-                        <p>{tweet.dislikes?.length}</p>
-                    </div>
-                </div>
-                <div className="fulltweet__interactions-options">
-                    <MoreHorizIcon
-                        className="fulltweet__button"
-                        id="tweet-options"
-                        onClick={() => setOptionsOpen(!optionsOpen)}
-                    />
-                </div>
             </div>
-            {replyBoxOpen && (
-                <div className="fulltweet__reply-box">
-                    <ReplyBox
-                        setReplyBoxOpen={setReplyBoxOpen}
-                        replyingTo={tweet}
-                    />
-                </div>
-            )}
-        </div>
+        </>
     );
 }
 

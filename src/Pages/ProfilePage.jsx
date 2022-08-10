@@ -6,6 +6,8 @@ import Navbar from "../Components/Navbar/Navbar";
 import ProfileTweets from "../Components/Profile/ProfileTweets";
 import ProfileDetails from "../Components/Profile/ProfileDetails";
 import UpdateProfileModal from "../Components/Profile/UpdateProfileModal";
+import FollowingList from "../Components/User/FollowingList";
+import FollowerList from "../Components/User/FollowerList";
 import Avatar from "../Components/Misc/Avatar";
 import "../Styles/ProfilePage/ProfilePage.css";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -15,9 +17,10 @@ function ProfilePage() {
     const { theme } = useThemeContext();
     const [updateModalOpen, setUpdateModalOpen] = useState(false);
     const [loading, setLoading] = useState(true);
+    const [followingOpen, setFollowingOpen] = useState(false);
+    const [followersOpen, setFollowersOpen] = useState(false);
 
     useEffect(() => {
-        console.log(userDoc);
         setLoading(false);
     }, []);
 
@@ -30,6 +33,26 @@ function ProfilePage() {
                         setUpdateModalOpen={setUpdateModalOpen}
                     />
                 </div>
+            )}
+            {followingOpen || followersOpen ? (
+                <div className={`${theme} profilepage__modals`}>
+                    {followingOpen && (
+                        <div>
+                            <FollowingList
+                                setFollowingOpenProfilePage={setFollowingOpen}
+                            />
+                        </div>
+                    )}
+                    {followersOpen && (
+                        <div>
+                            <FollowerList
+                                setFollowersOpenProfilePage={setFollowersOpen}
+                            />
+                        </div>
+                    )}
+                </div>
+            ) : (
+                ""
             )}
             <div className={`${theme} profilepage__container`}>
                 <div className="profilepage__banner">

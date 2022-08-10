@@ -8,10 +8,20 @@ import CloseIcon from "@mui/icons-material/Close";
 import "../../Styles/FollowingList/FollowingList.css";
 
 function FollowingList(props) {
-    const { setFollowingOpen } = props;
+    const {
+        setFollowingOpen,
+        setFollowingOpenProfilePage,
+        setFollowingOpenUserPage,
+    } = props;
     const { userDoc } = useUserAuth();
     const { theme } = useThemeContext();
     const [following, setFollowing] = useState([]);
+
+    const handleClose = () => {
+        setFollowingOpen(false);
+        setFollowingOpenProfilePage(false);
+        setFollowingOpenUserPage(false);
+    };
 
     useEffect(() => {
         if (userDoc) {
@@ -33,7 +43,7 @@ function FollowingList(props) {
                 <h3>Following</h3>
                 <CloseIcon
                     className="followinglist__icon"
-                    onClick={() => setFollowingOpen(false)}
+                    onClick={handleClose}
                 />
             </div>
             <div className="followinglist__items">

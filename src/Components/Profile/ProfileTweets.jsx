@@ -17,8 +17,8 @@ function ProfileTweets() {
     const { user, userDoc } = useUserAuth();
     const [profileTweets, setProfileTweets] = useState([]);
 
-    useEffect(
-        () =>
+    useEffect(() => {
+        if (user) {
             onSnapshot(
                 query(
                     collection(db, "all-tweets"),
@@ -33,9 +33,9 @@ function ProfileTweets() {
                         }))
                     );
                 }
-            ),
-        []
-    );
+            );
+        }
+    }, []);
 
     return (
         <div className="profiletweets__container">
