@@ -33,12 +33,14 @@
             display: flex;
             flex-direction: column;
             gap: 6px;
+            width: 100%;
             // align-items: flex-start;
             // text-align: left;
 
             .reply__details-user {
                 display: flex;
                 align-items: center;
+                justify-content: space-between;
                 gap: 16px;
 
                 .reply__details-user-info {
@@ -161,10 +163,17 @@
 .dark.reply__container {
     color: $darkModeText;
     background: $darkModeGrey;
+    border-bottom: 1px solid $darkModeGrey50;
 
     .reply__message {
         p {
             color: $darkModeText;
+        }
+    }
+
+    .reply__details-user {
+        p {
+            color: $darkModeSubtext;
         }
     }
 }

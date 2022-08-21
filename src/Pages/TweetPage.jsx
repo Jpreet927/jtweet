@@ -32,47 +32,46 @@ function TweetPage() {
         () =>
             onSnapshot(query(doc(db, "all-tweets", params.id)), (snapshot) => {
                 setTweet(snapshot.data());
-                console.log("snapshot:", snapshot.data());
             }),
         []
     );
 
     useEffect(() => {
-        console.log("tweet from useeffect:", tweet);
-    }, [tweet]);
-
-    useEffect(() => {
         const unsubscribe = async () => {
-            if (tweet.replies && tweet.replies.length > 0) {
-                const repliesRef = collection(db, "replies");
+            if (Object.keys(tweet).length !== 0) {
                 const q = query(
-                    repliesRef,
-                    where("uid", "in", tweet.replies),
-                    orderBy("timestamp", "asc")
+                    collection(db, "replies"),
+                    where("replyto", "==", tweet.uid),
+                    orderBy("timestamp", "desc")
                 );
 
-                const repliesSnapshot = await getDocs(q);
-                const queryReplies = [];
-                repliesSnapshot.forEach((doc) => {
-                    queryReplies.push(doc.data());
+                const querySnapshot = await getDocs(q);
+                let repliesTemp = [];
+
+                querySnapshot.forEach((doc) => {
+                    repliesTemp.push(doc.data());
                 });
-                setReplies(queryReplies);
+
+                console.log("replies" + repliesTemp);
+                setReplies(repliesTemp);
             }
         };
+
         return () => unsubscribe();
-    }, []);
+    }, [tweet]);
 
     return (
         <div className={`${theme} tweet-page__container`}>
             <Navbar />
             <div className="tweet-page__main">
                 <div className="tweet-page__tweet-container">
-                    <FullTweet
-                        tweet={tweet}
-                        author={author}
-                        tweetid={params.id}
-                    />
-
+                    {tweet && (
+                        <FullTweet
+                            tweet={tweet}
+                            author={author}
+                            tweetid={params.id}
+                        />
+                    )}
                     <div className="tweet-page__replies-container">
                         {replies.map((reply) => (
                             <Reply key={reply.uid} reply={reply} />

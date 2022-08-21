@@ -35,7 +35,6 @@ function Reply(props) {
     const [replies, setReplies] = useState([]);
     const [optionsOpen, setOptionsOpen] = useState(false);
     const [error, setError] = useState("");
-    // const generalReplyDocRef = doc(db, "replies", reply?.uid);
 
     // get reply author data
     useEffect(() => {
@@ -51,7 +50,6 @@ function Reply(props) {
         }
     }, [reply]);
 
-    // check if tweet has an image, set state
     useEffect(() => {
         if (reply) {
             if (reply.image === null || reply.image === "") {
@@ -141,7 +139,7 @@ function Reply(props) {
                             <p>{`@${authorDoc.username}`}</p>
                         </div>
                         <div className="reply__details-time">
-                            {/* <p>{reply.timestamp.toDate().toDateString()}</p> */}
+                            <p>{reply.timestamp.toDate().toDateString()}</p>
                         </div>
                     </div>
                     <div className="reply__message">

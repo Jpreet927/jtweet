@@ -258,7 +258,7 @@
 
 .dark.fulltweet__container {
   color: #e0e7f0;
-  background: #0a1324;
+  background: rgba(25, 40, 70, 0.621);
 }
 
 .dark.fulltweet__container h3,

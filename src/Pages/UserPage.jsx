@@ -39,7 +39,6 @@ function UserPage() {
         () =>
             onSnapshot(query(doc(db, "users", params.id)), (snapshot) => {
                 setUserProfile(snapshot.data());
-                console.log("snapshot:", snapshot.data());
             }),
         []
     );

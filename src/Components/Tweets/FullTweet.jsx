@@ -46,7 +46,7 @@ function FullTweet(props) {
         if (tweet.image === null || tweet.image === "") {
             setValidImage(false);
         }
-    }, []);
+    }, [tweet]);
 
     const handleLike = async () => {
         if (liked === false) {
@@ -105,7 +105,6 @@ function FullTweet(props) {
         if (user.uid == tweet.author) {
             try {
                 await deleteDoc(generalTweetDocRef);
-                // await deleteDoc(userTweetDocRef);
             } catch (error) {
                 setError(error.message);
             }
@@ -123,7 +122,7 @@ function FullTweet(props) {
                                 onClick={() => setFullImageOpen(false)}
                             />
                         </div>
-                        <img src={tweet.image} alt="" />
+                        <img src={tweet?.image} alt="" />
                     </div>
                 </div>
             )}
@@ -145,18 +144,18 @@ function FullTweet(props) {
                         </div>
                     </div>
                     <div className="fulltweet__details-time">
-                        <p>{tweet.timestamp.toDate().toDateString()}</p>
+                        <p>{tweet?.timestamp?.toDate().toDateString()}</p>
                     </div>
                 </div>
                 <div className="fulltweet__message">
-                    <p>{tweet.message}</p>
+                    <p>{tweet?.message}</p>
                 </div>
                 {validImage && (
                     <div
                         className="fulltweet__image"
                         onClick={() => setFullImageOpen(true)}
                     >
-                        <img src={tweet.image} alt="" />
+                        <img src={tweet?.image} alt="" />
                     </div>
                 )}
                 <div className="fulltweet__interactions">
@@ -164,7 +163,7 @@ function FullTweet(props) {
                         <div className="fulltweet__options-button">
                             <TweetOptions
                                 handleDelete={handleDelete}
-                                author={tweet.author}
+                                author={tweet?.author}
                             />
                         </div>
                     )}
@@ -175,7 +174,7 @@ function FullTweet(props) {
                                 id="tweet-reply"
                                 onClick={() => handleReplyBox()}
                             />
-                            <p>{tweet.replies?.length}</p>
+                            <p>{tweet?.replies?.length}</p>
                         </div>
                         <div className="fulltweet__interactions-icon-container">
                             <FavoriteIcon
@@ -187,7 +186,7 @@ function FullTweet(props) {
                                 id="tweet-like"
                                 onClick={() => handleLike()}
                             />
-                            <p>{tweet.likes?.length}</p>
+                            <p>{tweet?.likes?.length}</p>
                         </div>
 
                         <div className="fulltweet__interactions-icon-container">
@@ -200,7 +199,7 @@ function FullTweet(props) {
                                 id="tweet-dislike"
                                 onClick={() => handleDislike()}
                             />
-                            <p>{tweet.dislikes?.length}</p>
+                            <p>{tweet?.dislikes?.length}</p>
                         </div>
                     </div>
                     <div className="fulltweet__interactions-options">
