@@ -50,6 +50,18 @@
   width: 100%;
 }
 
+@media only screen and (max-width: 1366px) {
+  .profiledetails__container {
+    width: 25%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .profiledetails__container {
+    display: none;
+  }
+}
+
 .light.profiledetails__container {
   color: #5379a6;
 }

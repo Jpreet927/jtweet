@@ -66,6 +66,9 @@ function ProfilePage() {
                     <div className="profilepage__avatar">
                         <Avatar dimension={"250px"} />
                     </div>
+                    <div className="profilepage__avatar-small">
+                        <Avatar dimension={"150px"} />
+                    </div>
                     <div className="profilepage__button-container">
                         <button onClick={() => setUpdateModalOpen(true)}>
                             Edit Profile

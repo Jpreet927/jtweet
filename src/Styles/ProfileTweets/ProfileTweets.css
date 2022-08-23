@@ -9,4 +9,16 @@
   gap: 32px;
   width: 50%;
 }
+
+@media only screen and (max-width: 1366px) {
+  .profiletweets__container {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .profiletweets__container {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=ProfileTweets.css.map */

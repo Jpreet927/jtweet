@@ -26,23 +26,19 @@
 }
 
 .profilepage__container .profilepage__banner {
+  min-height: 300px;
   max-height: 550px;
   width: 100%;
   overflow: hidden;
-  -o-object-fit: cover;
-     object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .profilepage__container .profilepage__banner img {
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .profilepage__container .profilepage__avatar-button-container {
@@ -56,9 +52,14 @@
   height: 50px;
 }
 
-.profilepage__container .profilepage__avatar-button-container .profilepage__avatar {
+.profilepage__container .profilepage__avatar-button-container .profilepage__avatar,
+.profilepage__container .profilepage__avatar-button-container .profilepage__avatar-small {
   -webkit-transform: translateY(-250%);
           transform: translateY(-250%);
+}
+
+.profilepage__container .profilepage__avatar-button-container .profilepage__avatar-small {
+  display: none;
 }
 
 .profilepage__container .profilepage__avatar-button-container .profilepage__button-container button {
@@ -91,8 +92,22 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 32px;
-  padding: 24px 12.5% 120px;
+  gap: 64px;
+  padding: 36px 12.5% 120px;
+}
+
+@media only screen and (max-width: 768px) {
+  .profilepage__container .profilepage__content {
+    padding: 72px 12.5% 120px;
+  }
+  .profilepage__container .profilepage__avatar-button-container .profilepage__avatar-small {
+    display: block;
+    -webkit-transform: translateY(-150%);
+            transform: translateY(-150%);
+  }
+  .profilepage__container .profilepage__avatar-button-container .profilepage__avatar {
+    display: none;
+  }
 }
 
 .light.profilepage__container {

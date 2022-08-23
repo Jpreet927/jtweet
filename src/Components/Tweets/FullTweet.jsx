@@ -42,7 +42,6 @@ function FullTweet(props) {
     // const userTweetDocRef = doc(db, "tweets", author, "tweets", tweetid);
 
     useEffect(() => {
-        console.log("tweet from fulltweet:", tweet);
         if (tweet.image === null || tweet.image === "") {
             setValidImage(false);
         }

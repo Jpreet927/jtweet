@@ -24,8 +24,6 @@ function LoginModal() {
                 console.log(userDocSnapshot.data());
                 setUserDoc(userDocSnapshot.data());
             }
-
-            // console.log(user);
             navigate("/home");
             setError("");
         } catch (err) {

@@ -8,18 +8,11 @@ function Avatar(props) {
     const { user, userDoc } = useUserAuth();
     const { theme } = useThemeContext();
 
-    // useEffect(() => {
-    //     console.log("UserDoc from Avatar:", userDoc);
-    //     console.log("User Object from Avatar:", user);
-    // }, [userDoc, user]);
-
     const avatarStyle = {
         minWidth: dimension,
         minHeight: dimension,
         width: dimension,
         height: dimension,
-        // maxWidth: dimension,
-        // maxHeight: dimension,
     };
 
     return (

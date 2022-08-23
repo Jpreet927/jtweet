@@ -39,7 +39,6 @@ function Reply(props) {
     // get reply author data
     useEffect(() => {
         if (reply) {
-            console.log(reply);
             const unsubscribe = async () => {
                 const authorRef = doc(db, "users", reply.author);
                 const document = await getDoc(authorRef);

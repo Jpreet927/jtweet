@@ -24,19 +24,36 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        ul {
-            display: flex;
-            gap: 60px;
 
-            li {
-                list-style: none;
-                font-family: $sansSerifMain;
-                font-weight: 500;
+        .navbar__mobile {
+            display: none;
+            justify-content: space-between;
+
+            .navbar__mobile-icon {
                 transition: color 0.2s ease;
 
                 &:hover {
                     cursor: pointer;
                     color: $mainBlue;
+                }
+            }
+        }
+
+        .navbar__desktop {
+            ul {
+                display: flex;
+                gap: 60px;
+
+                li {
+                    list-style: none;
+                    font-family: $sansSerifMain;
+                    font-weight: 500;
+                    transition: color 0.2s ease;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: $mainBlue;
+                    }
                 }
             }
         }
@@ -89,12 +106,39 @@
             box-shadow: $lightModeShadow;
         }
     }
+
+    @media only screen and (max-width: $desktop) {
+        .navbar__search-avatar {
+            .navbar__search {
+                display: none;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $tablet) {
+        padding: 18px 48px;
+        nav {
+            .navbar__mobile {
+                display: flex;
+                gap: 60px;
+            }
+
+            .navbar__desktop {
+                display: none;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $phone) {
+        padding: 18px;
+    }
 }
 
 .light.navbar__container {
     background-color: $lightModeWhite90;
 
-    li {
+    li,
+    .navbar__mobile-icon {
         color: $lightModeGrey;
     }
 
@@ -110,7 +154,8 @@
 .dark.navbar__container {
     background-color: $darkModeNavbar;
 
-    li {
+    li,
+    .navbar__mobile-icon {
         color: $darkModeText;
     }
 

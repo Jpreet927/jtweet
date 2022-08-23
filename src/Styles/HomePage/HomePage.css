@@ -39,6 +39,45 @@
   height: 100%;
 }
 
+@media only screen and (max-width: 1366px) {
+  .home__container .home__main .home__right-section {
+    display: none;
+  }
+  .home__container .home__main .home__left-section {
+    max-width: 40%;
+    -webkit-box-flex: 40%;
+        -ms-flex: 40%;
+            flex: 40%;
+  }
+  .home__container .home__main .home__middle-section {
+    max-width: 60%;
+    -webkit-box-flex: 60%;
+        -ms-flex: 60%;
+            flex: 60%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home__container .home__main {
+    padding: 150px 48px 80px;
+  }
+  .home__container .home__main .home__left-section {
+    display: none;
+  }
+  .home__container .home__main .home__middle-section {
+    max-width: 100%;
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .home__container .home__main {
+    padding: 150px 0px 0px;
+  }
+}
+
 .light.home__container {
   background-image: url("../../Assets/Images/Light-BG-2.jpg");
 }

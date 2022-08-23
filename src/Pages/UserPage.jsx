@@ -146,7 +146,6 @@ function UserPage() {
                 </div>
                 <div className="userpage__avatar-follow-container">
                     <div className="userpage__avatar">
-                        {/* <Avatar dimension={"200px"} /> */}
                         <img src={userProfile.avatar} alt="" />
                     </div>
                     <div

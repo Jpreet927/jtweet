@@ -153,6 +153,21 @@
             }
         }
     }
+
+    @media only screen and (max-width: $phone) {
+        h3,
+        p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .reply__details {
+            .reply__details-time {
+                display: none;
+            }
+        }
+    }
 }
 
 .light.reply__container {

@@ -31,7 +31,6 @@ function Suggested() {
                 ),
                 (snapshot) => {
                     setSuggestedUsers(snapshot.docs.map((doc) => doc.data()));
-                    console.log(snapshot.docs.map((doc) => doc.data()));
                 }
             );
         }

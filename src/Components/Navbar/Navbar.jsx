@@ -8,6 +8,9 @@ import Avatar from "../Misc/Avatar";
 import UserDropdown from "./UserDropdown";
 import SearchItem from "./SearchItem";
 import SearchIcon from "@mui/icons-material/Search";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import "../../Styles/Navbar/Navbar.css";
 
 function Navbar() {
@@ -37,17 +40,33 @@ function Navbar() {
                 alt="Jtweet Logo"
             />
             <nav>
-                <ul>
+                <div className="navbar__mobile">
                     <Link to="/home" style={{ textDecoration: "none" }}>
-                        <li>Home</li>
+                        <HomeOutlinedIcon className="navbar__mobile-icon" />
                     </Link>
                     <Link to="/messages" style={{ textDecoration: "none" }}>
-                        <li>Messages</li>
+                        <EmailOutlinedIcon className="navbar__mobile-icon" />
                     </Link>
                     <Link to={`/profile`} style={{ textDecoration: "none" }}>
-                        <li>Profile</li>
+                        <PersonOutlineOutlinedIcon className="navbar__mobile-icon" />
                     </Link>
-                </ul>
+                </div>
+                <div className="navbar__desktop">
+                    <ul>
+                        <Link to="/home" style={{ textDecoration: "none" }}>
+                            <li>Home</li>
+                        </Link>
+                        <Link to="/messages" style={{ textDecoration: "none" }}>
+                            <li>Messages</li>
+                        </Link>
+                        <Link
+                            to={`/profile`}
+                            style={{ textDecoration: "none" }}
+                        >
+                            <li>Profile</li>
+                        </Link>
+                    </ul>
+                </div>
             </nav>
             <div className="navbar__search-avatar">
                 <div className="navbar__search">

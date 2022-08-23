@@ -176,6 +176,18 @@
   cursor: pointer;
 }
 
+@media only screen and (max-width: 360px) {
+  .reply__container h3,
+  .reply__container p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .reply__container .reply__details .reply__details-time {
+    display: none;
+  }
+}
+
 .light.reply__container {
   color: #5379a6;
   background: rgba(81, 155, 225, 0.2);

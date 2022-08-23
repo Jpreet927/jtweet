@@ -33,6 +33,14 @@
         border: none;
         width: 100%;
     }
+
+    @media only screen and (max-width: $desktop) {
+        width: 25%;
+    }
+
+    @media only screen and (max-width: $tablet) {
+        display: none;
+    }
 }
 
 .light.profiledetails__container {

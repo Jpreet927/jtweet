@@ -136,6 +136,21 @@
             }
         }
     }
+
+    @media only screen and (max-width: $phone) {
+        h3,
+        p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .tweet__details {
+            .tweet__details-time {
+                display: none;
+            }
+        }
+    }
 }
 
 .light.tweet__container {

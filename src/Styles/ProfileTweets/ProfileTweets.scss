@@ -5,4 +5,12 @@
     flex-direction: column;
     gap: $homeGap;
     width: 50%;
+
+    @media only screen and (max-width: $desktop) {
+        width: 75%;
+    }
+
+    @media only screen and (max-width: $tablet) {
+        width: 100%;
+    }
 }

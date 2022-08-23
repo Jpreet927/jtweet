@@ -33,6 +33,44 @@
             // background-color: rgba(255, 255, 255, 0.5);
         }
     }
+
+    @media only screen and (max-width: $desktop) {
+        .home__main {
+            .home__right-section {
+                display: none;
+            }
+
+            .home__left-section {
+                max-width: 40%;
+                flex: 40%;
+            }
+
+            .home__middle-section {
+                max-width: 60%;
+                flex: 60%;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $tablet) {
+        .home__main {
+            padding: 150px 48px 80px;
+            .home__left-section {
+                display: none;
+            }
+
+            .home__middle-section {
+                max-width: 100%;
+                flex: 100%;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $phone) {
+        .home__main {
+            padding: 150px 0px 0px;
+        }
+    }
 }
 
 .light.home__container {
