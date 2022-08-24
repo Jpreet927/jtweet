@@ -60,6 +60,23 @@
   font-size: 0.8em;
 }
 
+.light.listprofile__container {
+  border-bottom: 1px solid rgba(138, 180, 211, 0.2);
+}
+
+.light.listprofile__container:hover {
+  background-color: rgba(138, 180, 211, 0.2);
+}
+
+.light.listprofile__container h3 {
+  color: #5379a6;
+}
+
+.light.listprofile__container p,
+.light.listprofile__container .listprofile__icon {
+  color: #5379a6;
+}
+
 .dark.listprofile__container {
   border-bottom: 1px solid rgba(25, 40, 70, 0.621);
 }

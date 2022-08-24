@@ -44,6 +44,23 @@
     }
 }
 
+.light.listprofile__container {
+    border-bottom: 1px solid $lightModeGrey20;
+
+    &:hover {
+        background-color: $lightModeGrey20;
+    }
+
+    h3 {
+        color: $lightModeGrey;
+    }
+
+    p,
+    .listprofile__icon {
+        color: $lightModeGrey;
+    }
+}
+
 .dark.listprofile__container {
     border-bottom: 1px solid $darkModeTweet;
 

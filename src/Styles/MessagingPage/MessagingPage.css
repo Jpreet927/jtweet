@@ -1,0 +1,53 @@
+.messaging__container {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.messaging__container .messaging__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 32px;
+}
+
+.messaging__container .messaging__content img {
+  width: 150px;
+}
+
+.light.messaging__container {
+  background-image: url("../../Assets/Images/Light-BG-2.jpg");
+}
+
+.light.messaging__container h1 {
+  color: #5379a6;
+}
+
+.dark.messaging__container {
+  background-image: url("../../Assets/Images/Dark-BG.jpg");
+}
+
+.dark.messaging__container h1 {
+  color: #e0e7f0;
+}
+/*# sourceMappingURL=MessagingPage.css.map */

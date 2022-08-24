@@ -45,13 +45,25 @@
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 100%;
-  background-color: rgba(9, 18, 37, 0.75);
   min-height: 500px;
   max-height: 500px;
+}
+
+.light.followinglist__container {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #5379a6;
+}
+
+.light.followinglist__container .followinglist__items {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .dark.followinglist__container {
   background-color: rgba(25, 40, 70, 0.621);
   color: #e0e7f0;
+}
+
+.dark.followinglist__container .followinglist__items {
+  background-color: rgba(9, 18, 37, 0.75);
 }
 /*# sourceMappingURL=FollowingList.css.map */

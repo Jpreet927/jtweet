@@ -30,13 +30,25 @@
         // gap: 16px;
         // padding: 36px;
         min-height: 100%;
-        background-color: $darkModeNavbar;
         min-height: 500px;
         max-height: 500px;
+    }
+}
+
+.light.followinglist__container {
+    background-color: $lightModeWhite90;
+    color: $lightModeGrey;
+
+    .followinglist__items {
+        background-color: $lightModeWhite90;
     }
 }
 
 .dark.followinglist__container {
     background-color: $darkModeTweet;
     color: $darkModeText;
+
+    .followinglist__items {
+        background-color: $darkModeNavbar;
+    }
 }
