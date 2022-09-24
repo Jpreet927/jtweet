@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.951e6e6e.css",
+    "main.js": "/static/js/main.86bdfcaf.js",
+    "static/media/Logo-3D-Soft.png": "/static/media/Logo-3D-Soft.daac776d88b832145fb6.png",
+    "static/media/Auth-BG.jpg": "/static/media/Auth-BG.fb85b69c5c66db17dee9.jpg",
+    "static/media/Auth-Dark-BG.jpg": "/static/media/Auth-Dark-BG.fa9b461a2f6481584836.jpg",
+    "static/media/Dark-BG.jpg": "/static/media/Dark-BG.39161e70d0f058f6c900.jpg",
+    "static/media/Light-BG-2.jpg": "/static/media/Light-BG-2.37c218c5a9c1bd41d511.jpg",
+    "static/media/google-logo.png": "/static/media/google-logo.0590aaf0fe36e23dcc8c.png",
+    "index.html": "/index.html",
+    "main.951e6e6e.css.map": "/static/css/main.951e6e6e.css.map",
+    "main.86bdfcaf.js.map": "/static/js/main.86bdfcaf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.951e6e6e.css",
+    "static/js/main.86bdfcaf.js"
+  ]
+}
